@@ -10,7 +10,7 @@ class BorderButton: UIButton {
 		super.init(coder: aDecoder)!;
 		layer.cornerRadius = 0;  // ボタンの角の半径
 		layer.borderWidth = 0.5;  // ボタンの枠線の太さ
-		layer.borderColor = UIColor.blackColor().CGColor;
+		layer.borderColor = UIColor.darkGrayColor().CGColor;
 	}
 }
 
@@ -26,8 +26,8 @@ class calcController: UIViewController {
 	@IBOutlet var myGes: UIPanGestureRecognizer!
 	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
 		let move:CGPoint = sender.translationInView(view)
-		sender.view?.center.x = move.x
-		sender.view?.center.y = move.y
+		sender.view!.center.x = move.x
+		sender.view!.center.y = move.y
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()

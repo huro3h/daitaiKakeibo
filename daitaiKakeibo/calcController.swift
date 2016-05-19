@@ -6,18 +6,29 @@
 import UIKit
 
 class BorderButton: UIButton {
-	
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)!;
-		
-		layer.cornerRadius = 0;  /* ボタンの角の半径 */
-		layer.borderWidth = 0.5;  /* ボタンの枠線の太さ */
+		layer.cornerRadius = 0;  // ボタンの角の半径
+		layer.borderWidth = 0.5;  // ボタンの枠線の太さ
 		layer.borderColor = UIColor.blackColor().CGColor;
 	}
 }
 
 class calcController: UIViewController {
 
+	// 結果を表示するテキストフィールド
+	@IBOutlet weak var display: UITextField!
+	// 実際に数字を確認するテキストラベル
+	@IBOutlet weak var displayLabel: UILabel!
+	@IBOutlet weak var foodLabel: UILabel!
+	@IBOutlet weak var foodField: UIView!
+	
+	@IBOutlet var myGes: UIPanGestureRecognizer!
+	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
+		let move:CGPoint = sender.translationInView(view)
+		sender.view?.center.x = move.x
+		sender.view?.center.y = move.y
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -26,10 +37,9 @@ class calcController: UIViewController {
 		var bufferNumber : Int = 0  // 計算中の数値
 		var nextOperation : String?   // 次に演算する操作　+, -
 		
-		@IBOutlet weak var displayLabel: UILabel!
+	
 		
-		// 結果を表示するラベル
-		@IBOutlet weak var display: UITextField!
+
 		
 		
 		// 数字キーが押されたとき
@@ -56,7 +66,6 @@ class calcController: UIViewController {
 			
 			if sender.currentTitle == "C" {
 				bufferNumber = 0
-				
 				nextOperation = nil
 				
 				
@@ -107,6 +116,7 @@ class calcController: UIViewController {
 					presentViewController(myalert, animated: true, completion: nil)
 					display.text = "error"
 					display.text = "0"
+					displayLabel.text! = display.text!
 				}
 				
 				bufferNumber = 0
@@ -127,6 +137,15 @@ class calcController: UIViewController {
 		}
 	
 
+
+	
+	
+	
+	
+	
+	
+	
+	
 //	override func didReceiveMemoryWarning() {
 //		super.didReceiveMemoryWarning()
 //	}

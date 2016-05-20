@@ -25,9 +25,23 @@ class calcController: UIViewController {
 	
 	@IBOutlet var myGes: UIPanGestureRecognizer!
 	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
-		let move:CGPoint = sender.translationInView(view)
-		sender.view!.center.x = move.x
-		sender.view!.center.y = move.y
+		let move = sender.translationInView(view)
+		self.displayLabel.center.x = self.displayLabel.center.x + move.x
+		self.displayLabel.center.y = self.displayLabel.center.y + move.y
+//		sender.view!.center = CGPoint(x: sender.view!.center.x + move.x*0.05, y: sender.view!.center.y + move.y*0.02)
+		// displayLabel.center = move
+		
+		
+//		@IBAction func panYellowView(sender: UIPanGestureRecognizer) {
+//			
+//			let translation = sender.translationInView(self.view)
+//			
+//			sender.displayLabel.center = CGPoint(x: sender.displayLabel.center.x + move.x, y: sender.displayLabel.center.y + move.y)
+//			
+//			sender.setTranslation(CGPointZero, inView: self.view)
+//			
+//		}
+
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -36,10 +50,7 @@ class calcController: UIViewController {
 		var isTypingNumber = false  // 数字をタイプ中か
 		var bufferNumber : Int = 0  // 計算中の数値
 		var nextOperation : String?   // 次に演算する操作　+, -
-		
 	
-		
-
 		
 		
 		// 数字キーが押されたとき

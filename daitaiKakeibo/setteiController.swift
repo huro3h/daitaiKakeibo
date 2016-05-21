@@ -21,7 +21,7 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-		var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+		let cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
 		// cell.textLabel!.text = "\(indexPath.row)行目"
 		cell.accessoryType = .DisclosureIndicator
 		cell.textLabel!.text = "\(menuList[indexPath.row])"

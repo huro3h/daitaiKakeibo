@@ -14,6 +14,7 @@
 		3C6A8CEC1CE59844001527FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */; };
 		3C6A8CF71CE59844001527FA /* daitaiKakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A8CF61CE59844001527FA /* daitaiKakeiboTests.swift */; };
 		3C6A8D021CE59844001527FA /* daitaiKakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A8D011CE59844001527FA /* daitaiKakeiboUITests.swift */; };
+		3C828FE41CF0009200E9C0DC /* setteiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FE31CF0009200E9C0DC /* setteiController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3C6A8CFD1CE59844001527FA /* daitaiKakeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = daitaiKakeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A8D011CE59844001527FA /* daitaiKakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daitaiKakeiboUITests.swift; sourceTree = "<group>"; };
 		3C6A8D031CE59844001527FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C828FE31CF0009200E9C0DC /* setteiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setteiController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				3C6A8CE11CE59844001527FA /* AppDelegate.swift */,
 				3C6A8CE31CE59844001527FA /* calcController.swift */,
+				3C828FE31CF0009200E9C0DC /* setteiController.swift */,
 				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C6A8CE81CE59844001527FA /* Assets.xcassets */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				3C6A8CE41CE59844001527FA /* calcController.swift in Sources */,
 				3C6A8CE21CE59844001527FA /* AppDelegate.swift in Sources */,
+				3C828FE41CF0009200E9C0DC /* setteiController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,13 +32,14 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		
 		switch indexPath.row {
 		case 0:
-			self.navigationController?.pushViewController(howToUseController(), animated: true)
+			// self.navigationController?.pushViewController(howToUseController(), animated: true)
+			performSegueWithIdentifier("howToUseSegue", sender: nil)
 		case 1:
-			self.navigationController?.pushViewController(sendMailController(), animated: true)
+			performSegueWithIdentifier("sendMailSegue", sender: nil)
 		case 2:
-			self.navigationController?.pushViewController(aboutAppController(), animated: true)
+			performSegueWithIdentifier("aboutAppSegue", sender: nil)
 		case 3:
-			self.navigationController?.pushViewController(eraseController(), animated: true)
+			performSegueWithIdentifier("eraseSegue", sender: nil)
 		default:
 			break
 		}
@@ -46,10 +47,12 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 	
 //	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 //		if (segue.identifier == "howToUseSegue") {
-//			let subVC: SubViewController = (segue.destinationViewController as? howToUseController)!
+//			let twoVC: setteiController = (segue.setteiViewController as? howToUseController)!
 //
 //		}
 //	}
+	
+
 	
 
 	

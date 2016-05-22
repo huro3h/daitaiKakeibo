@@ -20,6 +20,7 @@
 		3C828FEA1CF02AE800E9C0DC /* aboutAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FE91CF02AE800E9C0DC /* aboutAppController.swift */; };
 		3C828FEC1CF02BAF00E9C0DC /* eraseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */; };
 		3C828FEE1CF0589300E9C0DC /* listController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FED1CF0589300E9C0DC /* listController.swift */; };
+		3C828FF01CF1892800E9C0DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3C828FE91CF02AE800E9C0DC /* aboutAppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutAppController.swift; sourceTree = "<group>"; };
 		3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eraseController.swift; sourceTree = "<group>"; };
 		3C828FED1CF0589300E9C0DC /* listController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listController.swift; sourceTree = "<group>"; };
+		3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C828FF01CF1892800E9C0DC /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 		3C6A8CD51CE59844001527FA = {
 			isa = PBXGroup;
 			children = (
+				3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */,
 				3C6A8CE01CE59844001527FA /* daitaiKakeibo */,
 				3C6A8CF51CE59844001527FA /* daitaiKakeiboTests */,
 				3C6A8D001CE59844001527FA /* daitaiKakeiboUITests */,

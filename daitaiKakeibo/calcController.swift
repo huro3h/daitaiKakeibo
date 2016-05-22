@@ -4,6 +4,7 @@
 //  Copyright © 2016年 satoshiii. All rights reserved.
 
 import UIKit
+import QuartzCore
 
 class BorderButton: UIButton {
 	required init(coder aDecoder: NSCoder) {
@@ -24,18 +25,19 @@ class calcController: UIViewController {
 	@IBOutlet weak var foodLabel: UILabel!
 	@IBOutlet weak var foodField: UIView!
 	
-	@IBOutlet var myGes: UIPanGestureRecognizer!
-	@IBOutlet var myGesField1: UIPanGestureRecognizer!
+//	@IBOutlet var myGes: UIPanGestureRecognizer!
 	
+	var startPoint: CGPoint?
+	var imageBeHereNowPoint: CGPoint?
+	var isImageInside: Bool?
+
 	
-	@IBAction func myGesActionField1(sender: UIPanGestureRecognizer) {
-		print("値を入力")
-	}
+//	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
+//		let move = sender.translationInView(view)
+//		self.displayLabel.center.x = self.displayLabel.center.x + move.x
+//		self.displayLabel.center.y = self.displayLabel.center.y + move.y
 	
-	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
-		let move = sender.translationInView(view)
-		self.displayLabel.center.x = self.displayLabel.center.x + move.x
-		self.displayLabel.center.y = self.displayLabel.center.y + move.y
+		
 //		sender.view!.center = CGPoint(x: sender.view!.center.x + move.x*0.05, y: sender.view!.center.y + move.y*0.02)
 		// displayLabel.center = move
 		
@@ -50,17 +52,64 @@ class calcController: UIViewController {
 //			
 //		}
 
-	}
+//	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	
+		displayLabel.userInteractionEnabled = true // 画像のタッチ操作を有効にする
+	
 	}
+	
+	// Labelタッチ判定追加テスト(5.22-)
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		let touch: UITouch = touches.first! as UITouch
 		
+		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
+		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
+		
+		// タップしたビューがUIImageViewか判断する。
+		if touch.view!.isKindOfClass(UILabel) {
+			isImageInside = true
+		} else {
+			isImageInside = false
+		}
+	}
+	
+	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		
+		if isImageInside! {
+			// タッチ中のLabelの座標を取得
+			let touch = touches.first! as UITouch
+			let location = touch.locationInView(self.view)
+			
+			// 移動量を計算
+			let deltaX: CGFloat = CGFloat(location.x - startPoint!.x)
+			let deltaY: CGFloat = CGFloat(location.y - startPoint!.y)
+			
+			// Labelを半透過にする
+			displayLabel.layer.opacity = 0.5
+			
+			// Labelを移動
+			self.displayLabel.frame.origin.x = imageBeHereNowPoint!.x + deltaX
+			self.displayLabel.frame.origin.y = imageBeHereNowPoint!.y + deltaY
+			
+		} else {
+			// Do nothing
+		}
+	}
+	
+	// Labelタッチ判定追加テスト ここまで↑↑(5.22-)
+	
+	
+	
+	
 		var isTypingNumber = false  // 数字をタイプ中か
 		var bufferNumber : Int = 0  // 計算中の数値
 		var nextOperation : String?   // 次に演算する操作　+, -
 	
-		
-		
+	
+	
 		// 数字キーが押されたとき
 		@IBAction func digit(sender: UIButton) {
 			

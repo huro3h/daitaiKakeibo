@@ -8,6 +8,7 @@
         <!--Calc Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="calcController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -206,7 +207,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-aq-1xQ">
-                                <rect key="frame" x="20" y="64" width="280" height="183"/>
+                                <rect key="frame" x="20" y="64" width="285" height="105"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD8-Qv-ZBO">
                                         <rect key="frame" x="220" y="0.0" width="60" height="30"/>
@@ -239,9 +240,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="RlO-bk-7d1" appends="YES" id="oyZ-8K-gIc"/>
-                                </connections>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-9L-VZK">
                                 <rect key="frame" x="88" y="283" width="14" height="30"/>
@@ -279,9 +277,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Y3b-VD-50g" appends="YES" id="Pdf-o3-Gg7"/>
-                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -294,22 +289,8 @@
                         <outlet property="displayLabel" destination="EDs-v0-Gxo" id="6Sa-i7-fL2"/>
                         <outlet property="foodField" destination="Cdg-aq-1xQ" id="ire-Gv-KBS"/>
                         <outlet property="foodLabel" destination="klw-Oe-nTM" id="xEF-Tn-i6e"/>
-                        <outlet property="myGes" destination="Y3b-VD-50g" id="k0k-CO-CdE"/>
-                        <outlet property="myGesField1" destination="RlO-bk-7d1" id="fT9-B8-yI8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Y3b-VD-50g">
-                    <connections>
-                        <action selector="myGesAction:" destination="BYZ-38-t0r" id="n2O-Cu-cHb"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="RlO-bk-7d1">
-                    <connections>
-                        <action selector="myGesActionField1:" destination="BYZ-38-t0r" id="ruH-kO-9m7"/>
-                        <outlet property="delegate" destination="Cdg-aq-1xQ" id="W9s-LG-OCB"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1802" y="349"/>
         </scene>

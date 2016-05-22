@@ -99,6 +99,27 @@ class calcController: UIViewController {
 		}
 	}
 	
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		// タッチ終了時の画像の座標と目標Areaの座標の距離を求める
+//		let distanceXFromDestination = fabs(imageBeHereNow.frame.origin.x - imageDestinationArea.frame.origin.x)
+//		let distanceYFromDestination = fabs(imageBeHereNow.frame.origin.y - imageDestinationArea.frame.origin.y)
+//		
+//		let threshold: CGFloat = 100
+//		
+//		if distanceXFromDestination < threshold && distanceYFromDestination < threshold {
+//			// アニメーションで目標Areaに吸着させる
+//			print("perform animation to imageDestinationArea")
+		
+			displayLabel.layer.opacity = 1.0
+			
+//			let fromPoint: CGPoint = imageBeHereNow.center
+//			let toPoint: CGPoint = imageDestinationArea.center
+//			positonAnimationFromPoint(fromPoint, toPoint: toPoint)
+//			
+//			imageBeHereNow.center = imageDestinationArea.center         // イメージを移動
+		
+	}
+	
 	// Labelタッチ判定追加テスト ここまで↑↑(5.22-)
 	
 	

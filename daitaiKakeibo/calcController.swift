@@ -20,10 +20,18 @@ class calcController: UIViewController {
 	@IBOutlet weak var display: UITextField!
 	// 実際に数字を確認するテキストラベル
 	@IBOutlet weak var displayLabel: UILabel!
+	
 	@IBOutlet weak var foodLabel: UILabel!
 	@IBOutlet weak var foodField: UIView!
 	
 	@IBOutlet var myGes: UIPanGestureRecognizer!
+	@IBOutlet var myGesField1: UIPanGestureRecognizer!
+	
+	
+	@IBAction func myGesActionField1(sender: UIPanGestureRecognizer) {
+		print("値を入力")
+	}
+	
 	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
 		let move = sender.translationInView(view)
 		self.displayLabel.center.x = self.displayLabel.center.x + move.x

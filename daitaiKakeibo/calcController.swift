@@ -165,7 +165,7 @@ class calcController: UIViewController {
 			
 		}
 		
-		// 操作キー（+-=C）が押されたとき
+		// 操作キー（+-×÷=C★!D）が押されたとき
 		@IBAction func operation(sender: UIButton) {
 			// ログに表示
 			print("pushed \(sender.currentTitle)")
@@ -206,7 +206,7 @@ class calcController: UIViewController {
 			if (sender.currentTitle == "=") {
 				displayLabel.text! = display.text!
 				// 文字数最大を決める
-				let maxLength: Int = 13
+				let maxLength: Int = 16
 				let str = display.text
 				
 				if str!.characters.count > maxLength {
@@ -233,6 +233,8 @@ class calcController: UIViewController {
 			if sender.currentTitle == "!" {
 				foodArray = []
 				foodLabel.text! = "0"
+				display.text = "0"
+				displayLabel.text! = display.text!
 			}
 			
 			if sender.currentTitle == "★" {
@@ -242,6 +244,12 @@ class calcController: UIViewController {
 				myDefault.setObject([foodTotal], forKey: "fourTotal")
 				// 即反映させる(きちんと保存して使用時すぐ出せるように)
 				myDefault.synchronize()
+			}
+			
+			if sender.currentTitle == "D" {
+				let myDefault = NSUserDefaults.standardUserDefaults()
+				// 一時的に用意したユーザーデフォルト消すボタン
+				myDefault.removeObjectForKey("fourTotal")
 			}
 			
 			

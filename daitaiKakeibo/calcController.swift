@@ -31,7 +31,7 @@ class calcController: UIViewController {
 	var isImageInside: Bool?
 	
 	var foodArray:[Int] = []
-
+	var foodTotal = 0
 	
 //	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
 //		let move = sender.translationInView(view)
@@ -132,9 +132,10 @@ class calcController: UIViewController {
 		let foodInt: Int = Int(displayLabel.text!)!
 		foodArray.append(foodInt)
 		print(foodArray)
-		let foodTotal = foodArray.reduce(0) { (num1, num2) -> Int in
+		foodTotal = foodArray.reduce(0) { (num1, num2) -> Int in
 			num1 + num2
 		}
+		
 		let foodString : String = String(foodTotal)
 		// print(foodTotal)
 		foodLabel.text! = foodString
@@ -235,8 +236,12 @@ class calcController: UIViewController {
 			}
 			
 			if sender.currentTitle == "★" {
-				bufferNumber = 0
-				//nextOperation = nil
+				// ユーザーデフォルトを用意する(情報の保管場所を用意)
+				let myDefault = NSUserDefaults.standardUserDefaults()
+				// データを書き込んで("fourTotal"箱の名前)
+				myDefault.setObject([foodTotal], forKey: "fourTotal")
+				// 即反映させる(きちんと保存して使用時すぐ出せるように)
+				myDefault.synchronize()
 			}
 			
 			

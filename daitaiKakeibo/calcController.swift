@@ -132,11 +132,13 @@ class calcController: UIViewController {
 		let foodInt: Int = Int(displayLabel.text!)!
 		foodArray.append(foodInt)
 		print(foodArray)
-//		displayLabel.text = "0"
+		let foodTotal = foodArray.reduce(0) { (num1, num2) -> Int in
+			num1 + num2
+		}
+		let foodString : String = String(foodTotal)
+		// print(foodTotal)
+		foodLabel.text! = foodString
 	}
-
-	
-	
 	
 	
 		var isTypingNumber = false  // 数字をタイプ中か

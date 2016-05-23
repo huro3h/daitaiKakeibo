@@ -25,14 +25,12 @@ class calcController: UIViewController {
 	@IBOutlet weak var foodLabel: UILabel!
 	@IBOutlet weak var foodField: UIView!
 	
-
-	
-	
-//	@IBOutlet var myGes: UIPanGestureRecognizer!
 	
 	var startPoint: CGPoint?
 	var imageBeHereNowPoint: CGPoint?
 	var isImageInside: Bool?
+	
+	var foodArray:[Int] = []
 
 	
 //	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
@@ -128,9 +126,12 @@ class calcController: UIViewController {
 	// Labelタッチ判定テスト ここまで↑↑(5.22-)
 	
 	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {
-		print("foodFieldたっぷ！")
-//		let foodTotal = displayLabel.text
-		foodLabel.text = displayLabel.text
+		// print("foodFieldたっぷ！")
+		
+		// 配列にInt型の値が入るように変更
+		let foodInt: Int = Int(displayLabel.text!)!
+		foodArray.append(foodInt)
+		print(foodArray)
 //		displayLabel.text = "0"
 	}
 

@@ -95,6 +95,7 @@
 				3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */,
 				3C6A8CE01CE59844001527FA /* daitaiKakeibo */,
 				3C6A8CF51CE59844001527FA /* daitaiKakeiboTests */,
+				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C6A8D001CE59844001527FA /* daitaiKakeiboUITests */,
 				3C6A8CDF1CE59844001527FA /* Products */,
 			);
@@ -121,7 +122,6 @@
 				3C828FE91CF02AE800E9C0DC /* aboutAppController.swift */,
 				3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */,
 				3C828FED1CF0589300E9C0DC /* listController.swift */,
-				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C6A8CE81CE59844001527FA /* Assets.xcassets */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
 				3C6A8CED1CE59844001527FA /* Info.plist */,
@@ -330,6 +330,7 @@
 				3C6A8CE61CE59844001527FA /* Base */,
 			);
 			name = Main.storyboard;
+			path = daitaiKakeibo;
 			sourceTree = "<group>";
 		};
 		3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */ = {

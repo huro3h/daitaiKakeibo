@@ -228,6 +228,17 @@ class calcController: UIViewController {
 				nextOperation = nil
 			}
 			
+			// !ボタンが押された場合、各項目Labelの値をリセット
+			if sender.currentTitle == "!" {
+				foodArray = []
+				foodLabel.text! = "0"
+			}
+			
+			if sender.currentTitle == "★" {
+				bufferNumber = 0
+				//nextOperation = nil
+			}
+			
 			
 		}
 		

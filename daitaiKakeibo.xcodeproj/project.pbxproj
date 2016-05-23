@@ -95,7 +95,6 @@
 				3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */,
 				3C6A8CE01CE59844001527FA /* daitaiKakeibo */,
 				3C6A8CF51CE59844001527FA /* daitaiKakeiboTests */,
-				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C6A8D001CE59844001527FA /* daitaiKakeiboUITests */,
 				3C6A8CDF1CE59844001527FA /* Products */,
 			);
@@ -114,6 +113,7 @@
 		3C6A8CE01CE59844001527FA /* daitaiKakeibo */ = {
 			isa = PBXGroup;
 			children = (
+				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C6A8CE11CE59844001527FA /* AppDelegate.swift */,
 				3C6A8CE31CE59844001527FA /* calcController.swift */,
 				3C828FE31CF0009200E9C0DC /* setteiController.swift */,
@@ -330,7 +330,6 @@
 				3C6A8CE61CE59844001527FA /* Base */,
 			);
 			name = Main.storyboard;
-			path = daitaiKakeibo;
 			sourceTree = "<group>";
 		};
 		3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */ = {

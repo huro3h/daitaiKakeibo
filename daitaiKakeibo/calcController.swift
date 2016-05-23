@@ -25,6 +25,9 @@ class calcController: UIViewController {
 	@IBOutlet weak var foodLabel: UILabel!
 	@IBOutlet weak var foodField: UIView!
 	
+
+	
+	
 //	@IBOutlet var myGes: UIPanGestureRecognizer!
 	
 	var startPoint: CGPoint?
@@ -61,14 +64,14 @@ class calcController: UIViewController {
 	
 	}
 	
-	// Labelタッチ判定追加テスト(5.22-)
+	// Labelタッチ判定テスト ここから↓↓ (5.22-)
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let touch: UITouch = touches.first! as UITouch
 		
 		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
 		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
 		
-		// タップしたビューがUIImageViewか判断する。
+		// タップしたビューがUILabelか判断する。
 		if touch.view!.isKindOfClass(UILabel) {
 			isImageInside = true
 		} else {
@@ -88,7 +91,7 @@ class calcController: UIViewController {
 			let deltaY: CGFloat = CGFloat(location.y - startPoint!.y)
 			
 			// Labelを半透過にする
-			displayLabel.layer.opacity = 0.5
+			displayLabel.layer.opacity = 0.6
 			
 			// Labelを移動
 			self.displayLabel.frame.origin.x = imageBeHereNowPoint!.x + deltaX
@@ -110,7 +113,10 @@ class calcController: UIViewController {
 //			// アニメーションで目標Areaに吸着させる
 //			print("perform animation to imageDestinationArea")
 		
-			displayLabel.layer.opacity = 1.0
+		// 指を離したタイミングでLabelの透過解除
+		displayLabel.layer.opacity = 1.0
+		
+		
 			
 //			let fromPoint: CGPoint = imageBeHereNow.center
 //			let toPoint: CGPoint = imageDestinationArea.center
@@ -119,8 +125,15 @@ class calcController: UIViewController {
 //			imageBeHereNow.center = imageDestinationArea.center         // イメージを移動
 		
 	}
+	// Labelタッチ判定テスト ここまで↑↑(5.22-)
 	
-	// Labelタッチ判定追加テスト ここまで↑↑(5.22-)
+	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {
+		print("foodFieldたっぷ！")
+//		let foodTotal = displayLabel.text
+		foodLabel.text = displayLabel.text
+//		displayLabel.text = "0"
+	}
+
 	
 	
 	

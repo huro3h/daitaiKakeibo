@@ -59,18 +59,18 @@ class calcController: UIViewController {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
-		
-		// ユーザーデフォルトから保存されたデータを取り出す
+	}
+	
+	override func viewWillAppear(animated: Bool) {
 		let myDefault = NSUserDefaults.standardUserDefaults()
 		let myStr = myDefault.stringForKey("fourTotal")
 		
 		if myStr == nil {
-			foodLabel.text! = "0"
+			foodLabel.text! = "00"
 		} else {
 			// 取り出した文字を表示
 			foodLabel.text = myStr
 		}
-		
 	}
 	
 	

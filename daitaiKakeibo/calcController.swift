@@ -45,6 +45,8 @@ class calcController: UIViewController {
 	var hokaArray:[Int] = []
 	var hokaTotal = 0
 	
+	var allTotal = 0
+	
 //	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
 //		let move = sender.translationInView(view)
 //		self.displayLabel.center.x = self.displayLabel.center.x + move.x
@@ -85,6 +87,9 @@ class calcController: UIViewController {
 					lifeTotal = fourTotal![1] as! Int
 					zappiTotal = fourTotal![2] as! Int
 					hokaTotal = fourTotal![3] as! Int
+					
+					allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
+					print(allTotal)
 				
 				let foodString : String = String(foodTotal)
 					foodLabel.text = foodString
@@ -113,6 +118,7 @@ class calcController: UIViewController {
 		}
 		let foodString : String = String(foodTotal)
 		foodLabel.text? = foodString
+		userDefaultMemory()
 	}
 	
 	@IBAction func tapLifeField(sender: UITapGestureRecognizer) {
@@ -125,6 +131,7 @@ class calcController: UIViewController {
 		}
 		let lifeString : String = String(lifeTotal)
 		lifeLabel.text! = lifeString
+		userDefaultMemory()
 	}
 	
 	@IBAction func tapZappiField(sender: UITapGestureRecognizer) {
@@ -137,6 +144,7 @@ class calcController: UIViewController {
 		}
 		let zappiString : String = String(zappiTotal)
 		zappiLabel.text! = zappiString
+		userDefaultMemory()
 	}
 	
 	@IBAction func tapHokaField(sender: UITapGestureRecognizer) {
@@ -149,6 +157,7 @@ class calcController: UIViewController {
 		}
 		let hokaString : String = String(hokaTotal)
 		hokaLabel.text! = hokaString
+		userDefaultMemory()
 		
 	}
 	
@@ -222,7 +231,6 @@ class calcController: UIViewController {
 	
 		// 数字キーが押されたとき
 		@IBAction func digit(sender: UIButton) {
-			
 			// ログに表示
 			print("pushed \(sender.currentTitle)")
 			
@@ -233,8 +241,8 @@ class calcController: UIViewController {
 				display.text = sender.currentTitle!
 				isTypingNumber = true
 			}
-			displayLabel.text! = display.text!
 			
+			displayLabel.text! = display.text!
 		}
 		
 		// 操作キー（+-×÷=C★!D）が押されたとき
@@ -245,7 +253,6 @@ class calcController: UIViewController {
 			if sender.currentTitle == "C" {
 				bufferNumber = 0
 				nextOperation = nil
-				
 				
 			} else {
 				if nextOperation == nil {
@@ -278,13 +285,13 @@ class calcController: UIViewController {
 			if (sender.currentTitle == "=") {
 				displayLabel.text! = display.text!
 				// 文字数最大を決める
-				let maxLength: Int = 16
+				let maxLength: Int = 17
 				let str = display.text
 				
 				if str!.characters.count > maxLength {
 					let myalert = UIAlertController(
-						title: "桁数",
-						message: "オーバーです",
+						title: "桁数オーバーです",
+						message: "17桁(1京円)以内で入力してください",
 						preferredStyle: .Alert)
 					
 					myalert.addAction(UIAlertAction(
@@ -317,12 +324,31 @@ class calcController: UIViewController {
 			
 			// MARK:★
 			if sender.currentTitle == "★" {
-				// ユーザーデフォルトを用意する(情報の保管場所を用意)
-				let myDefault = NSUserDefaults.standardUserDefaults()
-				// データを書き込んで("fourTotal"箱の名前)
-				myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
-				// 即反映させる(きちんと保存して使用時すぐ出せるように)
-				myDefault.synchronize()
+				userDefaultMemory()
+				
+				// 1.AppDelegateをコードで読み込む
+				let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+				
+				// 2.Entityの操作を制御する(managedObjectContext)を(appDelegate)から作成
+				if let managedObjectContext:NSManagedObjectContext = appDelegate.managedObjectContext{
+					
+					// 3.新しくデータを追加する為のEntityを作成する
+					let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+					
+					// 4.Todo EntityからObjectを生成し、Attributesに接続して値を代入
+					// (Entityにあわせたクラスを作ってから)
+					let accountBook = managedObject as! AccountBook
+					
+					accountBook.foodFee = foodTotal
+					accountBook.lifeFee = lifeTotal
+					accountBook.zappiFee = zappiTotal
+					accountBook.hokaFee = hokaTotal
+					accountBook.totalFee = allTotal
+					accountBook.inputDate = NSDate() // NSDate() 現在の日付を返す
+					
+					appDelegate.saveContext()
+				}
+				
 			}
 			
 			if sender.currentTitle == "D" {
@@ -334,7 +360,7 @@ class calcController: UIViewController {
 			
 		}
 		
-		
+		// MARK:自作関数置き場
 		// ディスプレイ表示を取得しIntに変換して返す
 		func getDisplayInt() -> Int {
 			if let displayText = display.text {
@@ -344,6 +370,13 @@ class calcController: UIViewController {
 			}
 		}
 	
+		func userDefaultMemory() {
+			let myDefault = NSUserDefaults.standardUserDefaults()
+			// データを書き込んで("fourTotal"箱の名前)
+			myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
+			// 即反映させる(きちんと保存して使用時すぐ出せるように)
+			myDefault.synchronize()
+		}
 
 
 	

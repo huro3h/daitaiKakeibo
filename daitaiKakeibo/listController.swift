@@ -10,6 +10,9 @@ class listController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		// CoreDataから読み込み
+		read()
     }
 	
 	override func viewWillAppear(animated: Bool) {
@@ -44,13 +47,52 @@ class listController: UIViewController,UITableViewDataSource,UITableViewDelegate
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		print("\(indexPath.row)行目を選択")
 	}
+	
+	// すでに存在するデータの読み込み処理
+	func read(){
+		
+		// a1.AppDelegateをコードで読み込む
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		
+		// a2.Entityの操作を制御する(managedObjectContext)を(appDelegate)から作成
+		if let managedObjectContext:NSManagedObjectContext = appDelegate.managedObjectContext{
+			
+			// a3.Entityを指定する設定
+			let entityDescription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+			
+			// a4.フェッチに必要なオブジェクトを準備
+			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+			fetchRequest.entity = entityDescription
+			
+			// a5.エラーが発生した際にキャッチするための変数
+			var error:NSError? = nil
+			
+			// a6.フェッチリクエスト(データの検索と取得処理)の実行
+			// 最初は短く書いて、後からスペースを入れることによってインデントが綺麗に治る
+			// do{}catch let error1 as NSError{ error = error1 }
+			// php であった try! catch と同じ役目
+			do{
+				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+				
+				//　a7.保存した件数をprint表示
+//				print(results.count)
+				
+				for managedObject in results {
+					let accountBook = managedObject as! AccountBook
+					
+					print("日時:\(accountBook.inputDate), 食費:\(accountBook.foodFee), 生活費:\(accountBook.lifeFee), 雑費:\(accountBook.zappiFee), 他:\(accountBook.hokaFee), 合計:\(accountBook.totalFee)")
+				}
+				
+			}catch let error1 as NSError{
+				error = error1
+			}
+			
+		}
+	}
 
 	
 	
-	
-	
-	
-	
+
 	
 	
 	

@@ -21,6 +21,7 @@
 		3C828FEC1CF02BAF00E9C0DC /* eraseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */; };
 		3C828FEE1CF0589300E9C0DC /* listController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FED1CF0589300E9C0DC /* listController.swift */; };
 		3C828FF01CF1892800E9C0DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */; };
+		3CE4629A1CF435EF00480502 /* daitaiKakeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eraseController.swift; sourceTree = "<group>"; };
 		3C828FED1CF0589300E9C0DC /* listController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listController.swift; sourceTree = "<group>"; };
 		3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = daitaiKakeibo.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				3C6A8CE81CE59844001527FA /* Assets.xcassets */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
 				3C6A8CED1CE59844001527FA /* Info.plist */,
+				3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */,
 			);
 			path = daitaiKakeibo;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				3C828FEA1CF02AE800E9C0DC /* aboutAppController.swift in Sources */,
 				3C828FE61CF0127A00E9C0DC /* howToUseController.swift in Sources */,
 				3C6A8CE21CE59844001527FA /* AppDelegate.swift in Sources */,
+				3CE4629A1CF435EF00480502 /* daitaiKakeibo.xcdatamodeld in Sources */,
 				3C828FE81CF029FE00E9C0DC /* sendMailController.swift in Sources */,
 				3C828FEC1CF02BAF00E9C0DC /* eraseController.swift in Sources */,
 				3C828FE41CF0009200E9C0DC /* setteiController.swift in Sources */,
@@ -534,6 +538,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */,
+			);
+			currentVersion = 3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */;
+			path = daitaiKakeibo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3C6A8CD61CE59844001527FA /* Project object */;
 }

@@ -223,6 +223,24 @@
                                     <outletCollection property="gestureRecognizers" destination="d2C-V9-hiS" appends="YES" id="c5i-Wl-Y1w"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-CM-QrY">
+                                <rect key="frame" x="0.0" y="191" width="160" height="127"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8K-kx-dQH">
+                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZGX-Od-B2e" appends="YES" id="iea-11-oZj"/>
+                                </connections>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-9L-VZK">
                                 <rect key="frame" x="281" y="328" width="14" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -272,6 +290,42 @@
                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9J-a5-7Ie"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWM-6z-Nz8">
+                                <rect key="frame" x="160" y="64" width="160" height="127"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oik-DY-We7">
+                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nzf-Y0-ae5" appends="YES" id="ieT-Oh-j0M"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srj-1j-uHf">
+                                <rect key="frame" x="160" y="191" width="160" height="127"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-6H-vRw">
+                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qwD-VZ-qLL" appends="YES" id="er7-VD-VsY"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -309,6 +363,12 @@
                         <outlet property="displayLabel" destination="EDs-v0-Gxo" id="6Sa-i7-fL2"/>
                         <outlet property="foodField" destination="Cdg-aq-1xQ" id="ire-Gv-KBS"/>
                         <outlet property="foodLabel" destination="klw-Oe-nTM" id="xEF-Tn-i6e"/>
+                        <outlet property="hokaField" destination="srj-1j-uHf" id="tH5-dr-f4n"/>
+                        <outlet property="hokaLabel" destination="J0V-6H-vRw" id="mAQ-aA-acS"/>
+                        <outlet property="lifeField" destination="SWM-6z-Nz8" id="aQu-5c-XJj"/>
+                        <outlet property="lifeLabel" destination="oik-DY-We7" id="GQI-hl-V1j"/>
+                        <outlet property="zappiField" destination="GFi-CM-QrY" id="rSb-al-BLq"/>
+                        <outlet property="zappiLabel" destination="c8K-kx-dQH" id="c0I-5e-Ygn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -317,8 +377,23 @@
                         <action selector="tapFoodField:" destination="BYZ-38-t0r" id="PUF-jO-KjD"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="nzf-Y0-ae5">
+                    <connections>
+                        <action selector="tapLifeField:" destination="BYZ-38-t0r" id="gS6-yF-P3A"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZGX-Od-B2e">
+                    <connections>
+                        <action selector="tapZappiField:" destination="BYZ-38-t0r" id="VBg-lr-3K6"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qwD-VZ-qLL">
+                    <connections>
+                        <action selector="tapHokaField:" destination="BYZ-38-t0r" id="Wik-ns-UgI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1802" y="349"/>
+            <point key="canvasLocation" x="1818" y="349"/>
         </scene>
         <!--List Controller-->
         <scene sceneID="hQp-Qp-9Ct">

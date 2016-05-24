@@ -24,7 +24,12 @@ class calcController: UIViewController {
 	
 	@IBOutlet weak var foodLabel: UILabel!
 	@IBOutlet weak var foodField: UIView!
-	
+	@IBOutlet weak var lifeLabel: UILabel!
+	@IBOutlet weak var lifeField: UIView!
+	@IBOutlet weak var zappiLabel: UILabel!
+	@IBOutlet weak var zappiField: UIView!
+	@IBOutlet weak var hokaLabel: UILabel!
+	@IBOutlet weak var hokaField: UIView!
 	
 	var startPoint: CGPoint?
 	var imageBeHereNowPoint: CGPoint?
@@ -32,6 +37,12 @@ class calcController: UIViewController {
 	
 	var foodArray:[Int] = []
 	var foodTotal = 0
+	var lifeArray:[Int] = []
+	var lifeTotal = 0
+	var zappiArray:[Int] = []
+	var zappiTotal = 0
+	var hokaArray:[Int] = []
+	var hokaTotal = 0
 	
 //	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
 //		let move = sender.translationInView(view)
@@ -62,15 +73,9 @@ class calcController: UIViewController {
 	}
 	
 	override func viewWillAppear(animated: Bool) {
-		let myDefault = NSUserDefaults.standardUserDefaults()
-		let myStr = myDefault.stringForKey("fourTotal")
-		
-		if myStr == nil {
-			foodLabel.text! = "00"
-		} else {
-			// 取り出した文字を表示
-			foodLabel.text = myStr
-		}
+//		let myDefault = NSUserDefaults.standardUserDefaults()
+//		var myStr: Array? = myDefault.arrayForKey("fourTotal")!
+//			foodLabel.text = myStr![0] as? String
 	}
 	
 	
@@ -148,11 +153,51 @@ class calcController: UIViewController {
 		foodTotal = foodArray.reduce(0) { (num1, num2) -> Int in
 			num1 + num2
 		}
-		
 		let foodString : String = String(foodTotal)
 		// print(foodTotal)
 		foodLabel.text! = foodString
 	}
+	
+	@IBAction func tapLifeField(sender: UITapGestureRecognizer) {
+	
+		let lifeInt: Int = Int(displayLabel.text!)!
+		lifeArray.append(lifeInt)
+		print(lifeArray)
+		lifeTotal = lifeArray.reduce(0) { (num1, num2) -> Int in
+			num1 + num2
+		}
+		let lifeString : String = String(lifeTotal)
+		// print(foodTotal)
+		lifeLabel.text! = lifeString
+	}
+	
+	@IBAction func tapZappiField(sender: UITapGestureRecognizer) {
+		
+		let zappiInt: Int = Int(displayLabel.text!)!
+		zappiArray.append(zappiInt)
+		print(zappiArray)
+		zappiTotal = zappiArray.reduce(0) { (num1, num2) -> Int in
+			num1 + num2
+		}
+		let zappiString : String = String(zappiTotal)
+		// print(foodTotal)
+		zappiLabel.text! = zappiString
+	}
+	
+	@IBAction func tapHokaField(sender: UITapGestureRecognizer) {
+		
+		let hokaInt: Int = Int(displayLabel.text!)!
+		hokaArray.append(hokaInt)
+		print(hokaArray)
+		hokaTotal = hokaArray.reduce(0) { (num1, num2) -> Int in
+			num1 + num2
+		}
+		let hokaString : String = String(hokaTotal)
+		// print(foodTotal)
+		hokaLabel.text! = hokaString
+	
+	}
+	
 	
 	
 		var isTypingNumber = false  // 数字をタイプ中か
@@ -246,6 +291,12 @@ class calcController: UIViewController {
 			if sender.currentTitle == "!" {
 				foodArray = []
 				foodLabel.text! = "0"
+				lifeArray = []
+				lifeLabel.text! = "0"
+				zappiArray = []
+				zappiLabel.text! = "0"
+				hokaArray = []
+				hokaLabel.text! = "0"
 				display.text = "0"
 				displayLabel.text! = display.text!
 			}

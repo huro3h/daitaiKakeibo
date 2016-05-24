@@ -1,10 +1,7 @@
-//
 //  AppDelegate.swift
 //  daitaiKakeibo
-//
 //  Created by satoshiii on 2016/05/13.
 //  Copyright © 2016年 satoshiii. All rights reserved.
-//
 
 import UIKit
 import QuartzCore

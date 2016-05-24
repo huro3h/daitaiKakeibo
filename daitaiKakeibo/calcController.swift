@@ -5,6 +5,7 @@
 
 import UIKit
 import QuartzCore
+import CoreData
 
 class BorderButton: UIButton {
 	required init(coder aDecoder: NSCoder) {
@@ -93,6 +94,7 @@ class calcController: UIViewController {
 					zappiLabel.text = zappiString
 				let hokaString : String = String(hokaTotal)
 					hokaLabel.text = hokaString
+				
 				}else{
 				 // 上の処理を無視！ \( 'ω')/
 				}
@@ -110,7 +112,6 @@ class calcController: UIViewController {
 			num1 + num2
 		}
 		let foodString : String = String(foodTotal)
-		// print(foodTotal)
 		foodLabel.text? = foodString
 	}
 	
@@ -123,7 +124,6 @@ class calcController: UIViewController {
 			num1 + num2
 		}
 		let lifeString : String = String(lifeTotal)
-		// print(foodTotal)
 		lifeLabel.text! = lifeString
 	}
 	
@@ -136,7 +136,6 @@ class calcController: UIViewController {
 			num1 + num2
 		}
 		let zappiString : String = String(zappiTotal)
-		// print(foodTotal)
 		zappiLabel.text! = zappiString
 	}
 	
@@ -149,11 +148,9 @@ class calcController: UIViewController {
 			num1 + num2
 		}
 		let hokaString : String = String(hokaTotal)
-		// print(foodTotal)
 		hokaLabel.text! = hokaString
 		
 	}
-	
 	
 	
 	// Labelタッチ判定テスト ここから↓↓ (5.22-)

@@ -4,6 +4,7 @@
 //  Copyright © 2016年 satoshiii. All rights reserved.
 
 import UIKit
+import CoreData
 
 class listController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 

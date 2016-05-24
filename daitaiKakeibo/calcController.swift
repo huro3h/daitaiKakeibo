@@ -74,10 +74,29 @@ class calcController: UIViewController {
 	
 	override func viewWillAppear(animated: Bool) {
 		let myDefault = NSUserDefaults.standardUserDefaults()
-		var fourTotal: Array? = myDefault.arrayForKey("fourTotal")!
-			foodTotal = fourTotal![0] as! Int
-		let foodString : String = String(foodTotal)
-			foodLabel.text = foodString
+			if (myDefault.arrayForKey("fourTotal") != nil){
+				
+				var fourTotal: Array? = myDefault.arrayForKey("fourTotal")!
+		
+				if (fourTotal!.count == 4){
+					
+					foodTotal = fourTotal![0] as! Int
+					lifeTotal = fourTotal![1] as! Int
+					zappiTotal = fourTotal![2] as! Int
+					hokaTotal = fourTotal![3] as! Int
+				
+				let foodString : String = String(foodTotal)
+					foodLabel.text = foodString
+				let lifeString : String = String(lifeTotal)
+					lifeLabel.text = lifeString
+				let zappiString : String = String(zappiTotal)
+					zappiLabel.text = zappiString
+				let hokaString : String = String(hokaTotal)
+					hokaLabel.text = hokaString
+				}else{
+				 // 上の処理を無視！ \( 'ω')/
+				}
+			}
 	}
 	
 	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {
@@ -200,15 +219,9 @@ class calcController: UIViewController {
 	}
 	// Labelタッチ判定テスト ここまで↑↑(5.22-)
 	
-
-	
-	
-	
 		var isTypingNumber = false  // 数字をタイプ中か
 		var bufferNumber : Int = 0  // 計算中の数値
 		var nextOperation : String?   // 次に演算する操作　+, -
-	
-	
 	
 		// 数字キーが押されたとき
 		@IBAction func digit(sender: UIButton) {
@@ -310,15 +323,15 @@ class calcController: UIViewController {
 				// ユーザーデフォルトを用意する(情報の保管場所を用意)
 				let myDefault = NSUserDefaults.standardUserDefaults()
 				// データを書き込んで("fourTotal"箱の名前)
-				myDefault.setObject([foodTotal], forKey: "fourTotal")
+				myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
 				// 即反映させる(きちんと保存して使用時すぐ出せるように)
 				myDefault.synchronize()
 			}
 			
 			if sender.currentTitle == "D" {
-//				let myDefault = NSUserDefaults.standardUserDefaults()
-				// 一時的に用意したユーザーデフォルト消すボタン
-//				myDefault.removeObjectForKey("fourTotal")
+				let myDefault = NSUserDefaults.standardUserDefaults()
+				 //一時的に用意したユーザーデフォルト消すボタン
+				myDefault.removeObjectForKey("fourTotal")
 			}
 			
 			

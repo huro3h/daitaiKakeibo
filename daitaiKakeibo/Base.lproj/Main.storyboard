@@ -171,7 +171,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xd-mU-ikf" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
-                                <rect key="frame" x="64" y="518" width="128" height="50"/>
+                                <rect key="frame" x="128" y="518" width="64" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="=">
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-QZ-L1y" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="518" width="64" height="50"/>
+                                <rect key="frame" x="0.0" y="518" width="128" height="50"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="0">
@@ -393,7 +393,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1818" y="349"/>
+            <point key="canvasLocation" x="1812" y="349"/>
         </scene>
         <!--List Controller-->
         <scene sceneID="hQp-Qp-9Ct">
@@ -446,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NO3-Ov-fzn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1630" y="1033"/>
+            <point key="canvasLocation" x="1812" y="1033"/>
         </scene>
         <!--Setting-->
         <scene sceneID="W42-wQ-sN2">
@@ -592,7 +592,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J1I-ym-dZ0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gfs-fo-2ke">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

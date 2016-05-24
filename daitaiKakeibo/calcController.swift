@@ -57,10 +57,23 @@ class calcController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
-		displayLabel.userInteractionEnabled = true // 画像のタッチ操作を有効にする
-	
+		// 画像のタッチ操作を有効にする
+		displayLabel.userInteractionEnabled = true
+		
+		// ユーザーデフォルトから保存されたデータを取り出す
+		let myDefault = NSUserDefaults.standardUserDefaults()
+		let myStr = myDefault.stringForKey("fourTotal")
+		
+		if myStr == nil {
+			foodLabel.text! = "0"
+		} else {
+			// 取り出した文字を表示
+			foodLabel.text = myStr
+		}
+		
 	}
+	
+	
 	
 	// Labelタッチ判定テスト ここから↓↓ (5.22-)
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -247,9 +260,9 @@ class calcController: UIViewController {
 			}
 			
 			if sender.currentTitle == "D" {
-				let myDefault = NSUserDefaults.standardUserDefaults()
+//				let myDefault = NSUserDefaults.standardUserDefaults()
 				// 一時的に用意したユーザーデフォルト消すボタン
-				myDefault.removeObjectForKey("fourTotal")
+//				myDefault.removeObjectForKey("fourTotal")
 			}
 			
 			

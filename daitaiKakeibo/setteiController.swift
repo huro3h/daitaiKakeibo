@@ -32,7 +32,6 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		
 		switch indexPath.row {
 		case 0:
-			// self.navigationController?.pushViewController(howToUseController(), animated: true)
 			performSegueWithIdentifier("howToUseSegue", sender: nil)
 		case 1:
 			performSegueWithIdentifier("sendMailSegue", sender: nil)

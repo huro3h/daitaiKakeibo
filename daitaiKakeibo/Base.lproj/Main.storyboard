@@ -579,6 +579,18 @@
                     <view key="view" contentMode="scaleToFill" id="2bP-j8-cEs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyP-4q-2l2">
+                                <rect key="frame" x="103" y="382" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.77201704545454541" green="0.77201704545454541" blue="0.77201704545454541" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="全期間削除">
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapBtn:" destination="y7J-JX-tVF" eventType="touchUpInside" id="zsI-Zz-lPI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.82275668104601452" green="0.69969986012444141" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

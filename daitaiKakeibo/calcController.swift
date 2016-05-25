@@ -119,6 +119,10 @@ class calcController: UIViewController {
 		let foodString : String = String(foodTotal)
 		foodLabel.text? = foodString
 		userDefaultMemory()
+//		bufferNumber = 0
+//		nextOperation = nil
+//		display.text = "0"
+//		displayLabel.text! = display.text!
 	}
 	
 	@IBAction func tapLifeField(sender: UITapGestureRecognizer) {
@@ -320,6 +324,8 @@ class calcController: UIViewController {
 				hokaLabel.text! = "0"
 				display.text = "0"
 				displayLabel.text! = display.text!
+				
+				userDefaultMemory()
 			}
 			
 			// MARK:★
@@ -355,6 +361,8 @@ class calcController: UIViewController {
 				let myDefault = NSUserDefaults.standardUserDefaults()
 				 //一時的に用意したユーザーデフォルト消すボタン
 				myDefault.removeObjectForKey("fourTotal")
+				
+				userDefaultMemory()
 			}
 			
 			

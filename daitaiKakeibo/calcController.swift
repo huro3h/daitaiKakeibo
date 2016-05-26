@@ -45,7 +45,7 @@ class calcController: UIViewController {
 	var hokaArray:[Int] = []
 	var hokaTotal = 0
 	
-	var allTotal = 0
+	var allTotal: Int = 0
 	
 //	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
 //		let move = sender.translationInView(view)
@@ -89,6 +89,7 @@ class calcController: UIViewController {
 					hokaTotal = fourTotal![3] as! Int
 					
 					allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
+					
 					print(allTotal)
 				
 				let foodString : String = String(foodTotal)
@@ -99,9 +100,10 @@ class calcController: UIViewController {
 					zappiLabel.text = zappiString
 				let hokaString : String = String(hokaTotal)
 					hokaLabel.text = hokaString
-				
+					
 				}else{
-				 // 上の処理を無視！ \( 'ω')/
+					
+					// 上の処理を無視！ \( 'ω')/
 				}
 			}
 	}

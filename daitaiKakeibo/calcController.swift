@@ -241,8 +241,8 @@ class calcController: UIViewController {
 			print("pushed \(sender.currentTitle)")
 			
 			if isTypingNumber {
-				let digit = sender.currentTitle!
-				display.text = display.text! + digit
+				let digit: Int = Int(sender.currentTitle!)!
+				display.text = String(Int(display.text!)! + digit)
 			} else {
 				display.text = sender.currentTitle!
 				isTypingNumber = true

@@ -118,13 +118,7 @@ class calcController: UIViewController {
 		}
 		let foodString : String = String(foodTotal)
 		foodLabel.text? = foodString
-		userDefaultMemory()
-//		bufferNumber = 0
-//		nextOperation = nil
-		display.text! = "0"
-		displayLabel.text! = display.text!
-//		getDisplayInt()
-		
+		doing0()
 	}
 	
 	@IBAction func tapLifeField(sender: UITapGestureRecognizer) {
@@ -137,7 +131,7 @@ class calcController: UIViewController {
 		}
 		let lifeString : String = String(lifeTotal)
 		lifeLabel.text! = lifeString
-		userDefaultMemory()
+		doing0()
 	}
 	
 	@IBAction func tapZappiField(sender: UITapGestureRecognizer) {
@@ -150,7 +144,7 @@ class calcController: UIViewController {
 		}
 		let zappiString : String = String(zappiTotal)
 		zappiLabel.text! = zappiString
-		userDefaultMemory()
+		doing0()
 	}
 	
 	@IBAction func tapHokaField(sender: UITapGestureRecognizer) {
@@ -163,8 +157,7 @@ class calcController: UIViewController {
 		}
 		let hokaString : String = String(hokaTotal)
 		hokaLabel.text! = hokaString
-		userDefaultMemory()
-		
+		doing0()
 	}
 	
 	
@@ -241,8 +234,15 @@ class calcController: UIViewController {
 			print("pushed \(sender.currentTitle)")
 			
 			if isTypingNumber {
-				let digit: Int = Int(sender.currentTitle!)!
-				display.text = String(Int(display.text!)! + digit)
+				
+				if(display.text == "0"){
+					let digit: Int = Int(sender.currentTitle!)!
+					display.text = String(Int(display.text!)! + digit)
+				} else {
+					let digit = sender.currentTitle!
+					display.text = display.text! + digit
+				}
+				
 			} else {
 				display.text = sender.currentTitle!
 				isTypingNumber = true
@@ -371,6 +371,7 @@ class calcController: UIViewController {
 		}
 		
 		// MARK:自作関数置き場
+	
 		// ディスプレイ表示を取得しIntに変換して返す
 		func getDisplayInt() -> Int {
 			if let displayText = display.text {
@@ -380,12 +381,20 @@ class calcController: UIViewController {
 			}
 		}
 	
+		// 値が入る時や何らかの動きがあった時にuserDefaultに保存
 		func userDefaultMemory() {
 			let myDefault = NSUserDefaults.standardUserDefaults()
 			// データを書き込んで("fourTotal"箱の名前)
 			myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
 			// 即反映させる(きちんと保存して使用時すぐ出せるように)
 			myDefault.synchronize()
+		}
+	
+		// userDefault保存後、計算機の値を0に戻す動き
+		func doing0(){
+			userDefaultMemory()
+			display.text! = "0"
+			displayLabel.text! = display.text!
 		}
 
 
@@ -400,7 +409,5 @@ class calcController: UIViewController {
 //	override func didReceiveMemoryWarning() {
 //		super.didReceiveMemoryWarning()
 //	}
-
-	
 }
 

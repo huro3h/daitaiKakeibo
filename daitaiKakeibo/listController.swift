@@ -36,22 +36,22 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		let cell = tableView.dequeueReusableCellWithIdentifier("myCell")! as UITableViewCell
 		
 		let label1 = cell.viewWithTag(1) as! UILabel
-		label1.text = "myTimes(indexPath.row)"
+		label1.text = "\(myTimes[indexPath.row])"
 		
 		let label2 = cell.viewWithTag(2) as! UILabel
-		label2.text = "\(indexPath.row)"
+		label2.text = "\(myFoods[indexPath.row])"
 		
 		let label3 = cell.viewWithTag(3) as! UILabel
-		label3.text = "\(indexPath.row)"
+		label3.text = "\(myLifes[indexPath.row])"
 		
 		let label4 = cell.viewWithTag(4) as! UILabel
-		label4.text = "\(indexPath.row)"
+		label4.text = "\(myZappies[indexPath.row])"
 		
 		let label5 = cell.viewWithTag(5) as! UILabel
-		label5.text = "\(indexPath.row)"
+		label5.text = "\(myHokas[indexPath.row])"
 		
 		let label6 = cell.viewWithTag(6) as! UILabel
-		label6.text = "\(indexPath.row)"
+		label6.text = "\(myTotals[indexPath.row])"
 		
 		return cell
 	}

@@ -121,8 +121,10 @@ class calcController: UIViewController {
 		userDefaultMemory()
 //		bufferNumber = 0
 //		nextOperation = nil
-//		display.text = "0"
-//		displayLabel.text! = display.text!
+		display.text! = "0"
+		displayLabel.text! = display.text!
+//		getDisplayInt()
+		
 	}
 	
 	@IBAction func tapLifeField(sender: UITapGestureRecognizer) {

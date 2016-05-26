@@ -121,12 +121,12 @@
 			children = (
 				3C6A8CE11CE59844001527FA /* AppDelegate.swift */,
 				3C6A8CE31CE59844001527FA /* calcController.swift */,
-				3C828FED1CF0589300E9C0DC /* listController.swift */,
 				3C828FE31CF0009200E9C0DC /* setteiController.swift */,
 				3C828FE51CF0127A00E9C0DC /* howToUseController.swift */,
 				3C828FE71CF029FE00E9C0DC /* sendMailController.swift */,
 				3C828FE91CF02AE800E9C0DC /* aboutAppController.swift */,
 				3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */,
+				3C828FED1CF0589300E9C0DC /* listController.swift */,
 				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
 				3C6A8CE81CE59844001527FA /* Assets.xcassets */,

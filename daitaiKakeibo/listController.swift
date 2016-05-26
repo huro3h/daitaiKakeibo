@@ -8,7 +8,7 @@ import CoreData
 
 class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
-	var myTimes: [NSDate] = []
+	var myTimes: [String] = []
 	var myFoods: [NSNumber] = []
 	var myLifes: [NSNumber] = []
 	var myZappies: [NSNumber] = []
@@ -88,7 +88,8 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 				for managedObject in results {
 					let accountBook = managedObject as! AccountBook
 					
-					myTimes.append(accountBook.inputDate!)
+					var fixDate = dateString(accountBook.inputDate!)
+					myTimes.append(fixDate)
 					myFoods.append(accountBook.foodFee!)
 					myLifes.append(accountBook.lifeFee!)
 					myZappies.append(accountBook.zappiFee!)
@@ -105,6 +106,15 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		}
 	print(myFoods)
 	print(myTimes)
+	}
+	
+	func dateString(date: NSDate) -> String {
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+		// dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+		dateFormatter.dateFormat = "M/dd"
+		let dateString: String = dateFormatter.stringFromDate(date)
+		return dateString
 	}
 
 	

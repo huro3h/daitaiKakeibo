@@ -102,9 +102,25 @@ class calcController: UIViewController {
 					hokaLabel.text = hokaString
 					
 				}else{
-					
 					// 上の処理を無視！ \( 'ω')/
 				}
+				
+			} else if (myDefault.arrayForKey("fourTotal") == nil) {
+				
+				foodArray = []
+				foodTotal = 0
+				foodLabel.text! = "0"
+				lifeArray = []
+				lifeTotal = 0
+				lifeLabel.text! = "0"
+				zappiArray = []
+				zappiTotal = 0
+				zappiLabel.text! = "0"
+				hokaArray = []
+				hokaTotal = 0
+				hokaLabel.text! = "0"
+				display.text = "0"
+				displayLabel.text! = display.text!
 			}
 	}
 	
@@ -318,7 +334,8 @@ class calcController: UIViewController {
 			
 			// !ボタンが押された場合、各項目Labelの値をリセット
 			if sender.currentTitle == "!" {
-				foodArray = []
+				
+//				foodArray = []
 				foodLabel.text! = "0"
 				lifeArray = []
 				lifeLabel.text! = "0"
@@ -329,7 +346,9 @@ class calcController: UIViewController {
 				display.text = "0"
 				displayLabel.text! = display.text!
 				
-				userDefaultMemory()
+				let myDefault = NSUserDefaults.standardUserDefaults()
+				myDefault.removeObjectForKey("fourTotal")
+
 			}
 			
 			// MARK:★
@@ -357,6 +376,19 @@ class calcController: UIViewController {
 					accountBook.inputDate = NSDate() // NSDate() 現在の日付を返す
 					
 					appDelegate.saveContext()
+					
+					foodArray = []
+					foodLabel.text! = "0"
+					lifeArray = []
+					lifeLabel.text! = "0"
+					zappiArray = []
+					zappiLabel.text! = "0"
+					hokaArray = []
+					hokaLabel.text! = "0"
+					display.text = "0"
+					displayLabel.text! = display.text!
+					let myDefault = NSUserDefaults.standardUserDefaults()
+					myDefault.removeObjectForKey("fourTotal")
 				}
 				
 			}
@@ -389,6 +421,7 @@ class calcController: UIViewController {
 			// データを書き込んで("fourTotal"箱の名前)
 			myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
 			// 即反映させる(きちんと保存して使用時すぐ出せるように)
+			allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
 			myDefault.synchronize()
 		}
 	

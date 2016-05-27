@@ -17,7 +17,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		
 		// CoreDataから読み込み
 		read()
     }
@@ -27,7 +26,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return myTimes.count // 入れたい行数(10行)
+		return myTimes.count // 行数をデータの数でカウント
 	}
 	
 	// 2.行に表示する内容をリセット
@@ -37,41 +36,35 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		
 		let label1 = cell.viewWithTag(1) as! UILabel
 		label1.text = "\(myTimes[indexPath.row])"
-		
 		let label2 = cell.viewWithTag(2) as! UILabel
 		label2.text = "\(myFoods[indexPath.row])"
-		
 		let label3 = cell.viewWithTag(3) as! UILabel
 		label3.text = "\(myLifes[indexPath.row])"
-		
 		let label4 = cell.viewWithTag(4) as! UILabel
 		label4.text = "\(myZappies[indexPath.row])"
-		
 		let label5 = cell.viewWithTag(5) as! UILabel
 		label5.text = "\(myHokas[indexPath.row])"
-		
 		let label6 = cell.viewWithTag(6) as! UILabel
 		label6.text = "\(myTotals[indexPath.row])"
-		
 		return cell
 	}
 	
 	@objc func tableView(tableView: UITableView, heightForRowAtIndexPath IndexPath: NSIndexPath) -> CGFloat{
-		return 15
+		return 20 // 行の幅
 	}
 	// 3.選択された時に行う処理(Delegate処理)
-	// 似た名前がたくさんあるので間違えないように注意！
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		print("\(indexPath.row)行目を選択")
 	}
 	
 
+	// 以下自作関数置き場
+	
+	// CoreDataから値読み込み
 	func read(){
-
 		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-		
 		if let managedObjectContext:NSManagedObjectContext = appDelegate.managedObjectContext{
-			
+
 			let entityDescription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
 			
 			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
@@ -81,33 +74,28 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 
 			do{
 				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
-				
-				//　a7.保存した件数をprint表示
 				print(results.count)
-				
 				for managedObject in results {
 					let accountBook = managedObject as! AccountBook
 					
-					var fixDate = dateString(accountBook.inputDate!)
+					// 用意した変数に各項目を配列の形で代入
+					let fixDate = dateString(accountBook.inputDate!)
 					myTimes.append(fixDate)
 					myFoods.append(accountBook.foodFee!)
 					myLifes.append(accountBook.lifeFee!)
 					myZappies.append(accountBook.zappiFee!)
 					myHokas.append(accountBook.hokaFee!)
 					myTotals.append(accountBook.totalFee!)
-
-					//print("日時:\(accountBook.inputDate), 食費:\(accountBook.foodFee), 生活費:\(accountBook.lifeFee), 雑費:\(accountBook.zappiFee), 他:\(accountBook.hokaFee), 合計:\(accountBook.totalFee)")
+					//print("日時:\(accountBook.inputDate)
 				}
 				
 			}catch let error1 as NSError{
 				error = error1
 			}
-			
 		}
-	print(myFoods)
-	print(myTimes)
 	}
 	
+	// NSDate->String型に変換
 	func dateString(date: NSDate) -> String {
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")

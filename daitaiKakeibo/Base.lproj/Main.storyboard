@@ -612,16 +612,18 @@
                             </button>
                             <pickerView contentMode="left" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJq-bV-jyH">
                                 <rect key="frame" x="0.0" y="285" width="320" height="110"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="y7J-JX-tVF" id="Mmf-XG-oax"/>
+                                    <outlet property="delegate" destination="y7J-JX-tVF" id="KFe-ff-W8b"/>
+                                </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0W-Dz-1tI">
                                 <rect key="frame" x="0.0" y="138" width="320" height="110"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="y7J-JX-tVF" id="8aV-I7-gIe"/>
+                                    <outlet property="delegate" destination="y7J-JX-tVF" id="Kx3-gJ-Ati"/>
+                                </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-Q0-Vec">
-                                <rect key="frame" x="105" y="256" width="110" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKk-19-VtM">
                                 <rect key="frame" x="103" y="437" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
@@ -636,13 +638,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-Q0-Vec">
+                                <rect key="frame" x="105" y="256" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="fromPicker" destination="hJq-bV-jyH" id="8c2-o2-pyU"/>
-                        <outlet property="untilPicker" destination="J0W-Dz-1tI" id="g88-LX-vyA"/>
+                        <outlet property="fromPicker" destination="J0W-Dz-1tI" id="jMb-xZ-iwx"/>
+                        <outlet property="untilPicker" destination="hJq-bV-jyH" id="ZkR-m1-tjx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-fr-w28" userLabel="First Responder" sceneMemberID="firstResponder"/>

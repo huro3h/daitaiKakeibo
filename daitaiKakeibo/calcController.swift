@@ -119,6 +119,7 @@ class calcController: UIViewController {
 				hokaArray = []
 				hokaTotal = 0
 				hokaLabel.text! = "0"
+				
 				display.text = "0"
 				displayLabel.text! = display.text!
 			}
@@ -397,7 +398,6 @@ class calcController: UIViewController {
 				let myDefault = NSUserDefaults.standardUserDefaults()
 				 //一時的に用意したユーザーデフォルト消すボタン
 				myDefault.removeObjectForKey("fourTotal")
-				
 				userDefaultMemory()
 			}
 			

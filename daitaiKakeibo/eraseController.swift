@@ -9,46 +9,46 @@ import CoreData
 class eraseController: UIViewController {
 
 	var dataArray: [String] = []
-	var catchFromDate: String = ""
-	var catchUntilDate: String = ""
+	var catchStartDate: String = ""
+	var catchEndDate: String = ""
 	let now = NSDate()
 	let df = NSDateFormatter()
 	
-	@IBOutlet weak var fromDatePicker: UIDatePicker!
-	@IBOutlet weak var untilDatePicker: UIDatePicker!
+	@IBOutlet weak var startDatePicker: UIDatePicker!
+	@IBOutlet weak var endDatePicker: UIDatePicker!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		read()
 		
 		// DatePicker設定
-		fromDatePicker.datePickerMode = UIDatePickerMode.Date
-		untilDatePicker.datePickerMode = UIDatePickerMode.Date
+		startDatePicker.datePickerMode = UIDatePickerMode.Date
+		endDatePicker.datePickerMode = UIDatePickerMode.Date
 		
 		df.dateFormat = "yyyy/MM/dd"
-		fromDatePicker.date = df.dateFromString("2016/04/01")!
-		fromDatePicker.minimumDate = df.dateFromString("2000/01/01")
-		fromDatePicker.maximumDate = df.dateFromString("2045/12/31")
-		untilDatePicker.date = df.dateFromString("2016/04/01")!
-		untilDatePicker.minimumDate = df.dateFromString("2000/01/01")
-		untilDatePicker.maximumDate = df.dateFromString("2045/12/31")
+		startDatePicker.date = df.dateFromString("2016/04/01")!
+		startDatePicker.minimumDate = df.dateFromString("2000/01/01")
+		startDatePicker.maximumDate = df.dateFromString("2045/12/31")
+		endDatePicker.date = df.dateFromString("2016/04/01")!
+		endDatePicker.minimumDate = df.dateFromString("2000/01/01")
+		endDatePicker.maximumDate = df.dateFromString("2045/12/31")
 		
 		// 今日の日付取得
-		fromDatePicker.date = now
-		untilDatePicker.date = now
+		startDatePicker.date = now
+		endDatePicker.date = now
 	}
 	
 	// 期間選択
 	@IBAction func changeFromPicker(sender: UIDatePicker) {
-		let selectedFromDate: NSString = df.stringFromDate(sender.date)
-		catchFromDate = selectedFromDate as String
-		print(catchFromDate)
+		let selectedStartDate: NSString = df.stringFromDate(sender.date)
+		catchStartDate = selectedStartDate as String
+		print(catchStartDate)
 	}
 	
 	@IBAction func changeUntilPicker(sender: UIDatePicker) {
-		let selectedUntilDate: NSString = df.stringFromDate(sender.date)
-		catchUntilDate = selectedUntilDate as String
-		print(catchUntilDate)
+		let selectedEndDate: NSString = df.stringFromDate(sender.date)
+		catchEndDate = selectedEndDate as String
+		print(catchEndDate)
 	}
 	
 	

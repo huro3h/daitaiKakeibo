@@ -25,7 +25,7 @@ class eraseController: UIViewController {
 		startDatePicker.datePickerMode = UIDatePickerMode.Date
 		endDatePicker.datePickerMode = UIDatePickerMode.Date
 		
-		df.dateFormat = "yyyy/MM/dd"
+		df.dateFormat = "yyyy-MM-dd"
 		startDatePicker.date = df.dateFromString("2016/04/01")!
 		startDatePicker.minimumDate = df.dateFromString("2000/01/01")
 		startDatePicker.maximumDate = df.dateFromString("2045/12/31")
@@ -37,6 +37,11 @@ class eraseController: UIViewController {
 		startDatePicker.date = now
 		endDatePicker.date = now
 	}
+	
+	override func viewWillAppear(animated: Bool) {
+		print("erase画面表示")
+	}
+
 	
 	// 期間選択
 	@IBAction func changeFromPicker(sender: UIDatePicker) {
@@ -51,10 +56,6 @@ class eraseController: UIViewController {
 		print(catchEndDate)
 	}
 	
-	
-	override func viewWillAppear(animated: Bool) {
-		print("erase画面表示")
-	}
 
 	@IBAction func tapBtnLimited(sender: UIButton) {
 		let alertController = UIAlertController(title: "データの消去", message: "指定された期間のデータを消去します", preferredStyle: .Alert)
@@ -106,7 +107,7 @@ class eraseController: UIViewController {
 					print("日時:\(accountBook.inputDate), 食費:\(accountBook.foodFee)")
 					
 					// 用意した変数に各項目を配列の形で代入
-					//let fixDate = dateString(accountBook.inputDate!)
+					let fixDate = dateString(accountBook.inputDate!)
 					//let myFoods = String(accountBook.foodFee!)
 					//let myLifes = String(accountBook.lifeFee!)
 					//let myZappies = String(accountBook.zappiFee!)
@@ -123,6 +124,7 @@ class eraseController: UIViewController {
 	}
 	
 	func deletePartData (){
+	
 		// CoreData期間削除
 		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 		if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {
@@ -131,10 +133,9 @@ class eraseController: UIViewController {
 			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
 			fetchRequest.entity = entityDiscription
 			
-			// 以下の2行で期間指定
-			let predicate = NSPredicate(format: "%K = %@", "title", "hogehoge")
+			// 以下の2行でデータ削除期間の指定
+			let predicate = NSPredicate(format: "inputDate CONTAINS %@", "2016-05-29")
 			fetchRequest.predicate = predicate
-			
 			var error: NSError? = nil
 			
 			do {

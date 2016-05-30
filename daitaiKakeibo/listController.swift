@@ -50,7 +50,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	}
 	
 	@objc func tableView(tableView: UITableView, heightForRowAtIndexPath IndexPath: NSIndexPath) -> CGFloat{
-		return 20 // 行の幅
+		return 25 // 行の幅
 	}
 	// 3.選択された時に行う処理(Delegate処理)
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

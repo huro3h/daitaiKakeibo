@@ -9,10 +9,17 @@ import CoreData
 class eraseController: UIViewController {
 
 	var dataArray: [String] = []
-	var catchStartDate: String = ""
-	var catchEndDate: String = ""
 	let now = NSDate()
 	let df = NSDateFormatter()
+	
+	// 以下4行期間指定削除で使う変数
+	// datePickerからString型で日付を取得し以下2行の変数に代入
+	var catchStartDate: String = "2000-01-01"
+	var catchEndDate: String = "2000-01-01"
+	
+	// 次の2行は先のデータをString型->NSDate型に変更した後に入れておく変数
+	var catchStartDate2: NSDate = NSDate()
+	var catchEndDate2: NSDate = NSDate()
 	
 	@IBOutlet weak var startDatePicker: UIDatePicker!
 	@IBOutlet weak var endDatePicker: UIDatePicker!
@@ -26,16 +33,17 @@ class eraseController: UIViewController {
 		endDatePicker.datePickerMode = UIDatePickerMode.Date
 		
 		df.dateFormat = "yyyy-MM-dd"
-		startDatePicker.date = df.dateFromString("2016/04/01")!
+		// 初期表示の日付を設定
+		startDatePicker.date = df.dateFromString("2016/01/01")!
+		endDatePicker.date = df.dateFromString("2016/01/01")!
+		// 選択可能範囲設定
 		startDatePicker.minimumDate = df.dateFromString("2000/01/01")
 		startDatePicker.maximumDate = df.dateFromString("2045/12/31")
-		endDatePicker.date = df.dateFromString("2016/04/01")!
 		endDatePicker.minimumDate = df.dateFromString("2000/01/01")
 		endDatePicker.maximumDate = df.dateFromString("2045/12/31")
 		
-		// 今日の日付取得
-		startDatePicker.date = now
-		endDatePicker.date = now
+		// startDatePicker.date = now
+		// endDatePicker.date = now
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -47,16 +55,13 @@ class eraseController: UIViewController {
 	@IBAction func changeFromPicker(sender: UIDatePicker) {
 		let selectedStartDate: NSString = df.stringFromDate(sender.date)
 		catchStartDate = selectedStartDate as String
-		print(catchStartDate)
 	}
 	
 	@IBAction func changeUntilPicker(sender: UIDatePicker) {
 		let selectedEndDate: NSString = df.stringFromDate(sender.date)
 		catchEndDate = selectedEndDate as String
-		print(catchEndDate)
 	}
 	
-
 	@IBAction func tapBtnLimited(sender: UIButton) {
 		let alertController = UIAlertController(title: "データの消去", message: "指定された期間のデータを消去します", preferredStyle: .Alert)
 		
@@ -113,7 +118,6 @@ class eraseController: UIViewController {
 					//let myZappies = String(accountBook.zappiFee!)
 					//let myHokas = String(accountBook.hokaFee!)
 					//let myTotals = String(accountBook.totalFee!)
-					
 					//dataArray.append("\(fixDate)\(myFoods)\(myLifes)\(myZappies)\(myHokas)\(myTotals)")
 					
 				}
@@ -122,29 +126,15 @@ class eraseController: UIViewController {
 			}
 		}
 	}
-	
-	// CoreDataから日付を検索するやり方 ?
-//	CoreDataのNSPredicateで日付を検索する方法を教えて下さい
-//	
-//	例えばCoreDataで"Data"というエンティティを作成したとして、
-//	その中にType：DateのAttribute、"day"を作成したとします。
-//	そして特定の日付(時間は無視します)のdayを引っ張ろうと試みた時に、次のようなコードとなりました。
-
-//	let predicate = NSPredicate(format: "%K = ?????", "day", ?????)
 
 //	 let calendar :NSCalendar! = NSCalendar(identifier: NSCalendarIdentifierGregorian)
 //	 let targetedDay :NSDate! = calendar.dateWithEra(1, year: 2015, month: 5, day: 12, hour: 0, minute: 0, second: 0, nanosecond: 0)
 //	 let predicate = NSPredicate(format: "SELF.day BETWEEN {%@ , %@}", targetedDay, NSDate(timeInterval: 24*60*60-1, sinceDate: targetedDay))
-	
 //	例えば、特定のNSDateを作って、そこからの24時間-1秒をBETWEENで取るという手があります。
 //	dayのattributeには、SELF.dayを使います。
 //	ミリ秒までデータがあるならば、SELF.day >= %@ AND SELF.day < %@で厳密に期間判定をした方が良いです。
 	
 	func deletePartData (){
-	
-		// 目的の日時と比較させる日付作成(2016年5月1日から今日が何日目かをカウントさせる)
-		let calendar :NSCalendar! = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-		let targetedDay :NSDate! = calendar.dateWithEra(1, year: 2016, month: 5, day: 29, hour: 0, minute: 0, second: 0, nanosecond: 0)
 		
 		// CoreData期間削除
 		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -154,10 +144,14 @@ class eraseController: UIViewController {
 			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
 			fetchRequest.entity = entityDiscription
 			
-			// 以下の2行でデータ削除期間の指定
-//			 let predicate = NSPredicate(format: "%K = ?????", "inputDate", "2016-05-29")
-			let predicate = NSPredicate(format: "SELF.day BETWEEN {%@ , %@}", targetedDay, NSDate(timeInterval: 24*60*60-1, sinceDate: targetedDay))
-			print(predicate)
+			// データをNSDate型に変換
+			catchStartDate2 = df.dateFromString(catchStartDate)!
+			catchEndDate2 = df.dateFromString(catchEndDate)!
+			// catchEndDate2に 23:59:59 加算
+			let catchEndDate2Plus1Day: NSDate = NSDate(timeInterval:24*60*60-1, sinceDate:catchEndDate2)
+
+			let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2, catchEndDate2Plus1Day)
+			// print(predicate)
 			fetchRequest.predicate = predicate
 			var error: NSError? = nil
 			
@@ -209,8 +203,7 @@ class eraseController: UIViewController {
 	func dateString (date: NSDate) -> String {
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
-		// dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-		dateFormatter.dateFormat = "M/dd"
+		dateFormatter.dateFormat = "yyyy-MM-dd"
 		let dateString: String = dateFormatter.stringFromDate(date)
 		return dateString
 	}

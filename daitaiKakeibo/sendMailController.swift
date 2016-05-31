@@ -8,7 +8,7 @@ import CoreData
 
 class sendMailController: UIViewController {
 	
-	var dataArray: [String] = []
+//	var dataArray: [String] = []
 	let now = NSDate()
 	let df = NSDateFormatter()
 	
@@ -17,7 +17,7 @@ class sendMailController: UIViewController {
 	var catchStartDate2: NSDate = NSDate()
 	var catchEndDate2: NSDate = NSDate()
 	
-	var shareText: [String] = []
+	var shareTextArray: [String] = []
 	
 	@IBOutlet weak var startDatePicker: UIDatePicker!
 	@IBOutlet weak var endDatePicker: UIDatePicker!
@@ -61,11 +61,13 @@ class sendMailController: UIViewController {
 	
 	
 	@IBAction func tapBtnLimited(sender: UIButton) {
-		sendPartData () 
-		// myActivity()
+		sendPartData()
+		myActivity()
+		// print(shareTextArray)
 	}
 	
 	@IBAction func tapBtnAll(sender: UIButton) {
+		sendAllData()
 		myActivity()
 	}
 	
@@ -84,16 +86,16 @@ class sendMailController: UIViewController {
 				
 				for managedObject in results {
 					let accountBook = managedObject as! AccountBook
-					print("日時:\(accountBook.inputDate), 食費:\(accountBook.foodFee)")
+//					print("日時:\(accountBook.inputDate), 食費:\(accountBook.foodFee)")
 					
 					// 用意した変数に各項目を配列の形で代入
 					let fixDate = dateString(accountBook.inputDate!)
-					let myFoods = String(accountBook.foodFee!)
-					let myLifes = String(accountBook.lifeFee!)
-					let myZappies = String(accountBook.zappiFee!)
-					let myHokas = String(accountBook.hokaFee!)
-					let myTotals = String(accountBook.totalFee!)
-					dataArray.append("\(fixDate)\(myFoods)\(myLifes)\(myZappies)\(myHokas)\(myTotals)")
+//					let myFoods = String(accountBook.foodFee!)
+//					let myLifes = String(accountBook.lifeFee!)
+//					let myZappies = String(accountBook.zappiFee!)
+//					let myHokas = String(accountBook.hokaFee!)
+//					let myTotals = String(accountBook.totalFee!)
+//					dataArray.append("\(fixDate)\(myFoods)\(myLifes)\(myZappies)\(myHokas)\(myTotals)")
 				}
 				
 			} catch let error1 as NSError {
@@ -131,6 +133,58 @@ class sendMailController: UIViewController {
 //					managedObjectContext.deleteObject(managedObject as! NSManagedObject)
 //					appDelegate.saveContext()
 					print(accountBook.totalFee)
+					let myDate = dateString(accountBook.inputDate!)
+					let myFoods = accountBook.foodFee!
+					let myLifes = accountBook.lifeFee!
+					let myZappies = accountBook.zappiFee!
+					let myHokas = accountBook.hokaFee!
+					let myTotals = accountBook.totalFee!
+					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
+					// shareTextArray = ["\(accountBook)"]
+				}
+			} catch let error1 as NSError {
+				error = error1
+			}
+		}
+	}
+	
+	func sendAllData () {
+		// CoreData期間指定
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {
+			let entityDiscription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+			fetchRequest.entity = entityDiscription
+			
+			// データをNSDate型に変換
+			// catchStartDate2 = df.dateFromString(catchStartDate)!
+			// catchEndDate2 = df.dateFromString(catchEndDate)!
+			// catchEndDate2に 23:59:59 加算
+			// let catchEndDate2Plus1Day: NSDate = NSDate(timeInterval:24*60*60-1, sinceDate:catchEndDate2)
+			// 並び順を指定
+			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: false)]
+			
+			// let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2, catchEndDate2Plus1Day)
+			// print(predicate)
+			// fetchRequest.predicate = predicate
+			var error: NSError? = nil
+			
+			do {
+				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+				print(results.count)
+				for managedObject in results{
+					let accountBook = managedObject as! AccountBook
+					//					managedObjectContext.deleteObject(managedObject as! NSManagedObject)
+					//					appDelegate.saveContext()
+					print(accountBook.totalFee)
+					let myDate = dateString(accountBook.inputDate!)
+					let myFoods = accountBook.foodFee!
+					let myLifes = accountBook.lifeFee!
+					let myZappies = accountBook.zappiFee!
+					let myHokas = accountBook.hokaFee!
+					let myTotals = accountBook.totalFee!
+					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
+					// shareTextArray = ["\(accountBook)"]
 				}
 			} catch let error1 as NSError {
 				error = error1
@@ -153,7 +207,7 @@ class sendMailController: UIViewController {
 	
 	func myActivity() {
 		// 共有したい情報を格納する配列
-		let activityItems = [shareText]
+		let activityItems = shareTextArray
 		
 		// 初期化処理
 		let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)

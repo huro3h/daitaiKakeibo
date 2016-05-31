@@ -15,14 +15,32 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	var myHokas: [NSNumber] = []
 	var myTotals: [NSNumber] = []
 	
+	var foodFeeCount: Int = 0
+	var lifeFeeCount: Int = 0
+	var zappiFeeCount: Int = 0
+	var hokaFeeCount: Int = 0
+	var totalFeeCount: Int = 0
+	
+	@IBOutlet weak var foodFeeLabel: UILabel!
+	@IBOutlet weak var lifeFeeLabel: UILabel!
+	@IBOutlet weak var zappiFeeLabel: UILabel!
+	@IBOutlet weak var hokaFeeLabel: UILabel!
+	@IBOutlet weak var totalFeeLabel: UILabel!
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// CoreDataから読み込み
 		read()
+		// var testFoodTotal: Int = (myFoods.reduce(0, combine: { $0 + $1 }))
     }
 	
 	override func viewWillAppear(animated: Bool) {
 		print("List画面表示")
+		foodFeeLabel.text = String(foodFeeCount)
+		lifeFeeLabel.text = String(lifeFeeCount)
+		zappiFeeLabel.text = String(zappiFeeCount)
+		hokaFeeLabel.text = String(hokaFeeCount)
+		totalFeeLabel.text = String(totalFeeCount)
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,6 +105,11 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 					myHokas.append(accountBook.hokaFee!)
 					myTotals.append(accountBook.totalFee!)
 					//print("日時:\(accountBook.inputDate)
+					foodFeeCount += (accountBook.foodFee! as Int)
+					lifeFeeCount += (accountBook.lifeFee! as Int)
+					zappiFeeCount += (accountBook.zappiFee! as Int)
+					hokaFeeCount += (accountBook.hokaFee! as Int)
+					totalFeeCount += (accountBook.totalFee! as Int)
 				}
 				
 			}catch let error1 as NSError{
@@ -104,6 +127,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		let dateString: String = dateFormatter.stringFromDate(date)
 		return dateString
 	}
+	
 
 	
 	

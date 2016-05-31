@@ -550,19 +550,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-gj-iXc">
-                                <rect key="frame" x="0.0" y="72" width="320" height="202"/>
-                                <date key="date" timeIntervalSinceReferenceDate="486285071.34511">
-                                    <!--2016-05-30 07:11:11 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="ja_JP"/>
-                            </datePicker>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tDx-as-qB6">
                                 <rect key="frame" x="0.0" y="296" width="320" height="200"/>
                                 <date key="date" timeIntervalSinceReferenceDate="486285082.190745">
                                     <!--2016-05-30 07:11:22 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeUntilPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="PpN-SL-2e5"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZS-wA-XEY">
                                 <rect key="frame" x="148" y="276" width="25" height="21"/>
@@ -582,6 +578,7 @@
                                 <state key="normal" title="期間送信"/>
                                 <connections>
                                     <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="g6N-3z-tve"/>
+                                    <action selector="tapBtnLimited:" destination="jUP-Io-j2j" eventType="touchUpInside" id="zCt-2O-QV2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJI-va-QCF">
@@ -591,14 +588,29 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="tapBtnAll:" destination="jUP-Io-j2j" eventType="touchUpInside" id="wOz-iK-7tZ"/>
                                     <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="jyq-bb-thV"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-gj-iXc">
+                                <rect key="frame" x="0.0" y="72" width="320" height="202"/>
+                                <date key="date" timeIntervalSinceReferenceDate="486285071.34511">
+                                    <!--2016-05-30 07:11:11 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeFromPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="zBa-tc-G7y"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="メールで送信" id="ih8-Ja-OiQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="endDatePicker" destination="tDx-as-qB6" id="gYo-e5-rl8"/>
+                        <outlet property="startDatePicker" destination="Ady-gj-iXc" id="OWk-WP-mBf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9h-7p-h57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

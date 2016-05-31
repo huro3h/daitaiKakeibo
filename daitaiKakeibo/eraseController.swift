@@ -26,6 +26,7 @@ class eraseController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
 		read()
 		
 		// DatePicker設定
@@ -34,8 +35,8 @@ class eraseController: UIViewController {
 		
 		df.dateFormat = "yyyy-MM-dd"
 		// 初期表示の日付を設定
-		startDatePicker.date = df.dateFromString("2016/01/01")!
-		endDatePicker.date = df.dateFromString("2016/01/01")!
+		startDatePicker.date = df.dateFromString("2016/05/30")!
+		endDatePicker.date = df.dateFromString("2016/06/03")!
 		// 選択可能範囲設定
 		startDatePicker.minimumDate = df.dateFromString("2000/01/01")
 		startDatePicker.maximumDate = df.dateFromString("2045/12/31")
@@ -134,8 +135,7 @@ class eraseController: UIViewController {
 //	dayのattributeには、SELF.dayを使います。
 //	ミリ秒までデータがあるならば、SELF.day >= %@ AND SELF.day < %@で厳密に期間判定をした方が良いです。
 	
-	func deletePartData (){
-		
+	func deletePartData () {
 		// CoreData期間削除
 		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 		if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {

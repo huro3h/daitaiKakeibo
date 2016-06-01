@@ -378,6 +378,12 @@ class calcController: UIViewController {
 					
 					appDelegate.saveContext()
 					
+					foodTotal = 0
+					lifeTotal = 0
+					zappiTotal = 0
+					hokaTotal = 0
+					allTotal = 0
+					
 					let myDefault = NSBundle.mainBundle().bundleIdentifier
 					NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
 					bufferNumber = 0

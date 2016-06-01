@@ -68,6 +68,7 @@ class sendMailController: UIViewController {
 	
 	@IBAction func tapBtnLimited(sender: UIButton) {
 		sendPartData()
+		// メールの最終行に合計値追加
 		shareTextArray.append("TOTAL,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
 		myActivity()
 		// print(shareTextArray)
@@ -75,6 +76,7 @@ class sendMailController: UIViewController {
 	
 	@IBAction func tapBtnAll(sender: UIButton) {
 		sendAllData()
+		// メールの最終行に合計値追加
 		shareTextArray.append("TOTAL,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
 		myActivity()
 	}
@@ -125,7 +127,7 @@ class sendMailController: UIViewController {
 			catchEndDate2 = df.dateFromString(catchEndDate)!
 			// catchEndDate2に 23:59:59 加算
 			let catchEndDate2Plus1Day: NSDate = NSDate(timeInterval:24*60*60-1, sinceDate:catchEndDate2)
-			// 並び順を指定
+			// 並び順を指定 ascending: true - falseで降順-昇順切り替え
 			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: true)]
 			
 			let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2, catchEndDate2Plus1Day)
@@ -138,8 +140,8 @@ class sendMailController: UIViewController {
 				print(results.count)
 				for managedObject in results{
 					let accountBook = managedObject as! AccountBook
-//					managedObjectContext.deleteObject(managedObject as! NSManagedObject)
-//					appDelegate.saveContext()
+					// managedObjectContext.deleteObject(managedObject as! NSManagedObject)
+					// appDelegate.saveContext()
 					print(accountBook.totalFee)
 					let myDate = dateString(accountBook.inputDate!)
 					let myFoods = accountBook.foodFee!
@@ -149,6 +151,7 @@ class sendMailController: UIViewController {
 					let myTotals = accountBook.totalFee!
 					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
 					
+					// 選択した範囲の合計値をメールの一番下に追加する為、各値の合計を代入
 					foodFeeCount += (accountBook.foodFee! as Int)
 					lifeFeeCount += (accountBook.lifeFee! as Int)
 					zappiFeeCount += (accountBook.zappiFee! as Int)
@@ -172,7 +175,7 @@ class sendMailController: UIViewController {
 			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
 			fetchRequest.entity = entityDiscription
 			
-			// 並び順を指定
+			// 並び順を指定 ascending: true - falseで降順-昇順切り替え
 			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: true)]
 			
 			// データをNSDate型に変換
@@ -203,6 +206,7 @@ class sendMailController: UIViewController {
 					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
 					// shareTextArray = ["\(accountBook)"]
 					
+					// 選択した範囲の合計値をメールの一番下に追加する為、各値の合計を代入
 					foodFeeCount += (accountBook.foodFee! as Int)
 					lifeFeeCount += (accountBook.lifeFee! as Int)
 					zappiFeeCount += (accountBook.zappiFee! as Int)
@@ -252,8 +256,8 @@ class sendMailController: UIViewController {
 	
 	
 	
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 	
 }

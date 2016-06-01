@@ -221,6 +221,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="d2C-V9-hiS" appends="YES" id="c5i-Wl-Y1w"/>
+                                    <outletCollection property="gestureRecognizers" destination="Lrb-9h-k3Z" appends="YES" id="D4E-ak-0EP"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-CM-QrY">
@@ -239,6 +240,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ZGX-Od-B2e" appends="YES" id="iea-11-oZj"/>
+                                    <outletCollection property="gestureRecognizers" destination="qzf-4L-CSF" appends="YES" id="79c-St-0yD"/>
                                 </connections>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-9L-VZK">
@@ -298,6 +300,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="qwD-VZ-qLL" appends="YES" id="er7-VD-VsY"/>
+                                    <outletCollection property="gestureRecognizers" destination="oX2-FA-zyB" appends="YES" id="85w-fe-9Uv"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWM-6z-Nz8">
@@ -316,6 +319,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nzf-Y0-ae5" appends="YES" id="ieT-Oh-j0M"/>
+                                    <outletCollection property="gestureRecognizers" destination="sID-7n-FKJ" appends="YES" id="5PG-O9-4uY"/>
                                 </connections>
                             </view>
                             <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-v0-Gxo">
@@ -335,10 +339,8 @@
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pBr-mT-dOF">
                             <rect key="frame" x="138" y="7" width="45" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="リスト">
-                                <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="リスト"/>
                             <connections>
                                 <segue destination="BTD-6R-0tI" kind="show" id="wmm-8J-mRx"/>
                             </connections>
@@ -347,10 +349,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FD8-Qv-ZBO">
                                 <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="設定">
-                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="設定"/>
                                 <connections>
                                     <segue destination="g3R-mY-ewG" kind="show" identifier="mySegue" id="uCC-eK-t6O"/>
                                 </connections>
@@ -392,6 +391,26 @@
                         <action selector="tapHokaField:" destination="BYZ-38-t0r" id="Wik-ns-UgI"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Lrb-9h-k3Z">
+                    <connections>
+                        <action selector="longPressFoodField:" destination="BYZ-38-t0r" id="Oke-3H-jaf"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="sID-7n-FKJ">
+                    <connections>
+                        <action selector="longPressLifeField:" destination="BYZ-38-t0r" id="dpA-18-ad2"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="qzf-4L-CSF">
+                    <connections>
+                        <action selector="longPressZappiField:" destination="BYZ-38-t0r" id="BY9-z2-GZV"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="oX2-FA-zyB">
+                    <connections>
+                        <action selector="longPressHokaField:" destination="BYZ-38-t0r" id="JFF-9m-gPM"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1812" y="349"/>
         </scene>

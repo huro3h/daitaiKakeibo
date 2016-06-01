@@ -180,6 +180,36 @@ class calcController: UIViewController {
 		doing0()
 	}
 	
+	// 画面長押しで項目の値 全削除　ここから↓(6.1-)
+	@IBAction func longPressFoodField(sender: UILongPressGestureRecognizer) {
+		foodArray = []
+		foodLabel.text! = "0"
+		foodTotal = 0
+		userDefaultMemory()
+	}
+	
+	@IBAction func longPressLifeField(sender: UILongPressGestureRecognizer) {
+		lifeArray = []
+		lifeLabel.text! = "0"
+		lifeTotal = 0
+		userDefaultMemory()
+	}
+	
+	@IBAction func longPressZappiField(sender: UILongPressGestureRecognizer) {
+		zappiArray = []
+		zappiLabel.text! = "0"
+		zappiTotal = 0
+		userDefaultMemory()
+	}
+	
+	@IBAction func longPressHokaField(sender: UILongPressGestureRecognizer) {
+		hokaArray = []
+		hokaLabel.text! = "0"
+		hokaTotal = 0
+		userDefaultMemory()
+	}
+	
+	
 	
 	// Labelタッチ判定テスト ここから↓↓ (5.22-)
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -337,7 +367,7 @@ class calcController: UIViewController {
 			// !ボタンが押された場合、各項目Labelの値をリセット
 			if sender.currentTitle == "!" {
 				
-//				foodArray = []
+				foodArray = []
 				foodLabel.text! = "0"
 				lifeArray = []
 				lifeLabel.text! = "0"

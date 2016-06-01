@@ -185,6 +185,7 @@ class calcController: UIViewController {
 		foodArray = []
 		foodLabel.text! = "0"
 		foodTotal = 0
+		print("foodをリセット!\(foodArray)")
 		userDefaultMemory()
 	}
 	
@@ -192,6 +193,7 @@ class calcController: UIViewController {
 		lifeArray = []
 		lifeLabel.text! = "0"
 		lifeTotal = 0
+		print("lifeをリセット!\(lifeArray)")
 		userDefaultMemory()
 	}
 	
@@ -199,6 +201,7 @@ class calcController: UIViewController {
 		zappiArray = []
 		zappiLabel.text! = "0"
 		zappiTotal = 0
+		print("zappiをリセット!\(zappiArray)")
 		userDefaultMemory()
 	}
 	
@@ -206,8 +209,55 @@ class calcController: UIViewController {
 		hokaArray = []
 		hokaLabel.text! = "0"
 		hokaTotal = 0
+		print("hokaをリセット!\(hokaArray)")
 		userDefaultMemory()
 	}
+	
+	// 画面外側にスワイプしたら、配列の最後の値を削除(擬似Undo機能)
+	@IBAction func swipeFoodField(sender: UISwipeGestureRecognizer) {
+		if(foodArray != []) {
+			foodArray.removeLast()
+			foodLabel.text! = String(foodArray.reduce(0, combine: { $0 + $1 }))
+			print ("foodUndo:\(foodArray)")
+			userDefaultMemory()
+		} else {
+			// 配列が空だったら何もしない
+		}
+	}
+	
+	@IBAction func swipeLifeField(sender: UISwipeGestureRecognizer) {
+		if(lifeArray != []) {
+			lifeArray.removeLast()
+			lifeLabel.text! = String(lifeArray.reduce(0, combine: { $0 + $1 }))
+			print ("lifeUndo:\(lifeArray)")
+			userDefaultMemory()
+		} else {
+			// 配列が空だったら何もしない
+		}
+	}
+	
+	@IBAction func swipeZappiField(sender: UISwipeGestureRecognizer) {
+		if(zappiArray != []) {
+			zappiArray.removeLast()
+			zappiLabel.text! = String(zappiArray.reduce(0, combine: { $0 + $1 }))
+			print ("zappiUndo:\(zappiArray)")
+			userDefaultMemory()
+		} else {
+			// 配列が空だったら何もしない
+		}
+	}
+	
+	@IBAction func swipeHokaField(sender: UISwipeGestureRecognizer) {
+		if(hokaArray != []) {
+			hokaArray.removeLast()
+			hokaLabel.text! = String(hokaArray.reduce(0, combine: { $0 + $1 }))
+			print ("hokaUndo:\(hokaArray)")
+			userDefaultMemory()
+		} else {
+			// 配列が空だったら何もしない
+		}
+	}
+	
 	
 	
 	

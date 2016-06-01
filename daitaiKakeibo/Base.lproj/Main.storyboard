@@ -222,6 +222,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="d2C-V9-hiS" appends="YES" id="c5i-Wl-Y1w"/>
                                     <outletCollection property="gestureRecognizers" destination="Lrb-9h-k3Z" appends="YES" id="D4E-ak-0EP"/>
+                                    <outletCollection property="gestureRecognizers" destination="UaG-wr-Giy" appends="YES" id="tf1-fT-hdm"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-CM-QrY">
@@ -241,6 +242,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ZGX-Od-B2e" appends="YES" id="iea-11-oZj"/>
                                     <outletCollection property="gestureRecognizers" destination="qzf-4L-CSF" appends="YES" id="79c-St-0yD"/>
+                                    <outletCollection property="gestureRecognizers" destination="rIP-bj-oVS" appends="YES" id="H8P-5Q-Qww"/>
                                 </connections>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-9L-VZK">
@@ -301,6 +303,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="qwD-VZ-qLL" appends="YES" id="er7-VD-VsY"/>
                                     <outletCollection property="gestureRecognizers" destination="oX2-FA-zyB" appends="YES" id="85w-fe-9Uv"/>
+                                    <outletCollection property="gestureRecognizers" destination="KJI-Bc-cZj" appends="YES" id="1ri-Az-i1c"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWM-6z-Nz8">
@@ -320,6 +323,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nzf-Y0-ae5" appends="YES" id="ieT-Oh-j0M"/>
                                     <outletCollection property="gestureRecognizers" destination="sID-7n-FKJ" appends="YES" id="5PG-O9-4uY"/>
+                                    <outletCollection property="gestureRecognizers" destination="T4T-hp-Hek" appends="YES" id="njg-wJ-Wsa"/>
                                 </connections>
                             </view>
                             <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-v0-Gxo">
@@ -411,6 +415,26 @@
                         <action selector="longPressHokaField:" destination="BYZ-38-t0r" id="JFF-9m-gPM"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="UaG-wr-Giy">
+                    <connections>
+                        <action selector="swipeFoodField:" destination="BYZ-38-t0r" id="eeE-cj-j9s"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="T4T-hp-Hek">
+                    <connections>
+                        <action selector="swipeLifeField:" destination="BYZ-38-t0r" id="Ead-WU-bfo"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="rIP-bj-oVS">
+                    <connections>
+                        <action selector="swipeZappiField:" destination="BYZ-38-t0r" id="VXH-g6-NQ6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="KJI-Bc-cZj">
+                    <connections>
+                        <action selector="swipeHokaField:" destination="BYZ-38-t0r" id="Iot-k0-teb"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1812" y="349"/>
         </scene>

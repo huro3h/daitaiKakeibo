@@ -4,16 +4,23 @@
 //  Copyright © 2016年 satoshiii. All rights reserved.
 
 import UIKit
+import GoogleMobileAds
 
-class setteiController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class setteiController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate{
 
 	@IBOutlet weak var myTableView: UITableView!
 	var selectedIndex = -1
 	var menuList = ["How To Use","メールで送信","アプリについて","データの削除"]
 	var selectedName:String = ""
 	
+	let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+	let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+	let AdMobTest:Bool = true
+	let SimulatorTest:Bool = true
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		insertAdMob()
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +49,35 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		default:
 			break
 		}
+	}
+	
+	func insertAdMob(){
+		// 以下参考サイトからのコピぺ
+		var admobView: GADBannerView = GADBannerView()
+		admobView = GADBannerView(adSize:kGADAdSizeBanner)
+		
+		// 広告の位置を指定している(下に設置)
+		admobView.frame.origin = CGPointMake(0, self.view.frame.size.height - admobView.frame.height)
+		
+		// ↓上に設置の場合
+		// admobView.frame.origin = CGPointMake(0, 20)
+		// 広告のサイズを指定している
+		admobView.frame.size = CGSizeMake(self.view.frame.width, admobView.frame.height)
+		admobView.adUnitID = AdMobID
+		admobView.delegate = self
+		admobView.rootViewController = self
+		
+		let admobRequest:GADRequest = GADRequest()
+		
+		if AdMobTest {
+			if SimulatorTest {
+				admobRequest.testDevices = [kGADSimulatorID]
+			} else {
+				admobRequest.testDevices = [TEST_DEVICE_ID]
+			}
+		}
+		admobView.loadRequest(admobRequest)
+		self.view.addSubview(admobView)
 	}
 	
 //	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

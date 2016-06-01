@@ -15,6 +15,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	var myHokas: [NSNumber] = []
 	var myTotals: [NSNumber] = []
 	
+	// リスト最下部に表示させる変数
 	var foodFeeCount: Int = 0
 	var lifeFeeCount: Int = 0
 	var zappiFeeCount: Int = 0
@@ -104,7 +105,8 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 					myZappies.append(accountBook.zappiFee!)
 					myHokas.append(accountBook.hokaFee!)
 					myTotals.append(accountBook.totalFee!)
-					//print("日時:\(accountBook.inputDate)
+					
+					// リストに各項目の合計値を入れる為、Int型にダウンキャストして合計させる
 					foodFeeCount += (accountBook.foodFee! as Int)
 					lifeFeeCount += (accountBook.lifeFee! as Int)
 					zappiFeeCount += (accountBook.zappiFee! as Int)

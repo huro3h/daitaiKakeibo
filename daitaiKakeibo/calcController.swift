@@ -354,7 +354,7 @@ class calcController: UIViewController {
 			
 			// MARK:★
 			if sender.currentTitle == "★" {
-				userDefaultMemory()
+				// userDefaultMemory()
 				
 				// 1.AppDelegateをコードで読み込む
 				let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -378,6 +378,11 @@ class calcController: UIViewController {
 					
 					appDelegate.saveContext()
 					
+					let myDefault = NSBundle.mainBundle().bundleIdentifier
+					NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
+					bufferNumber = 0
+					nextOperation = nil
+					
 					foodArray = []
 					foodLabel.text! = "0"
 					lifeArray = []
@@ -388,18 +393,24 @@ class calcController: UIViewController {
 					hokaLabel.text! = "0"
 					display.text = "0"
 					displayLabel.text! = display.text!
-					let myDefault = NSUserDefaults.standardUserDefaults()
-					myDefault.removeObjectForKey("fourTotal")
+					
+					// let myDefault = NSUserDefaults.standardUserDefaults()
+					// myDefault.removeObjectForKey("fourTotal")
+					// let myDefault = NSBundle.mainBundle().bundleIdentifier
+					// NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
+					// userDefaultMemory()
+					// bufferNumber = 0
+					// nextOperation = nil
 				}
 				
 			}
 			
-			if sender.currentTitle == "D" {
-				let myDefault = NSUserDefaults.standardUserDefaults()
-				 //一時的に用意したユーザーデフォルト消すボタン
-				myDefault.removeObjectForKey("fourTotal")
-				userDefaultMemory()
-			}
+//			if sender.currentTitle == "D" {
+//				let myDefault = NSUserDefaults.standardUserDefaults()
+//				 //一時的に用意したユーザーデフォルト消すボタン
+//				myDefault.removeObjectForKey("fourTotal")
+//				userDefaultMemory()
+//			}
 			
 			
 		}

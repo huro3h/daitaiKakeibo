@@ -17,6 +17,12 @@ class sendMailController: UIViewController {
 	var catchStartDate2: NSDate = NSDate()
 	var catchEndDate2: NSDate = NSDate()
 	
+	var foodFeeCount: Int = 0
+	var lifeFeeCount: Int = 0
+	var zappiFeeCount: Int = 0
+	var hokaFeeCount: Int = 0
+	var totalFeeCount: Int = 0
+	
 	var shareTextArray: [String] = []
 	
 	@IBOutlet weak var startDatePicker: UIDatePicker!
@@ -62,12 +68,14 @@ class sendMailController: UIViewController {
 	
 	@IBAction func tapBtnLimited(sender: UIButton) {
 		sendPartData()
+		shareTextArray.append("TOTAL,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
 		myActivity()
 		// print(shareTextArray)
 	}
 	
 	@IBAction func tapBtnAll(sender: UIButton) {
 		sendAllData()
+		shareTextArray.append("TOTAL,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
 		myActivity()
 	}
 	
@@ -118,7 +126,7 @@ class sendMailController: UIViewController {
 			// catchEndDate2に 23:59:59 加算
 			let catchEndDate2Plus1Day: NSDate = NSDate(timeInterval:24*60*60-1, sinceDate:catchEndDate2)
 			// 並び順を指定
-			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: false)]
+			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: true)]
 			
 			let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2, catchEndDate2Plus1Day)
 			// print(predicate)
@@ -140,8 +148,16 @@ class sendMailController: UIViewController {
 					let myHokas = accountBook.hokaFee!
 					let myTotals = accountBook.totalFee!
 					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
+					
+					foodFeeCount += (accountBook.foodFee! as Int)
+					lifeFeeCount += (accountBook.lifeFee! as Int)
+					zappiFeeCount += (accountBook.zappiFee! as Int)
+					hokaFeeCount += (accountBook.hokaFee! as Int)
+					totalFeeCount += (accountBook.totalFee! as Int)
+					
 					// shareTextArray = ["\(accountBook)"]
 				}
+				
 			} catch let error1 as NSError {
 				error = error1
 			}
@@ -156,13 +172,14 @@ class sendMailController: UIViewController {
 			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
 			fetchRequest.entity = entityDiscription
 			
+			// 並び順を指定
+			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: true)]
+			
 			// データをNSDate型に変換
 			// catchStartDate2 = df.dateFromString(catchStartDate)!
 			// catchEndDate2 = df.dateFromString(catchEndDate)!
 			// catchEndDate2に 23:59:59 加算
 			// let catchEndDate2Plus1Day: NSDate = NSDate(timeInterval:24*60*60-1, sinceDate:catchEndDate2)
-			// 並び順を指定
-			fetchRequest.sortDescriptors = [NSSortDescriptor(key: "inputDate", ascending: false)]
 			
 			// let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2, catchEndDate2Plus1Day)
 			// print(predicate)
@@ -185,6 +202,12 @@ class sendMailController: UIViewController {
 					let myTotals = accountBook.totalFee!
 					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
 					// shareTextArray = ["\(accountBook)"]
+					
+					foodFeeCount += (accountBook.foodFee! as Int)
+					lifeFeeCount += (accountBook.lifeFee! as Int)
+					zappiFeeCount += (accountBook.zappiFee! as Int)
+					hokaFeeCount += (accountBook.hokaFee! as Int)
+					totalFeeCount += (accountBook.totalFee! as Int)
 				}
 			} catch let error1 as NSError {
 				error = error1

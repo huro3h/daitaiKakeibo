@@ -32,6 +32,8 @@ class calcController: UIViewController {
 	@IBOutlet weak var hokaLabel: UILabel!
 	@IBOutlet weak var hokaField: UIView!
 	
+	@IBOutlet weak var foodTextView: UITextView!
+	
 	var startPoint: CGPoint?
 	var imageBeHereNowPoint: CGPoint?
 	var isImageInside: Bool?
@@ -76,7 +78,11 @@ class calcController: UIViewController {
 		// print(changeJpDate())
 	}
 	
+	
+	
 	override func viewWillAppear(animated: Bool) {
+		foodTextView.text = "食費:\(foodArray)"
+		
 		let myDefault = NSUserDefaults.standardUserDefaults()
 			if (myDefault.arrayForKey("fourTotal") != nil){
 				
@@ -138,6 +144,7 @@ class calcController: UIViewController {
 		}
 		let foodString : String = String(foodTotal)
 		foodLabel.text? = foodString
+		foodTextView.text = "食費:\(foodArray)"
 		doing0()
 	}
 	
@@ -186,6 +193,7 @@ class calcController: UIViewController {
 		foodLabel.text! = "0"
 		foodTotal = 0
 		print("foodをリセット!\(foodArray)")
+		foodTextView.text = "食費:\(foodArray)"
 		userDefaultMemory()
 	}
 	
@@ -219,6 +227,7 @@ class calcController: UIViewController {
 			foodArray.removeLast()
 			foodLabel.text! = String(foodArray.reduce(0, combine: { $0 + $1 }))
 			print ("foodUndo:\(foodArray)")
+			foodTextView.text = "食費:\(foodArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -465,6 +474,7 @@ class calcController: UIViewController {
 					hokaTotal = 0
 					allTotal = 0
 					
+					
 					let myDefault = NSBundle.mainBundle().bundleIdentifier
 					NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
 					bufferNumber = 0
@@ -480,6 +490,8 @@ class calcController: UIViewController {
 					hokaLabel.text! = "0"
 					display.text = "0"
 					displayLabel.text! = display.text!
+					
+					foodTextView.text = "食費:\(foodArray)"
 					
 					// let myDefault = NSUserDefaults.standardUserDefaults()
 					// myDefault.removeObjectForKey("fourTotal")
@@ -529,6 +541,14 @@ class calcController: UIViewController {
 			display.text! = "0"
 			displayLabel.text! = display.text!
 		}
+	
+//		func longPressReset(a: String) {
+//			\(a)Array = []
+//			foodLabel.text! = "0"
+//			foodTotal = 0
+//			print("foodをリセット!\(foodArray)")
+//			userDefaultMemory()
+//		}
 	
 		// CoreData内の時間を日本時間で記録しようと思ったが、
 		// 処理が複雑そうな為、別画面に表示させた時に日本時間に変換する処理のままで。

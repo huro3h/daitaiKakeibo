@@ -208,6 +208,13 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-aq-1xQ">
                                 <rect key="frame" x="0.0" y="64" width="160" height="127"/>
                                 <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-Ns-mQK">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="127"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klw-Oe-nTM">
                                         <rect key="frame" x="36" y="99" width="116" height="20"/>
                                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
@@ -366,6 +373,7 @@
                         <outlet property="displayLabel" destination="EDs-v0-Gxo" id="6Sa-i7-fL2"/>
                         <outlet property="foodField" destination="Cdg-aq-1xQ" id="ire-Gv-KBS"/>
                         <outlet property="foodLabel" destination="klw-Oe-nTM" id="xEF-Tn-i6e"/>
+                        <outlet property="foodTextView" destination="hd7-Ns-mQK" id="lYc-cA-DC5"/>
                         <outlet property="hokaField" destination="srj-1j-uHf" id="tH5-dr-f4n"/>
                         <outlet property="hokaLabel" destination="J0V-6H-vRw" id="mAQ-aA-acS"/>
                         <outlet property="lifeField" destination="SWM-6z-Nz8" id="aQu-5c-XJj"/>

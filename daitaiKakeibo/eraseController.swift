@@ -20,7 +20,7 @@ class eraseController: UIViewController {
 	// 次の2行は先のデータをString型->NSDate型に変更した後に入れておく変数
 	var catchStartDate2: NSDate = NSDate()
 	var catchEndDate2: NSDate = NSDate()
-	
+
 	@IBOutlet weak var startDatePicker: UIDatePicker!
 	@IBOutlet weak var endDatePicker: UIDatePicker!
 	
@@ -34,9 +34,13 @@ class eraseController: UIViewController {
 		endDatePicker.datePickerMode = UIDatePickerMode.Date
 		
 		df.dateFormat = "yyyy-MM-dd"
+		
+		catchStartDate = df.stringFromDate(NSDate())
+		catchEndDate = df.stringFromDate(NSDate(timeInterval:24*60*60, sinceDate:NSDate()))
+		
 		// 初期表示の日付を設定
-		startDatePicker.date = df.dateFromString("2016/05/30")!
-		endDatePicker.date = df.dateFromString("2016/06/03")!
+		startDatePicker.date = df.dateFromString(catchStartDate)!
+		endDatePicker.date = df.dateFromString(catchEndDate)!
 		// 選択可能範囲設定
 		startDatePicker.minimumDate = df.dateFromString("2000/01/01")
 		startDatePicker.maximumDate = df.dateFromString("2045/12/31")

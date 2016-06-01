@@ -32,7 +32,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
         super.viewDidLoad()
 		// CoreDataから読み込み
 		read()
-		// var testFoodTotal: Int = (myFoods.reduce(0, combine: { $0 + $1 }))
     }
 	
 	override func viewWillAppear(animated: Bool) {

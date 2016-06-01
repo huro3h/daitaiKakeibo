@@ -73,6 +73,7 @@ class calcController: UIViewController {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
+		// print(changeJpDate())
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -448,6 +449,25 @@ class calcController: UIViewController {
 			display.text! = "0"
 			displayLabel.text! = display.text!
 		}
+	
+		// CoreData内の時間を日本時間で記録しようと思ったが、
+		// 処理が複雑そうな為、別画面に表示させた時に日本時間に変換する処理のままで。
+	
+//		func changeJpDate() -> NSDate {
+//			let fmt = NSDateFormatter()
+//			
+//			fmt.dateFormat = "yyyy/MM/dd HH:mm:ss"
+//			let jpStartDate = fmt.stringFromDate(NSDate())
+//			
+//			let df = NSDateFormatter()
+//			df.locale = NSLocale(localeIdentifier: "ja_JP")
+//			df.dateFormat = "yyyy/MM/dd HH:mm:ss"
+//			
+//			let testDate = df.dateFromString(jpStartDate)!
+//			
+//			return df.dateFromString(jpStartDate)!
+//		}
+
 
 
 	

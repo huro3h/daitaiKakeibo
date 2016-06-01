@@ -37,15 +37,20 @@ class sendMailController: UIViewController {
 		startDatePicker.datePickerMode = UIDatePickerMode.Date
 		endDatePicker.datePickerMode = UIDatePickerMode.Date
 		
-		df.dateFormat = "yyyy-MM-dd"
+		df.dateFormat = "yyyy/MM/dd"
+		
+		catchStartDate = df.stringFromDate(NSDate())
+		
 		// 初期表示の日付を設定
-		startDatePicker.date = df.dateFromString("2016/06/01")!
-		endDatePicker.date = df.dateFromString("2016/06/19")!
+		startDatePicker.date = df.dateFromString(catchStartDate)!
+		endDatePicker.date = df.dateFromString(catchEndDate)!
 		// 選択可能範囲設定
-		startDatePicker.minimumDate = df.dateFromString("2000/01/01")
+		startDatePicker.minimumDate = df.dateFromString("2016/01/01")
 		startDatePicker.maximumDate = df.dateFromString("2045/12/31")
-		endDatePicker.minimumDate = df.dateFromString("2000/01/01")
+		endDatePicker.minimumDate = df.dateFromString("2016/01/01")
 		endDatePicker.maximumDate = df.dateFromString("2045/12/31")
+		
+
 		
 		// startDatePicker.date = now
 		// endDatePicker.date = now

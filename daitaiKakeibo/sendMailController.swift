@@ -67,17 +67,19 @@ class sendMailController: UIViewController {
 	
 	
 	@IBAction func tapBtnLimited(sender: UIButton) {
+		shareTextArray.append("日付,食費,生活費,雑費,その他,小計")
 		sendPartData()
 		// メールの最終行に合計値追加
-		shareTextArray.append("TOTAL,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
+		shareTextArray.append("合計,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
 		myActivity()
 		// print(shareTextArray)
 	}
 	
 	@IBAction func tapBtnAll(sender: UIButton) {
+		shareTextArray.append("日付,食費,生活費,雑費,その他,小計")
 		sendAllData()
 		// メールの最終行に合計値追加
-		shareTextArray.append("TOTAL,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
+		shareTextArray.append("合計,\(foodFeeCount),\(lifeFeeCount),\(zappiFeeCount),\(hokaFeeCount),\(totalFeeCount)")
 		myActivity()
 	}
 	

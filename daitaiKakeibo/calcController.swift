@@ -49,36 +49,15 @@ class calcController: UIViewController {
 	
 	var allTotal: Int = 0
 	
-//	@IBAction func myGesAction(sender: UIPanGestureRecognizer) {
-//		let move = sender.translationInView(view)
-//		self.displayLabel.center.x = self.displayLabel.center.x + move.x
-//		self.displayLabel.center.y = self.displayLabel.center.y + move.y
+	var touchJudge: Bool = false
 	
-		
-//		sender.view!.center = CGPoint(x: sender.view!.center.x + move.x*0.05, y: sender.view!.center.y + move.y*0.02)
-		// displayLabel.center = move
-		
-		
-//		@IBAction func panYellowView(sender: UIPanGestureRecognizer) {
-//			
-//			let translation = sender.translationInView(self.view)
-//			
-//			sender.displayLabel.center = CGPoint(x: sender.displayLabel.center.x + move.x, y: sender.displayLabel.center.y + move.y)
-//			
-//			sender.setTranslation(CGPointZero, inView: self.view)
-//			
-//		}
-
-//	}
+	var panLocation: CGPoint = CGPoint()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
-		// print(changeJpDate())
 	}
-	
-	
 	
 	override func viewWillAppear(animated: Bool) {
 		foodTextView.text = "食費:\(foodArray)"
@@ -88,29 +67,28 @@ class calcController: UIViewController {
 				
 				var fourTotal: Array? = myDefault.arrayForKey("fourTotal")!
 		
-				if (fourTotal!.count == 4){
+					if (fourTotal!.count == 4){
+						foodTotal = fourTotal![0] as! Int
+						lifeTotal = fourTotal![1] as! Int
+						zappiTotal = fourTotal![2] as! Int
+						hokaTotal = fourTotal![3] as! Int
+						
+						allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
+						
+						print(allTotal)
 					
-					foodTotal = fourTotal![0] as! Int
-					lifeTotal = fourTotal![1] as! Int
-					zappiTotal = fourTotal![2] as! Int
-					hokaTotal = fourTotal![3] as! Int
-					
-					allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
-					
-					print(allTotal)
-				
-				let foodString : String = String(foodTotal)
-					foodLabel.text = foodString
-				let lifeString : String = String(lifeTotal)
-					lifeLabel.text = lifeString
-				let zappiString : String = String(zappiTotal)
-					zappiLabel.text = zappiString
-				let hokaString : String = String(hokaTotal)
-					hokaLabel.text = hokaString
-					
-				}else{
-					// 上の処理を無視！ \( 'ω')/
-				}
+					let foodString : String = String(foodTotal)
+						foodLabel.text = foodString
+					let lifeString : String = String(lifeTotal)
+						lifeLabel.text = lifeString
+					let zappiString : String = String(zappiTotal)
+						zappiLabel.text = zappiString
+					let hokaString : String = String(hokaTotal)
+						hokaLabel.text = hokaString
+						
+					}else{
+						// 上の処理を無視！ \( 'ω')/
+					}
 				
 			} else if (myDefault.arrayForKey("fourTotal") == nil) {
 				
@@ -132,9 +110,70 @@ class calcController: UIViewController {
 			}
 	}
 	
+	// Labelタッチ判定テスト ここから↓↓ (5.22-)
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		let touch: UITouch = touches.first! as UITouch
+		touchJudge = true
+		
+		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
+		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
+		
+		// タップしたビューがUILabelか判断する。
+		// if touch.view!.isKindOfClass(UILabel) {
+		if touch.view!.isKindOfClass(UILabel) {
+			isImageInside = true
+		} else {
+			isImageInside = false
+		}
+	}
+	
+	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		
+		if isImageInside! {
+			// タッチ中のLabelの座標を取得
+			let touch = touches.first! as UITouch
+			let location = touch.locationInView(self.view)
+			
+			// 移動量を計算
+			let deltaX: CGFloat = CGFloat(location.x - startPoint!.x)
+			let deltaY: CGFloat = CGFloat(location.y - startPoint!.y)
+			
+			// Labelを半透過にする
+			displayLabel.layer.opacity = 0.6
+			
+			// Labelを移動
+			self.displayLabel.frame.origin.x = imageBeHereNowPoint!.x + deltaX
+			self.displayLabel.frame.origin.y = imageBeHereNowPoint!.y + deltaY
+			
+		} else {
+			// Do nothing
+		}
+	}
+	// MARK:label効果
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		// 指を離したタイミングでLabelの透過解除
+		displayLabel.layer.opacity = 1.0
+		
+		// タッチイベントを取得する
+		let touch = touches.first
+		// タップした座標を取得する
+		panLocation = touch!.locationInView(self.view)
+		print(panLocation)
+		
+		// touchJudge = false
+	}
+	// Labelタッチ判定テスト ここまで↑↑(5.22-)
+	
+//	@IBAction func panFoodField(sender: UIPanGestureRecognizer) {
+//		if (touchJudge == true){
+//			print("ぱんされてます")
+//		}
+//	}
+	
+	
+	
 	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {
 		// print("foodFieldたっぷ！")
-		
 		// 配列にInt型の値が入るように変更
 		let foodInt: Int = Int(displayLabel.text!)!
 		foodArray.append(foodInt)
@@ -268,71 +307,6 @@ class calcController: UIViewController {
 	}
 	
 	
-	
-	
-	// Labelタッチ判定テスト ここから↓↓ (5.22-)
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		let touch: UITouch = touches.first! as UITouch
-		
-		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
-		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
-		
-		// タップしたビューがUILabelか判断する。
-		if touch.view!.isKindOfClass(UILabel) {
-			isImageInside = true
-		} else {
-			isImageInside = false
-		}
-	}
-	
-	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		
-		if isImageInside! {
-			// タッチ中のLabelの座標を取得
-			let touch = touches.first! as UITouch
-			let location = touch.locationInView(self.view)
-			
-			// 移動量を計算
-			let deltaX: CGFloat = CGFloat(location.x - startPoint!.x)
-			let deltaY: CGFloat = CGFloat(location.y - startPoint!.y)
-			
-			// Labelを半透過にする
-			displayLabel.layer.opacity = 0.6
-			
-			// Labelを移動
-			self.displayLabel.frame.origin.x = imageBeHereNowPoint!.x + deltaX
-			self.displayLabel.frame.origin.y = imageBeHereNowPoint!.y + deltaY
-			
-		} else {
-			// Do nothing
-		}
-	}
-	
-	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		// タッチ終了時の画像の座標と目標Areaの座標の距離を求める
-//		let distanceXFromDestination = fabs(imageBeHereNow.frame.origin.x - imageDestinationArea.frame.origin.x)
-//		let distanceYFromDestination = fabs(imageBeHereNow.frame.origin.y - imageDestinationArea.frame.origin.y)
-//		
-//		let threshold: CGFloat = 100
-//		
-//		if distanceXFromDestination < threshold && distanceYFromDestination < threshold {
-//			// アニメーションで目標Areaに吸着させる
-//			print("perform animation to imageDestinationArea")
-		
-		// 指を離したタイミングでLabelの透過解除
-		displayLabel.layer.opacity = 1.0
-		
-		
-			
-//			let fromPoint: CGPoint = imageBeHereNow.center
-//			let toPoint: CGPoint = imageDestinationArea.center
-//			positonAnimationFromPoint(fromPoint, toPoint: toPoint)
-//			
-//			imageBeHereNow.center = imageDestinationArea.center         // イメージを移動
-		
-	}
-	// Labelタッチ判定テスト ここまで↑↑(5.22-)
-	
 		var isTypingNumber = false  // 数字をタイプ中か
 		var bufferNumber : Int = 0  // 計算中の数値
 		var nextOperation : String?   // 次に演算する操作　+, -
@@ -356,7 +330,6 @@ class calcController: UIViewController {
 				display.text = sender.currentTitle!
 				isTypingNumber = true
 			}
-			
 			displayLabel.text! = display.text!
 		}
 		
@@ -442,9 +415,9 @@ class calcController: UIViewController {
 
 			}
 			
+			
 			// MARK:★
 			if sender.currentTitle == "★" {
-				// userDefaultMemory()
 				
 				// 1.AppDelegateをコードで読み込む
 				let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -474,7 +447,6 @@ class calcController: UIViewController {
 					hokaTotal = 0
 					allTotal = 0
 					
-					
 					let myDefault = NSBundle.mainBundle().bundleIdentifier
 					NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
 					bufferNumber = 0
@@ -493,13 +465,6 @@ class calcController: UIViewController {
 					
 					foodTextView.text = "食費:\(foodArray)"
 					
-					// let myDefault = NSUserDefaults.standardUserDefaults()
-					// myDefault.removeObjectForKey("fourTotal")
-					// let myDefault = NSBundle.mainBundle().bundleIdentifier
-					// NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
-					// userDefaultMemory()
-					// bufferNumber = 0
-					// nextOperation = nil
 				}
 				
 			}
@@ -510,7 +475,6 @@ class calcController: UIViewController {
 //				myDefault.removeObjectForKey("fourTotal")
 //				userDefaultMemory()
 //			}
-			
 			
 		}
 		
@@ -541,41 +505,6 @@ class calcController: UIViewController {
 			display.text! = "0"
 			displayLabel.text! = display.text!
 		}
-	
-//		func longPressReset(a: String) {
-//			\(a)Array = []
-//			foodLabel.text! = "0"
-//			foodTotal = 0
-//			print("foodをリセット!\(foodArray)")
-//			userDefaultMemory()
-//		}
-	
-		// CoreData内の時間を日本時間で記録しようと思ったが、
-		// 処理が複雑そうな為、別画面に表示させた時に日本時間に変換する処理のままで。
-	
-//		func changeJpDate() -> NSDate {
-//			let fmt = NSDateFormatter()
-//			
-//			fmt.dateFormat = "yyyy/MM/dd HH:mm:ss"
-//			let jpStartDate = fmt.stringFromDate(NSDate())
-//			
-//			let df = NSDateFormatter()
-//			df.locale = NSLocale(localeIdentifier: "ja_JP")
-//			df.dateFormat = "yyyy/MM/dd HH:mm:ss"
-//			
-//			let testDate = df.dateFromString(jpStartDate)!
-//			
-//			return df.dateFromString(jpStartDate)!
-//		}
-
-
-
-	
-	
-	
-	
-	
-	
 	
 	
 //	override func didReceiveMemoryWarning() {

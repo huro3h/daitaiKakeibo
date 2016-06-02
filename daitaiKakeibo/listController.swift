@@ -129,16 +129,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		return dateString
 	}
 	
-
-	
-	
-
-	
-	
-	
-	
-	
-	
 	
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()

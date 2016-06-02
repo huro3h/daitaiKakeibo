@@ -260,9 +260,6 @@ class sendMailController: UIViewController {
 	}
 	
 	
-	
-	
-	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

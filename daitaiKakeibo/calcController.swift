@@ -113,8 +113,6 @@ class calcController: UIViewController {
 	// Labelタッチ判定テスト ここから↓↓ (5.22-)
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let touch: UITouch = touches.first! as UITouch
-		touchJudge = true
-		
 		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
 		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
 		
@@ -139,7 +137,7 @@ class calcController: UIViewController {
 			let deltaY: CGFloat = CGFloat(location.y - startPoint!.y)
 			
 			// Labelを半透過にする
-			displayLabel.layer.opacity = 0.6
+			displayLabel.layer.opacity = 0.8
 			
 			// Labelを移動
 			self.displayLabel.frame.origin.x = imageBeHereNowPoint!.x + deltaX
@@ -149,6 +147,7 @@ class calcController: UIViewController {
 			// Do nothing
 		}
 	}
+	
 	// MARK:label効果
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		// 指を離したタイミングでLabelの透過解除
@@ -166,14 +165,56 @@ class calcController: UIViewController {
 			let pointXY = (point.x,point.y)
 			//条件分岐
 				switch pointXY {
+				
 				case (0.0...159.9, 64.0...192.0):
 					print("foodFieldにラベルがきました！")
+					let foodInt: Int = Int(displayLabel.text!)!
+					foodArray.append(foodInt)
+					print(foodArray)
+					foodTotal = foodArray.reduce(0) { (num1, num2) -> Int in
+						num1 + num2
+					}
+					let foodString : String = String(foodTotal)
+					foodLabel.text? = foodString
+					foodTextView.text = "食費:\(foodArray)"
+					doing0()
+					
 				case (160.0...320.0, 64.0...192.0):
 					print("lifeFieldにラベルがきました！")
+					let lifeInt: Int = Int(displayLabel.text!)!
+					lifeArray.append(lifeInt)
+					print(lifeArray)
+					lifeTotal = lifeArray.reduce(0) { (num1, num2) -> Int in
+						num1 + num2
+					}
+					let lifeString : String = String(lifeTotal)
+					lifeLabel.text! = lifeString
+					doing0()
+					
 				case (0.0...159.9, 192.0...319.0):
 					print("zappiFieldにラベルがきました！")
+					let zappiInt: Int = Int(displayLabel.text!)!
+					zappiArray.append(zappiInt)
+					print(zappiArray)
+					zappiTotal = zappiArray.reduce(0) { (num1, num2) -> Int in
+						num1 + num2
+					}
+					let zappiString : String = String(zappiTotal)
+					zappiLabel.text! = zappiString
+					doing0()
+					
 				case (160.0...320.0, 192.0...319.0):
 					print("hokaFieldにラベルがきました！")
+					let hokaInt: Int = Int(displayLabel.text!)!
+					hokaArray.append(hokaInt)
+					print(hokaArray)
+					hokaTotal = hokaArray.reduce(0) { (num1, num2) -> Int in
+						num1 + num2
+					}
+					let hokaString : String = String(hokaTotal)
+					hokaLabel.text! = hokaString
+					doing0()
+					
 				default:
 					break
 				}
@@ -275,6 +316,7 @@ class calcController: UIViewController {
 		if(foodArray != []) {
 			foodArray.removeLast()
 			foodLabel.text! = String(foodArray.reduce(0, combine: { $0 + $1 }))
+			foodTotal = foodArray.reduce(0, combine: { $0 + $1 })
 			print ("foodUndo:\(foodArray)")
 			foodTextView.text = "食費:\(foodArray)"
 			userDefaultMemory()
@@ -287,6 +329,7 @@ class calcController: UIViewController {
 		if(lifeArray != []) {
 			lifeArray.removeLast()
 			lifeLabel.text! = String(lifeArray.reduce(0, combine: { $0 + $1 }))
+			lifeTotal = lifeArray.reduce(0, combine: { $0 + $1 })
 			print ("lifeUndo:\(lifeArray)")
 			userDefaultMemory()
 		} else {
@@ -298,6 +341,7 @@ class calcController: UIViewController {
 		if(zappiArray != []) {
 			zappiArray.removeLast()
 			zappiLabel.text! = String(zappiArray.reduce(0, combine: { $0 + $1 }))
+			zappiTotal = zappiArray.reduce(0, combine: { $0 + $1 })
 			print ("zappiUndo:\(zappiArray)")
 			userDefaultMemory()
 		} else {
@@ -309,6 +353,7 @@ class calcController: UIViewController {
 		if(hokaArray != []) {
 			hokaArray.removeLast()
 			hokaLabel.text! = String(hokaArray.reduce(0, combine: { $0 + $1 }))
+			hokaTotal = hokaArray.reduce(0, combine: { $0 + $1 })
 			print ("hokaUndo:\(hokaArray)")
 			userDefaultMemory()
 		} else {

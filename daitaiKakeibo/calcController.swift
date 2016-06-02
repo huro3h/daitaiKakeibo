@@ -154,22 +154,32 @@ class calcController: UIViewController {
 		// 指を離したタイミングでLabelの透過解除
 		displayLabel.layer.opacity = 1.0
 		
-		// タッチイベントを取得する
-		let touch = touches.first
-		// タップした座標を取得する
-		panLocation = touch!.locationInView(self.view)
-		print(panLocation)
-		
-		// touchJudge = false
+//		// タッチイベントを取得する
+//		let touch = touches.first
+//		// タップした座標を取得する
+//		panLocation = touch!.locationInView(self.view)
+//		print(panLocation)
+		//タッチした位置の座標を取得
+		for touch: AnyObject in touches {
+			let point = touch.locationInView(self.view)
+			//座標獲得
+			let pointXY = (point.x,point.y)
+			//条件分岐
+				switch pointXY {
+				case (0.0...159.9, 64.0...192.0):
+					print("foodFieldにラベルがきました！")
+				case (160.0...320.0, 64.0...192.0):
+					print("lifeFieldにラベルがきました！")
+				case (0.0...159.9, 192.0...319.0):
+					print("zappiFieldにラベルがきました！")
+				case (160.0...320.0, 192.0...319.0):
+					print("hokaFieldにラベルがきました！")
+				default:
+					break
+				}
+		}
 	}
 	// Labelタッチ判定テスト ここまで↑↑(5.22-)
-	
-//	@IBAction func panFoodField(sender: UIPanGestureRecognizer) {
-//		if (touchJudge == true){
-//			print("ぱんされてます")
-//		}
-//	}
-	
 	
 	
 	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {

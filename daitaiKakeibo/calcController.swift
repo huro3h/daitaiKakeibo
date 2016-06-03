@@ -55,8 +55,6 @@ class calcController: UIViewController {
 	
 	var allTotal: Int = 0
 	
-	var touchJudge: Bool = false
-	
 	var panLocation: CGPoint = CGPoint()
 	// 起動画面サイズの取得
 	let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
@@ -68,6 +66,7 @@ class calcController: UIViewController {
 	}
 	
 	override func viewWillAppear(animated: Bool) {
+		
 		foodTextView.text = "食費:\(foodArray)"
 		lifeTextView.text = "生活費:\(lifeArray)"
 		zappiTextView.text = "雑費:\(zappiArray)"
@@ -169,17 +168,22 @@ class calcController: UIViewController {
 			let point = touch.locationInView(self.view)
 			//座標獲得
 			let pointXY = (point.x,point.y)
+			print(pointXY)
 			// let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
 			
+			// オートレイアウトに対応
 			// 変数に画面の左半分と右半分の値を代入
-			let widthleftX = myBoundSize.width*0.4999
-			let widthrightX = myBoundSize.width*0.50
+			let widthLeft = myBoundSize.width*0.4999 // 159.9
+			let widthRight = myBoundSize.width*0.50  // 160.0
 			
+			let heightUp = myBoundSize.height*0.223591+64   // 191.9
+			let heightDown = myBoundSize.height*0.223592+64 // 192.0
+			let heightEnd = myBoundSize.height*0.447184+64  // 319.0
 			//条件分岐
 				switch pointXY {
 				
 				// case (0.0...159.9, 64.0...192.0):
-				case (0.0...widthleftX, 64.0...192.0):
+				case (0.0...widthLeft, 64.0...heightUp):
 					print("foodFieldにラベルがきました！")
 					let foodInt: Int = Int(displayLabel.text!)!
 					foodArray.append(foodInt)
@@ -192,7 +196,7 @@ class calcController: UIViewController {
 					foodTextView.text = "食費:\(foodArray)"
 					doing0()
 					
-				case (widthrightX...myBoundSize.width, 64.0...192.0):
+				case (widthRight...myBoundSize.width, 64.0...heightUp):
 					print("lifeFieldにラベルがきました！")
 					let lifeInt: Int = Int(displayLabel.text!)!
 					lifeArray.append(lifeInt)
@@ -205,7 +209,7 @@ class calcController: UIViewController {
 					lifeTextView.text = "生活費:\(lifeArray)"
 					doing0()
 					
-				case (0.0...widthleftX, 192.0...319.0):
+				case (0.0...widthLeft, heightDown...heightEnd):
 					print("zappiFieldにラベルがきました！")
 					let zappiInt: Int = Int(displayLabel.text!)!
 					zappiArray.append(zappiInt)
@@ -218,7 +222,7 @@ class calcController: UIViewController {
 					zappiTextView.text = "雑費:\(zappiArray)"
 					doing0()
 					
-				case (widthrightX...myBoundSize.width, 192.0...319.0):
+				case (widthRight...myBoundSize.width, heightDown...heightEnd):
 					print("hokaFieldにラベルがきました！")
 					let hokaInt: Int = Int(displayLabel.text!)!
 					hokaArray.append(hokaInt)

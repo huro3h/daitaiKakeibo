@@ -127,7 +127,7 @@ class calcController: UIViewController {
 		
 		// タップしたビューがUILabelか判断する。
 		// if touch.view!.isKindOfClass(UILabel) {
-		if touch.view!.isKindOfClass(UILabel) {
+		if touch.view!.tag == 10 {
 			isImageInside = true
 		} else {
 			isImageInside = false
@@ -167,6 +167,7 @@ class calcController: UIViewController {
 //		// タップした座標を取得する
 //		panLocation = touch!.locationInView(self.view)
 //		print(panLocation)
+
 		//タッチした位置の座標を取得
 		for touch: AnyObject in touches {
 			let point = touch.locationInView(self.view)

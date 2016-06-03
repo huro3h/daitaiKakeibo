@@ -58,6 +58,8 @@ class calcController: UIViewController {
 	var touchJudge: Bool = false
 	
 	var panLocation: CGPoint = CGPoint()
+	// 起動画面サイズの取得
+	let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -161,22 +163,23 @@ class calcController: UIViewController {
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		// 指を離したタイミングでLabelの透過解除
 		displayLabel.layer.opacity = 1.0
-		
-//		// タッチイベントを取得する
-//		let touch = touches.first
-//		// タップした座標を取得する
-//		panLocation = touch!.locationInView(self.view)
-//		print(panLocation)
 
-		//タッチした位置の座標を取得
+		// タッチした位置の座標を取得
 		for touch: AnyObject in touches {
 			let point = touch.locationInView(self.view)
 			//座標獲得
 			let pointXY = (point.x,point.y)
+			// let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
+			
+			// 変数に画面の左半分と右半分の値を代入
+			let widthleftX = myBoundSize.width*0.4999
+			let widthrightX = myBoundSize.width*0.50
+			
 			//条件分岐
 				switch pointXY {
 				
-				case (0.0...159.9, 64.0...192.0):
+				// case (0.0...159.9, 64.0...192.0):
+				case (0.0...widthleftX, 64.0...192.0):
 					print("foodFieldにラベルがきました！")
 					let foodInt: Int = Int(displayLabel.text!)!
 					foodArray.append(foodInt)
@@ -189,7 +192,7 @@ class calcController: UIViewController {
 					foodTextView.text = "食費:\(foodArray)"
 					doing0()
 					
-				case (160.0...320.0, 64.0...192.0):
+				case (widthrightX...myBoundSize.width, 64.0...192.0):
 					print("lifeFieldにラベルがきました！")
 					let lifeInt: Int = Int(displayLabel.text!)!
 					lifeArray.append(lifeInt)
@@ -202,7 +205,7 @@ class calcController: UIViewController {
 					lifeTextView.text = "生活費:\(lifeArray)"
 					doing0()
 					
-				case (0.0...159.9, 192.0...319.0):
+				case (0.0...widthleftX, 192.0...319.0):
 					print("zappiFieldにラベルがきました！")
 					let zappiInt: Int = Int(displayLabel.text!)!
 					zappiArray.append(zappiInt)
@@ -215,7 +218,7 @@ class calcController: UIViewController {
 					zappiTextView.text = "雑費:\(zappiArray)"
 					doing0()
 					
-				case (160.0...320.0, 192.0...319.0):
+				case (widthrightX...myBoundSize.width, 192.0...319.0):
 					print("hokaFieldにラベルがきました！")
 					let hokaInt: Int = Int(displayLabel.text!)!
 					hokaArray.append(hokaInt)

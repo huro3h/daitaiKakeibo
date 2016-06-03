@@ -208,21 +208,21 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-aq-1xQ">
                                 <rect key="frame" x="0.0" y="64" width="160" height="127"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-Ns-mQK">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="127"/>
-                                        <gestureRecognizers/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klw-Oe-nTM">
-                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <rect key="frame" x="44" y="0.0" width="116" height="20"/>
                                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="食費をここに表示 食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示食費をここに表示" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-Ns-mQK">
+                                        <rect key="frame" x="0.0" y="20" width="160" height="107"/>
+                                        <gestureRecognizers/>
+                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -236,13 +236,19 @@
                                 <rect key="frame" x="0.0" y="191" width="160" height="127"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8K-kx-dQH">
-                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <rect key="frame" x="44" y="0.0" width="116" height="20"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 雑費をここに表示 " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfW-bi-gnA">
+                                        <rect key="frame" x="0.0" y="20" width="160" height="107"/>
+                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -285,13 +291,19 @@
                                 <rect key="frame" x="160" y="191" width="160" height="127"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-6H-vRw">
-                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <rect key="frame" x="44" y="0.0" width="116" height="20"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="その他をここに表示 その他をここに表示その他をここに表示その他をここに表示その他をここに表示その他をここに表示その他をここに表示その他をここに表示その他をここに表示" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XME-Ng-6Zw">
+                                        <rect key="frame" x="0.0" y="19" width="160" height="108"/>
+                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -305,13 +317,19 @@
                                 <rect key="frame" x="160" y="64" width="160" height="127"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oik-DY-We7">
-                                        <rect key="frame" x="36" y="99" width="116" height="20"/>
+                                        <rect key="frame" x="44" y="0.0" width="116" height="20"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 生活費をここに表示 " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9B-Yu-5ez">
+                                        <rect key="frame" x="0.0" y="21" width="160" height="106"/>
+                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -376,10 +394,13 @@
                         <outlet property="foodTextView" destination="hd7-Ns-mQK" id="lYc-cA-DC5"/>
                         <outlet property="hokaField" destination="srj-1j-uHf" id="tH5-dr-f4n"/>
                         <outlet property="hokaLabel" destination="J0V-6H-vRw" id="mAQ-aA-acS"/>
+                        <outlet property="hokaTextView" destination="XME-Ng-6Zw" id="CNe-gk-lnT"/>
                         <outlet property="lifeField" destination="SWM-6z-Nz8" id="aQu-5c-XJj"/>
                         <outlet property="lifeLabel" destination="oik-DY-We7" id="GQI-hl-V1j"/>
+                        <outlet property="lifeTextView" destination="o9B-Yu-5ez" id="qbd-fc-hPW"/>
                         <outlet property="zappiField" destination="GFi-CM-QrY" id="rSb-al-BLq"/>
                         <outlet property="zappiLabel" destination="c8K-kx-dQH" id="c0I-5e-Ygn"/>
+                        <outlet property="zappiTextView" destination="UfW-bi-gnA" id="XL1-Q6-47h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

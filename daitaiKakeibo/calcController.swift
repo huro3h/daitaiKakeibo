@@ -25,14 +25,20 @@ class calcController: UIViewController {
 	
 	@IBOutlet weak var foodLabel: UILabel!
 	@IBOutlet weak var foodField: UIView!
+	
 	@IBOutlet weak var lifeLabel: UILabel!
 	@IBOutlet weak var lifeField: UIView!
+	
 	@IBOutlet weak var zappiLabel: UILabel!
 	@IBOutlet weak var zappiField: UIView!
+	
 	@IBOutlet weak var hokaLabel: UILabel!
 	@IBOutlet weak var hokaField: UIView!
 	
 	@IBOutlet weak var foodTextView: UITextView!
+	@IBOutlet weak var lifeTextView: UITextView!
+	@IBOutlet weak var zappiTextView: UITextView!
+	@IBOutlet weak var hokaTextView: UITextView!
 	
 	var startPoint: CGPoint?
 	var imageBeHereNowPoint: CGPoint?
@@ -61,6 +67,9 @@ class calcController: UIViewController {
 	
 	override func viewWillAppear(animated: Bool) {
 		foodTextView.text = "食費:\(foodArray)"
+		lifeTextView.text = "生活費:\(lifeArray)"
+		zappiTextView.text = "雑費:\(zappiArray)"
+		hokaTextView.text = "他:\(hokaArray)"
 		
 		let myDefault = NSUserDefaults.standardUserDefaults()
 			if (myDefault.arrayForKey("fourTotal") != nil){
@@ -189,6 +198,7 @@ class calcController: UIViewController {
 					}
 					let lifeString : String = String(lifeTotal)
 					lifeLabel.text! = lifeString
+					lifeTextView.text = "生活費:\(lifeArray)"
 					doing0()
 					
 				case (0.0...159.9, 192.0...319.0):
@@ -201,6 +211,7 @@ class calcController: UIViewController {
 					}
 					let zappiString : String = String(zappiTotal)
 					zappiLabel.text! = zappiString
+					zappiTextView.text = "雑費:\(zappiArray)"
 					doing0()
 					
 				case (160.0...320.0, 192.0...319.0):
@@ -213,6 +224,7 @@ class calcController: UIViewController {
 					}
 					let hokaString : String = String(hokaTotal)
 					hokaLabel.text! = hokaString
+					hokaTextView.text = "他:\(hokaArray)"
 					doing0()
 					
 				default:
@@ -248,6 +260,7 @@ class calcController: UIViewController {
 		}
 		let lifeString : String = String(lifeTotal)
 		lifeLabel.text! = lifeString
+		lifeTextView.text = "生活費:\(lifeArray)"
 		doing0()
 	}
 	
@@ -261,6 +274,7 @@ class calcController: UIViewController {
 		}
 		let zappiString : String = String(zappiTotal)
 		zappiLabel.text! = zappiString
+		zappiTextView.text = "雑費:\(zappiArray)"
 		doing0()
 	}
 	
@@ -274,6 +288,7 @@ class calcController: UIViewController {
 		}
 		let hokaString : String = String(hokaTotal)
 		hokaLabel.text! = hokaString
+		hokaTextView.text = "他:\(hokaArray)"
 		doing0()
 	}
 	
@@ -292,6 +307,7 @@ class calcController: UIViewController {
 		lifeLabel.text! = "0"
 		lifeTotal = 0
 		print("lifeをリセット!\(lifeArray)")
+		lifeTextView.text = "生活費:\(lifeArray)"
 		userDefaultMemory()
 	}
 	
@@ -300,6 +316,7 @@ class calcController: UIViewController {
 		zappiLabel.text! = "0"
 		zappiTotal = 0
 		print("zappiをリセット!\(zappiArray)")
+		zappiTextView.text = "雑費:\(zappiArray)"
 		userDefaultMemory()
 	}
 	
@@ -308,6 +325,7 @@ class calcController: UIViewController {
 		hokaLabel.text! = "0"
 		hokaTotal = 0
 		print("hokaをリセット!\(hokaArray)")
+		hokaTextView.text = "他:\(hokaArray)"
 		userDefaultMemory()
 	}
 	
@@ -331,6 +349,7 @@ class calcController: UIViewController {
 			lifeLabel.text! = String(lifeArray.reduce(0, combine: { $0 + $1 }))
 			lifeTotal = lifeArray.reduce(0, combine: { $0 + $1 })
 			print ("lifeUndo:\(lifeArray)")
+			lifeTextView.text = "生活費:\(lifeArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -343,6 +362,7 @@ class calcController: UIViewController {
 			zappiLabel.text! = String(zappiArray.reduce(0, combine: { $0 + $1 }))
 			zappiTotal = zappiArray.reduce(0, combine: { $0 + $1 })
 			print ("zappiUndo:\(zappiArray)")
+			zappiTextView.text = "雑費:\(zappiArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -355,6 +375,7 @@ class calcController: UIViewController {
 			hokaLabel.text! = String(hokaArray.reduce(0, combine: { $0 + $1 }))
 			hokaTotal = hokaArray.reduce(0, combine: { $0 + $1 })
 			print ("hokaUndo:\(hokaArray)")
+			hokaTextView.text = "他:\(hokaArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -465,8 +486,21 @@ class calcController: UIViewController {
 				display.text = "0"
 				displayLabel.text! = display.text!
 				
+				foodTotal = 0
+				lifeTotal = 0
+				zappiTotal = 0
+				hokaTotal = 0
+				allTotal = 0
+				
+				foodTextView.text = "食費:\(foodArray)"
+				lifeTextView.text = "生活費:\(lifeArray)"
+				zappiTextView.text = "雑費:\(zappiArray)"
+				hokaTextView.text = "他:\(hokaArray)"
+				
 				let myDefault = NSUserDefaults.standardUserDefaults()
 				myDefault.removeObjectForKey("fourTotal")
+				
+				userDefaultMemory()
 
 			}
 			
@@ -519,6 +553,9 @@ class calcController: UIViewController {
 					displayLabel.text! = display.text!
 					
 					foodTextView.text = "食費:\(foodArray)"
+					lifeTextView.text = "生活:\(lifeArray)"
+					zappiTextView.text = "雑費:\(zappiArray)"
+					hokaTextView.text = "他:\(hokaArray)"
 					
 				}
 				
@@ -562,8 +599,8 @@ class calcController: UIViewController {
 		}
 	
 	
-//	override func didReceiveMemoryWarning() {
-//		super.didReceiveMemoryWarning()
-//	}
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
 }
 

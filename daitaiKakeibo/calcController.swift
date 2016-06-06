@@ -17,7 +17,8 @@ class BorderButton: UIButton {
 }
 
 class calcController: UIViewController {
-
+	
+	@IBOutlet weak var flexView: UIView!
 	// 結果を表示するテキストフィールド
 	@IBOutlet weak var display: UITextField!
 	// 実際に数字を確認するテキストラベル

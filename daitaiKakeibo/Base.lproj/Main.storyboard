@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-eM-pLu" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-eM-pLu" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="192" y="468" width="64" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.69019607843137254" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -141,7 +141,7 @@
                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L2g-qi-dET"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz4-l8-Nw6" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz4-l8-Nw6" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="468" width="64" height="50"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -152,7 +152,7 @@
                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dRw-7U-JVB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-0a-aFz" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBS-0a-aFz" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="64" y="468" width="64" height="50"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -164,7 +164,7 @@
                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="whM-c6-VTD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZi-sl-iVJ" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZi-sl-iVJ" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="128" y="468" width="64" height="50"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -366,20 +366,36 @@
                         <constraints>
                             <constraint firstItem="0FA-QZ-L1y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="3uc-Dp-XgQ"/>
                             <constraint firstItem="9LU-bi-Xdc" firstAttribute="leading" secondItem="qv0-BM-QcV" secondAttribute="trailing" id="6Gh-Zj-hVl"/>
+                            <constraint firstItem="OBS-0a-aFz" firstAttribute="leading" secondItem="vz4-l8-Nw6" secondAttribute="trailing" id="8Ib-Ke-X0O"/>
+                            <constraint firstItem="Rh0-eM-pLu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="9np-At-ZmO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0FA-QZ-L1y" secondAttribute="bottom" id="GeF-Qw-o6K"/>
                             <constraint firstItem="3xd-mU-ikf" firstAttribute="leading" secondItem="0FA-QZ-L1y" secondAttribute="trailing" id="Hgi-nN-Fkv"/>
+                            <constraint firstItem="HZi-sl-iVJ" firstAttribute="leading" secondItem="OBS-0a-aFz" secondAttribute="trailing" id="HkG-qS-OO9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3xd-mU-ikf" secondAttribute="bottom" id="J0k-01-d5q"/>
                             <constraint firstItem="9LU-bi-Xdc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="KDm-6M-CuF"/>
+                            <constraint firstItem="Rh0-eM-pLu" firstAttribute="leading" secondItem="HZi-sl-iVJ" secondAttribute="trailing" id="MBR-fT-ole"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qv0-BM-QcV" secondAttribute="bottom" id="MW9-Hy-FjS"/>
+                            <constraint firstItem="vz4-l8-Nw6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="NXJ-rg-yuL"/>
+                            <constraint firstItem="0FA-QZ-L1y" firstAttribute="top" secondItem="vz4-l8-Nw6" secondAttribute="bottom" id="PPc-da-lYy"/>
+                            <constraint firstItem="HZi-sl-iVJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="UHM-tr-iVO"/>
+                            <constraint firstItem="vz4-l8-Nw6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="V3w-Bf-80w"/>
+                            <constraint firstItem="HZi-sl-iVJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="VsR-eM-jrI"/>
                             <constraint firstItem="3xd-mU-ikf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="XA4-9b-l6j"/>
+                            <constraint firstItem="0FA-QZ-L1y" firstAttribute="top" secondItem="OBS-0a-aFz" secondAttribute="bottom" id="XN6-vG-Pm7"/>
+                            <constraint firstItem="qv0-BM-QcV" firstAttribute="top" secondItem="Rh0-eM-pLu" secondAttribute="bottom" id="XhZ-tS-dYd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9LU-bi-Xdc" secondAttribute="bottom" id="b1J-Yl-bqh"/>
+                            <constraint firstItem="OBS-0a-aFz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="b6E-ve-8pi"/>
                             <constraint firstItem="qv0-BM-QcV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="bOb-O2-6zy"/>
                             <constraint firstItem="0FA-QZ-L1y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="bSi-bW-6gj"/>
                             <constraint firstItem="9LU-bi-Xdc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.176056" id="be4-1Z-tIV"/>
+                            <constraint firstItem="3xd-mU-ikf" firstAttribute="top" secondItem="HZi-sl-iVJ" secondAttribute="bottom" id="eUH-48-AAL"/>
                             <constraint firstItem="3xd-mU-ikf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="hNR-UT-Usp"/>
+                            <constraint firstItem="Rh0-eM-pLu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="jBt-rU-Jsj"/>
+                            <constraint firstItem="OBS-0a-aFz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="lyx-Sr-FVX"/>
                             <constraint firstItem="0FA-QZ-L1y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oz7-AG-kdZ"/>
                             <constraint firstItem="qv0-BM-QcV" firstAttribute="leading" secondItem="3xd-mU-ikf" secondAttribute="trailing" id="uaA-7C-F7v"/>
                             <constraint firstItem="qv0-BM-QcV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="yZx-9k-Ali"/>
+                            <constraint firstItem="vz4-l8-Nw6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zsi-c9-SZS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DiU-Mu-HAB">

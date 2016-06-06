@@ -72,6 +72,8 @@ class calcController: UIViewController {
 		zappiTextView.text = "雑費:\(zappiArray)"
 		hokaTextView.text = "他:\(hokaArray)"
 		
+		foodTextView.textColor = UIColor.whiteColor()
+		
 		let myDefault = NSUserDefaults.standardUserDefaults()
 			if (myDefault.arrayForKey("fourTotal") != nil){
 				
@@ -568,7 +570,7 @@ class calcController: UIViewController {
 					lifeTextView.text = "生活:\(lifeArray)"
 					zappiTextView.text = "雑費:\(zappiArray)"
 					hokaTextView.text = "他:\(hokaArray)"
-					
+					foodTextView.textColor = UIColor.whiteColor()
 				}
 				
 			}
@@ -601,6 +603,7 @@ class calcController: UIViewController {
 			// 即反映させる(きちんと保存して使用時すぐ出せるように)
 			allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
 			myDefault.synchronize()
+			foodTextView.textColor = UIColor.whiteColor()
 		}
 	
 		// userDefault保存後、計算機の値を0に戻す動き

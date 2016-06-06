@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Calc Controller-->
@@ -199,7 +200,7 @@
                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ios-Ez-aY3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-QZ-L1y" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-QZ-L1y" customClass="BorderButton" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="518" width="128" height="50"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -362,6 +363,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="0FA-QZ-L1y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="3uc-Dp-XgQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0FA-QZ-L1y" secondAttribute="bottom" id="GeF-Qw-o6K"/>
+                            <constraint firstItem="0FA-QZ-L1y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0880282" id="bSi-bW-6gj"/>
+                            <constraint firstItem="0FA-QZ-L1y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oz7-AG-kdZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DiU-Mu-HAB">
                         <nil key="title"/>

@@ -18,6 +18,7 @@ class BorderButton: UIButton {
 
 class calcController: UIViewController {
 	
+	// 画面サイズによって可変させるview
 	@IBOutlet weak var flexView: UIView!
 	// 結果を表示するテキストフィールド
 	@IBOutlet weak var display: UITextField!
@@ -60,10 +61,12 @@ class calcController: UIViewController {
 	// 起動画面サイズの取得
 	let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
 	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
+		
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -129,6 +132,9 @@ class calcController: UIViewController {
 		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
 		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
 		
+		// 画面の大きさによって可変させるViewから高さを取得
+		let myFlexViewSize:CGSize = self.flexView.bounds.size
+		
 		// タップしたビューがUILabelか判断する。
 		// if touch.view!.isKindOfClass(UILabel) {
 		if touch.view!.tag == 10 {
@@ -145,12 +151,15 @@ class calcController: UIViewController {
 			let touch = touches.first! as UITouch
 			let location = touch.locationInView(self.view)
 			
+			// 画面の大きさによって可変させるViewから高さを取得
+			let myFlexViewSize:CGSize = self.flexView.bounds.size
+			
 			// 移動量を計算
 			let deltaX: CGFloat = CGFloat(location.x - startPoint!.x)
 			let deltaY: CGFloat = CGFloat(location.y - startPoint!.y)
 			
 			// Labelを半透過にする
-			displayLabel.layer.opacity = 0.8
+			displayLabel.layer.opacity = 0.5
 			// displayLabel.transform = CGAffineTransformMakeScale(0.7, 0.7)
 			
 			// Labelを移動
@@ -165,6 +174,8 @@ class calcController: UIViewController {
 	
 	// MARK:label効果
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		// 画面の大きさによって可変させるViewから高さを取得
+		let myFlexViewSize:CGSize = self.flexView.bounds.size
 		// 指を離したタイミングでLabelの透過解除
 		displayLabel.layer.opacity = 1.0
 		// displayLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
@@ -183,9 +194,9 @@ class calcController: UIViewController {
 			let widthLeft = myBoundSize.width*0.4999 // 159.9
 			let widthRight = myBoundSize.width*0.50  // 160.0
 			
-			let heightMiddleUp = myBoundSize.height*0.223591+64   // 191.9
-			let heightMiddleDown = myBoundSize.height*0.223592+64 // 192.0
-			let heightEnd = myBoundSize.height*0.447184+64  // 319.0
+			let heightMiddleUp = myFlexViewSize.height*0.25198413 + 64   // 191.9
+			let heightMiddleDown = myFlexViewSize.height*0.25198414 + 64 // 192.0
+			let heightEnd = myFlexViewSize.height*0.50396825 + 64  // 319.0
 			//条件分岐
 				switch pointXY {
 				

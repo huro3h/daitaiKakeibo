@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C01675C1D069CD700A13D3C /* feeList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C01675B1D069CD700A13D3C /* feeList.xib */; };
+		3C01675E1D069E3C00A13D3C /* FeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01675D1D069E3C00A13D3C /* FeeTableViewCell.swift */; };
 		3C6A8CE21CE59844001527FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A8CE11CE59844001527FA /* AppDelegate.swift */; };
 		3C6A8CE41CE59844001527FA /* calcController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A8CE31CE59844001527FA /* calcController.swift */; };
 		3C6A8CE71CE59844001527FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6A8CE51CE59844001527FA /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C01675B1D069CD700A13D3C /* feeList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = feeList.xib; sourceTree = "<group>"; };
+		3C01675D1D069E3C00A13D3C /* FeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeeTableViewCell.swift; sourceTree = "<group>"; };
 		3C6A8CDE1CE59844001527FA /* daitaiKakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daitaiKakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6A8CE11CE59844001527FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C6A8CE31CE59844001527FA /* calcController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */,
 				3C828FED1CF0589300E9C0DC /* listController.swift */,
 				3C6A8CE51CE59844001527FA /* Main.storyboard */,
+				3C01675D1D069E3C00A13D3C /* FeeTableViewCell.swift */,
+				3C01675B1D069CD700A13D3C /* feeList.xib */,
 				3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */,
 				3CE4629C1CF43D5E00480502 /* AccountBook.swift */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
@@ -307,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C01675C1D069CD700A13D3C /* feeList.xib in Resources */,
 				3C6A8CEC1CE59844001527FA /* LaunchScreen.storyboard in Resources */,
 				3C6A8CE91CE59844001527FA /* Assets.xcassets in Resources */,
 				3C6A8CE71CE59844001527FA /* Main.storyboard in Resources */,
@@ -338,6 +345,7 @@
 				3CE4629E1CF43D5E00480502 /* AccountBook.swift in Sources */,
 				3C828FEA1CF02AE800E9C0DC /* aboutAppController.swift in Sources */,
 				3CE4629D1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift in Sources */,
+				3C01675E1D069E3C00A13D3C /* FeeTableViewCell.swift in Sources */,
 				3C828FE61CF0127A00E9C0DC /* howToUseController.swift in Sources */,
 				3C6A8CE21CE59844001527FA /* AppDelegate.swift in Sources */,
 				3CE4629A1CF435EF00480502 /* daitaiKakeibo.xcdatamodeld in Sources */,

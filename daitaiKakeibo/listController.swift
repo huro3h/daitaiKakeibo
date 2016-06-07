@@ -8,6 +8,8 @@ import CoreData
 
 class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
+	@IBOutlet weak var listTableView: UITableView!
+	
 	var myTimes: [String] = []
 	var myFoods: [NSNumber] = []
 	var myLifes: [NSNumber] = []
@@ -15,6 +17,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	var myHokas: [NSNumber] = []
 	var myTotals: [NSNumber] = []
 	
+
 	// リスト最下部に表示させる変数
 	var foodFeeCount: Int = 0
 	var lifeFeeCount: Int = 0
@@ -32,6 +35,8 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
         super.viewDidLoad()
 		// CoreDataから読み込み
 		read()
+		// 別でcellファイルを作った時に
+		listTableView.registerNib(UINib(nibName: "feeList", bundle: nil), forCellReuseIdentifier: "feeList")
     }
 	
 	override func viewWillAppear(animated: Bool) {
@@ -50,26 +55,38 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	// 2.行に表示する内容をリセット
 	// returnで入る物、int型(引数) -> 戻り値のデータ型
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("myCell")! as UITableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("feeList")! as! FeeTableViewCell
 		
-		let label1 = cell.viewWithTag(1) as! UILabel
-		label1.text = "\(myTimes[indexPath.row])"
-		let label2 = cell.viewWithTag(2) as! UILabel
-		label2.text = "\(myFoods[indexPath.row])"
-		let label3 = cell.viewWithTag(3) as! UILabel
-		label3.text = "\(myLifes[indexPath.row])"
-		let label4 = cell.viewWithTag(4) as! UILabel
-		label4.text = "\(myZappies[indexPath.row])"
-		let label5 = cell.viewWithTag(5) as! UILabel
-		label5.text = "\(myHokas[indexPath.row])"
-		let label6 = cell.viewWithTag(6) as! UILabel
-		label6.text = "\(myTotals[indexPath.row])"
+		cell.dayLabel.text = "\(myTimes[indexPath.row])"
+
+		cell.foodFareLabel.text = "\(myFoods[indexPath.row])"
+
+		cell.lifeFareLabel.text = "\(myLifes[indexPath.row])"
+
+		cell.zappiFareLabel.text  = "\(myZappies[indexPath.row])"
+
+		cell.hokaFareLabel.text  = "\(myHokas[indexPath.row])"
+
+		cell.totalFareLabel.text  = "\(myTotals[indexPath.row])"
 		return cell
+//		let label1 = cell.viewWithTag(1) as! UILabel
+//		label1.text = "\(myTimes[indexPath.row])"
+//		let label2 = cell.viewWithTag(2) as! UILabel
+//		label2.text = "\(myFoods[indexPath.row])"
+//		let label3 = cell.viewWithTag(3) as! UILabel
+//		label3.text = "\(myLifes[indexPath.row])"
+//		let label4 = cell.viewWithTag(4) as! UILabel
+//		label4.text = "\(myZappies[indexPath.row])"
+//		let label5 = cell.viewWithTag(5) as! UILabel
+//		label5.text = "\(myHokas[indexPath.row])"
+//		let label6 = cell.viewWithTag(6) as! UILabel
+//		label6.text = "\(myTotals[indexPath.row])"
+//		return cell
 	}
 	
-	@objc func tableView(tableView: UITableView, heightForRowAtIndexPath IndexPath: NSIndexPath) -> CGFloat{
-		return 25 // 行の幅
-	}
+//	@objc func tableView(tableView: UITableView, heightForRowAtIndexPath IndexPath: NSIndexPath) -> CGFloat{
+//		return 25 // 行の幅
+//	}
 	// 3.選択された時に行う処理(Delegate処理)
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		print("\(indexPath.row)行目を選択")

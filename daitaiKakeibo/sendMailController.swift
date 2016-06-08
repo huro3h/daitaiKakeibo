@@ -6,6 +6,12 @@
 import UIKit
 import CoreData
 
+class buttonShape: UIButton {
+	required init(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)!;
+		layer.cornerRadius = 2;  // ボタンの角の半径
+	}
+}
 class sendMailController: UIViewController {
 	
 //	var dataArray: [String] = []
@@ -24,6 +30,9 @@ class sendMailController: UIViewController {
 	var totalFeeCount: Int = 0
 	
 	var shareTextArray: [String] = []
+	
+	
+	@IBOutlet weak var spacerView: UIView!
 	
 	@IBOutlet weak var startDatePicker: UIDatePicker!
 	@IBOutlet weak var endDatePicker: UIDatePicker!

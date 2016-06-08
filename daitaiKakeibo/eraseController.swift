@@ -21,6 +21,8 @@ class eraseController: UIViewController {
 	var catchStartDate2: NSDate = NSDate()
 	var catchEndDate2: NSDate = NSDate()
 
+	@IBOutlet weak var spacerView: UIView!
+	
 	@IBOutlet weak var startDatePicker: UIDatePicker!
 	@IBOutlet weak var endDatePicker: UIDatePicker!
 	

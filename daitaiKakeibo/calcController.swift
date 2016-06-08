@@ -16,6 +16,13 @@ class BorderButton: UIButton {
 	}
 }
 
+class whiteColorText: UITextView {
+	required init(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)!;
+		textColor = UIColor.whiteColor()
+	}
+}
+
 class calcController: UIViewController {
 	
 	// 画面サイズによって可変させるview
@@ -77,6 +84,7 @@ class calcController: UIViewController {
 		hokaTextView.text = "他:\(hokaArray)"
 		
 		foodTextView.textColor = UIColor.whiteColor()
+		zappiLabel.textColor = UIColor.whiteColor()
 		
 		let myDefault = NSUserDefaults.standardUserDefaults()
 			if (myDefault.arrayForKey("fourTotal") != nil){
@@ -197,7 +205,7 @@ class calcController: UIViewController {
 			let heightMiddleUp = myFlexViewSize.height*0.25198413 + 64   // 191.9
 			let heightMiddleDown = myFlexViewSize.height*0.25198414 + 64 // 192.0
 			let heightEnd = myFlexViewSize.height*0.50396825 + 64  // 319.0
-			//条件分岐
+				//条件分岐
 				switch pointXY {
 				
 				// case (0.0...159.9, 64.0...192.0):

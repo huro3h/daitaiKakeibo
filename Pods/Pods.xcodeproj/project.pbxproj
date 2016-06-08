@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0039EEF8B31575F0A84A492BA8089E7D /* FAKFoundationIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = D004968535ECFB94A738EB291EDD2D88 /* FAKFoundationIcons.m */; };
+		0308B2902DB5695DBD6AD4564FCBD4F2 /* FAKIonIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = 173C5F5F82175DBBD63F16A31A50F3C9 /* FAKIonIcons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		096174CAD2C9165E184133009B35FD8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
+		0E6286D602F986CED7FF745B76549AC1 /* Pods-daitaiKakeiboUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C2790B972481AAC50856B290FAD28D /* Pods-daitaiKakeiboUITests-dummy.m */; };
+		13D7ECB843CFC8919FA00457603382E5 /* Pods-daitaiKakeiboTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4371EB6E78608C153B372042FE06176 /* Pods-daitaiKakeiboTests-dummy.m */; };
+		29DB8AAB20B9088A34901CEC43319146 /* FAKIonIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCFDD2307310B018C64E6E99F8A8671 /* FAKIonIcons.m */; };
+		337166F44CD41FBD5074A886981DE532 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C588EDFEB84C0F46E259AF0517FEAEB /* zocial-regular-webfont.ttf */; };
+		3959AEE0134F0E863AC4DB059BAF0C9F /* FAKIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AFD482573C41230F622CD6D5C4336 /* FAKIcon.m */; };
+		3EF7E1965C8DC4082C4FE09AA765613C /* Pods-daitaiKakeibo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D39C999C2757B87EBA1D6BC20745DD2F /* Pods-daitaiKakeibo-dummy.m */; };
+		4182001ABB7E8A62566D430DBEB10915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
+		41F0FA885B04325837CBA8B2388C4B33 /* Pods-daitaiKakeibo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B47E9454B2C3A4DEA2FACF618110B2 /* Pods-daitaiKakeibo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A084EEAD754D6A50378E26C789F5A51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E08379A0DC830C1B585DFE85C4E677 /* UIKit.framework */; };
+		60FD66A0C4A398F6DF3E89C15E01EB64 /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 348D9899C488F42FFA76E76CACE5CFDD /* foundation-icons.ttf */; };
+		650E9C1297EAE9A8E153D5F4FD3FFF51 /* FontAwesomeKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC2A80CA854E52192F79C5CC5E596F3B /* FontAwesomeKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7684852F540BB5B520A48E7FDDD20D8B /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 832585F8BBCEC2ADDFEA40259182113F /* ionicons.ttf */; };
+		80B88D9E4C211C1ABEE48E1D94CFDDA1 /* Pods-daitaiKakeiboTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C8F581A8B9FF12F4A6F61C6D0454FCD /* Pods-daitaiKakeiboTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FF68AEC20BF30072F4AD866513FE44E /* FAKFoundationIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = 13C8F17AC572905C43A9EDC40D9C9C0C /* FAKFoundationIcons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A03CFEDB5A7FAE5352A508F1DCF0C842 /* Pods-daitaiKakeiboUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 938A4FE5A0C6231B575826840709A5A0 /* Pods-daitaiKakeiboUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A37E4933BC6CB5D541B5AC4521631878 /* FAKZocial.h in Headers */ = {isa = PBXBuildFile; fileRef = EBEEF080EEE770242D282A426AA49A0D /* FAKZocial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67729C8F962F6D92B999E1279EE7527 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
+		B78D2975AB22D41BB5C802A247336E7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */; };
+		BC96108EBCE6F29BACA0662BC5B15254 /* FontAwesomeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3F86521930F6EB1AE6875F5183681F /* FontAwesomeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C59A78C9247621B660AE7AAD46E82446 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B87BB18FC41140CF9A78D48A09A4258 /* FontAwesome.otf */; };
+		D140AE94F6E42075FEC37162DD5F36D9 /* FAKFontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4626FCBB0168E3243C9D24A190D56089 /* FAKFontAwesome.m */; };
+		D8B25CA4E48EEE4831E896F4077A6D3A /* FontAwesomeKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6F471A46B7F8E69FD93C06AA48051 /* FontAwesomeKit-dummy.m */; };
+		DBD220F2A48C1644E5E1ACF39E20350B /* FAKZocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 782020E831E6E4DC207949E494D3D565 /* FAKZocial.m */; };
+		DFDAB04F787BC7FB9EA75BDB0E773937 /* FAKFontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9029C37C49E056FA8D0B5E5A1A8CA6 /* FAKFontAwesome.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F41CB5FFBB71B707F5CE8F5C23F3F895 /* FAKIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CD3AC7F01C217528E9ECE9B4405D41 /* FAKIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6EA84588DAC976B9455D3948E884167 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03400C0CD6ED48B34D5902A1A473F402 /* CoreText.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC7718A9F2449051E2FB0751427AFC4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BE9D4B6FF6D92923152CB0534F2BB94;
+			remoteInfo = FontAwesomeKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03400C0CD6ED48B34D5902A1A473F402 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		061BCF2FF3C09D3A2E3FF78D39CFDFDB /* Pods-daitaiKakeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daitaiKakeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
+		07CD3AC7F01C217528E9ECE9B4405D41 /* FAKIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAKIcon.h; path = FontAwesomeKit/FAKIcon.h; sourceTree = "<group>"; };
+		0C588EDFEB84C0F46E259AF0517FEAEB /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "zocial-regular-webfont.ttf"; path = "FontAwesomeKit/zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
+		102E8ABFC29213D0A3BDF462FD39F0AD /* Pods-daitaiKakeiboUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-daitaiKakeiboUITests.modulemap"; sourceTree = "<group>"; };
+		13C8F17AC572905C43A9EDC40D9C9C0C /* FAKFoundationIcons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAKFoundationIcons.h; path = FontAwesomeKit/FAKFoundationIcons.h; sourceTree = "<group>"; };
+		15F553E7C706AC94185DAA4364F6C81A /* Pods-daitaiKakeibo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daitaiKakeibo-resources.sh"; sourceTree = "<group>"; };
+		173C5F5F82175DBBD63F16A31A50F3C9 /* FAKIonIcons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAKIonIcons.h; path = FontAwesomeKit/FAKIonIcons.h; sourceTree = "<group>"; };
+		17E08379A0DC830C1B585DFE85C4E677 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		17F9475304168D351FA7FDAD22E12258 /* Pods-daitaiKakeiboUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daitaiKakeiboUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1850EE9DBEB8D3FF74F9A97EBD2D62BC /* Pods-daitaiKakeibo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daitaiKakeibo-acknowledgements.plist"; sourceTree = "<group>"; };
+		18B47E9454B2C3A4DEA2FACF618110B2 /* Pods-daitaiKakeibo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-daitaiKakeibo-umbrella.h"; sourceTree = "<group>"; };
+		1AA3B7E84CB319898DFB7945E2ED38EB /* Pods-daitaiKakeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daitaiKakeibo.debug.xcconfig"; sourceTree = "<group>"; };
+		1F2A0CE87E4FED50B473D309D00B95AF /* FontAwesomeKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesomeKit-prefix.pch"; sourceTree = "<group>"; };
+		2A3878E1AB3432C50349CA86137DE2B8 /* Pods-daitaiKakeibo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daitaiKakeibo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2BEE7C307C4FE423BBB504C0BFC20BAE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED281F516C1FA46FD526CC130AC508F /* Pods-daitaiKakeiboTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daitaiKakeiboTests-resources.sh"; sourceTree = "<group>"; };
+		348D9899C488F42FFA76E76CACE5CFDD /* foundation-icons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "foundation-icons.ttf"; path = "FontAwesomeKit/foundation-icons.ttf"; sourceTree = "<group>"; };
+		362BF4F64BD2E7D70B6CD2E5E224598A /* Pods-daitaiKakeiboTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daitaiKakeiboTests.debug.xcconfig"; sourceTree = "<group>"; };
+		36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		45BC3C8B612FDDBA951DAE785F4FEEDC /* Pods-daitaiKakeiboTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-daitaiKakeiboTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4626FCBB0168E3243C9D24A190D56089 /* FAKFontAwesome.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FAKFontAwesome.m; path = FontAwesomeKit/FAKFontAwesome.m; sourceTree = "<group>"; };
+		50047F65B8AFC0ECCC1B80431B318578 /* Pods_daitaiKakeiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5262B8B7FDDE93FBA64F0063315F687A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		669C63DE78F2D428311A5090FC6CE17B /* Pods-daitaiKakeiboTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daitaiKakeiboTests-frameworks.sh"; sourceTree = "<group>"; };
+		685B26F019F5D48252ABA539D23D8A47 /* FontAwesomeKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FontAwesomeKit.modulemap; sourceTree = "<group>"; };
+		69B72D12EF96F44EE19487BA53FA69E0 /* Pods-daitaiKakeiboUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daitaiKakeiboUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C544A0AB0DA234DDAA5BA7A796D71BF /* Pods-daitaiKakeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daitaiKakeibo.release.xcconfig"; sourceTree = "<group>"; };
+		782020E831E6E4DC207949E494D3D565 /* FAKZocial.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FAKZocial.m; path = FontAwesomeKit/FAKZocial.m; sourceTree = "<group>"; };
+		79D4021E7FC6C16DDC418D95BAAD99F5 /* Pods-daitaiKakeiboUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daitaiKakeiboUITests-frameworks.sh"; sourceTree = "<group>"; };
+		7B4A8058F268B72749E4EF6CD2080F21 /* Pods_daitaiKakeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C8F8033C6786A33A0D83B188A96CC96 /* Pods_daitaiKakeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9029C37C49E056FA8D0B5E5A1A8CA6 /* FAKFontAwesome.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAKFontAwesome.h; path = FontAwesomeKit/FAKFontAwesome.h; sourceTree = "<group>"; };
+		832585F8BBCEC2ADDFEA40259182113F /* ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = ionicons.ttf; path = FontAwesomeKit/ionicons.ttf; sourceTree = "<group>"; };
+		8F3F86521930F6EB1AE6875F5183681F /* FontAwesomeKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FontAwesomeKit.h; path = FontAwesomeKit/FontAwesomeKit.h; sourceTree = "<group>"; };
+		938A4FE5A0C6231B575826840709A5A0 /* Pods-daitaiKakeiboUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-daitaiKakeiboUITests-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B87BB18FC41140CF9A78D48A09A4258 /* FontAwesome.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.otf; path = FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
+		9C8F581A8B9FF12F4A6F61C6D0454FCD /* Pods-daitaiKakeiboTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-daitaiKakeiboTests-umbrella.h"; sourceTree = "<group>"; };
+		A1C2790B972481AAC50856B290FAD28D /* Pods-daitaiKakeiboUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daitaiKakeiboUITests-dummy.m"; sourceTree = "<group>"; };
+		A3DE92AE267983E977AE1EAD096F4E25 /* Pods-daitaiKakeiboUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daitaiKakeiboUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AD187EF51BC3D5815A5EFD75F3618AEF /* Pods-daitaiKakeibo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daitaiKakeibo-frameworks.sh"; sourceTree = "<group>"; };
+		B5BD4556E17B4DF0032DD4A5391E0245 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6EA40D35A3CEE070EE440405B84EE1B /* Pods-daitaiKakeibo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-daitaiKakeibo.modulemap"; sourceTree = "<group>"; };
+		BC04E98A2638A55DFDB67684296A47C3 /* FontAwesomeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FontAwesomeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE7AFD482573C41230F622CD6D5C4336 /* FAKIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FAKIcon.m; path = FontAwesomeKit/FAKIcon.m; sourceTree = "<group>"; };
+		C086756EFF47BA393A0208DAF3E2CAC4 /* Pods-daitaiKakeiboTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-daitaiKakeiboTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C4371EB6E78608C153B372042FE06176 /* Pods-daitaiKakeiboTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daitaiKakeiboTests-dummy.m"; sourceTree = "<group>"; };
+		D004968535ECFB94A738EB291EDD2D88 /* FAKFoundationIcons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FAKFoundationIcons.m; path = FontAwesomeKit/FAKFoundationIcons.m; sourceTree = "<group>"; };
+		D39C999C2757B87EBA1D6BC20745DD2F /* Pods-daitaiKakeibo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-daitaiKakeibo-dummy.m"; sourceTree = "<group>"; };
+		D8D6F471A46B7F8E69FD93C06AA48051 /* FontAwesomeKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontAwesomeKit-dummy.m"; sourceTree = "<group>"; };
+		D9EC07C71E9141680EC14581CBEFACC5 /* Pods-daitaiKakeiboUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-daitaiKakeiboUITests-resources.sh"; sourceTree = "<group>"; };
+		EBEEF080EEE770242D282A426AA49A0D /* FAKZocial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAKZocial.h; path = FontAwesomeKit/FAKZocial.h; sourceTree = "<group>"; };
+		EC2A80CA854E52192F79C5CC5E596F3B /* FontAwesomeKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesomeKit-umbrella.h"; sourceTree = "<group>"; };
+		EE64D67730295883E992D58D6216C96D /* FontAwesomeKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesomeKit.xcconfig; sourceTree = "<group>"; };
+		F8E512F1A00CECD1655C1C9F92071747 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1CBE9FDCB4B55F4360FE4274C45329 /* Pods-daitaiKakeiboTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-daitaiKakeiboTests.modulemap"; sourceTree = "<group>"; };
+		FD0F0EC488B36813E4A5E9534F61C25F /* Pods-daitaiKakeiboTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-daitaiKakeiboTests.release.xcconfig"; sourceTree = "<group>"; };
+		FFCFDD2307310B018C64E6E99F8A8671 /* FAKIonIcons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FAKIonIcons.m; path = FontAwesomeKit/FAKIonIcons.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25E165FBC8EED956DD81AFCFE1192D58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4182001ABB7E8A62566D430DBEB10915 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C9550AB6D56A7830662A6D8B0C8B3DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6EA84588DAC976B9455D3948E884167 /* CoreText.framework in Frameworks */,
+				B67729C8F962F6D92B999E1279EE7527 /* Foundation.framework in Frameworks */,
+				5A084EEAD754D6A50378E26C789F5A51 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58B4BB8DA4462E401D70F26D5DF02C31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				096174CAD2C9165E184133009B35FD8E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC89B2C1219A237E4F43A63573EB7D12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78D2975AB22D41BB5C802A247336E7F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		119D7D439DFEA95D5C6B2E6AB322724A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				03400C0CD6ED48B34D5902A1A473F402 /* CoreText.framework */,
+				36AEF61D43D41269BA24FCD70FB8BE98 /* Foundation.framework */,
+				17E08379A0DC830C1B585DFE85C4E677 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				119D7D439DFEA95D5C6B2E6AB322724A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1589228300985958601859BEF09F14D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C588EDFEB84C0F46E259AF0517FEAEB /* zocial-regular-webfont.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1D0508A1D6FCFF81008E93D7B12FB3CF /* IonIcons */ = {
+			isa = PBXGroup;
+			children = (
+				173C5F5F82175DBBD63F16A31A50F3C9 /* FAKIonIcons.h */,
+				FFCFDD2307310B018C64E6E99F8A8671 /* FAKIonIcons.m */,
+				9D08F4BD8511737564CD04D163AFBC99 /* Resources */,
+			);
+			name = IonIcons;
+			sourceTree = "<group>";
+		};
+		231C7D4898106D08C13D4D7DCA2C898B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B87BB18FC41140CF9A78D48A09A4258 /* FontAwesome.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2DEB40EFC6B33FC581818C438F7FB49E /* FontAwesomeKit */ = {
+			isa = PBXGroup;
+			children = (
+				8F3F86521930F6EB1AE6875F5183681F /* FontAwesomeKit.h */,
+				74055A6E45060562757C9281617BB429 /* Core */,
+				491A0C7BB7D0C35A38ADC15A7D1712B0 /* FontAwesome */,
+				CC5A2803E0C2003CA3BAFF927DB9143B /* FoundationIcons */,
+				1D0508A1D6FCFF81008E93D7B12FB3CF /* IonIcons */,
+				637D9C04527AF65B5B73A278A5A252E6 /* Support Files */,
+				DD574FC726AFB6CFF2FFB63F328CAB9D /* Zocial */,
+			);
+			path = FontAwesomeKit;
+			sourceTree = "<group>";
+		};
+		44055226BF3E6BFFB5A066CA087D709D /* Pods-daitaiKakeibo */ = {
+			isa = PBXGroup;
+			children = (
+				B5BD4556E17B4DF0032DD4A5391E0245 /* Info.plist */,
+				B6EA40D35A3CEE070EE440405B84EE1B /* Pods-daitaiKakeibo.modulemap */,
+				2A3878E1AB3432C50349CA86137DE2B8 /* Pods-daitaiKakeibo-acknowledgements.markdown */,
+				1850EE9DBEB8D3FF74F9A97EBD2D62BC /* Pods-daitaiKakeibo-acknowledgements.plist */,
+				D39C999C2757B87EBA1D6BC20745DD2F /* Pods-daitaiKakeibo-dummy.m */,
+				AD187EF51BC3D5815A5EFD75F3618AEF /* Pods-daitaiKakeibo-frameworks.sh */,
+				15F553E7C706AC94185DAA4364F6C81A /* Pods-daitaiKakeibo-resources.sh */,
+				18B47E9454B2C3A4DEA2FACF618110B2 /* Pods-daitaiKakeibo-umbrella.h */,
+				1AA3B7E84CB319898DFB7945E2ED38EB /* Pods-daitaiKakeibo.debug.xcconfig */,
+				6C544A0AB0DA234DDAA5BA7A796D71BF /* Pods-daitaiKakeibo.release.xcconfig */,
+			);
+			name = "Pods-daitaiKakeibo";
+			path = "Target Support Files/Pods-daitaiKakeibo";
+			sourceTree = "<group>";
+		};
+		491A0C7BB7D0C35A38ADC15A7D1712B0 /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				7E9029C37C49E056FA8D0B5E5A1A8CA6 /* FAKFontAwesome.h */,
+				4626FCBB0168E3243C9D24A190D56089 /* FAKFontAwesome.m */,
+				231C7D4898106D08C13D4D7DCA2C898B /* Resources */,
+			);
+			name = FontAwesome;
+			sourceTree = "<group>";
+		};
+		56C96C1E5A3F511342C21BB2DEDC5AA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DEB40EFC6B33FC581818C438F7FB49E /* FontAwesomeKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		637D9C04527AF65B5B73A278A5A252E6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				685B26F019F5D48252ABA539D23D8A47 /* FontAwesomeKit.modulemap */,
+				EE64D67730295883E992D58D6216C96D /* FontAwesomeKit.xcconfig */,
+				D8D6F471A46B7F8E69FD93C06AA48051 /* FontAwesomeKit-dummy.m */,
+				1F2A0CE87E4FED50B473D309D00B95AF /* FontAwesomeKit-prefix.pch */,
+				EC2A80CA854E52192F79C5CC5E596F3B /* FontAwesomeKit-umbrella.h */,
+				5262B8B7FDDE93FBA64F0063315F687A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FontAwesomeKit";
+			sourceTree = "<group>";
+		};
+		74055A6E45060562757C9281617BB429 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				07CD3AC7F01C217528E9ECE9B4405D41 /* FAKIcon.h */,
+				BE7AFD482573C41230F622CD6D5C4336 /* FAKIcon.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				56C96C1E5A3F511342C21BB2DEDC5AA4 /* Pods */,
+				C898276B72AE04E68A40348FB739A3CB /* Products */,
+				C98B9455B73F88131326B6F28AE8595D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		93FAA6AD0D62DBC3FF7930989327D1D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				348D9899C488F42FFA76E76CACE5CFDD /* foundation-icons.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9D08F4BD8511737564CD04D163AFBC99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				832585F8BBCEC2ADDFEA40259182113F /* ionicons.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C898276B72AE04E68A40348FB739A3CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC04E98A2638A55DFDB67684296A47C3 /* FontAwesomeKit.framework */,
+				7C8F8033C6786A33A0D83B188A96CC96 /* Pods_daitaiKakeibo.framework */,
+				7B4A8058F268B72749E4EF6CD2080F21 /* Pods_daitaiKakeiboTests.framework */,
+				50047F65B8AFC0ECCC1B80431B318578 /* Pods_daitaiKakeiboUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C98B9455B73F88131326B6F28AE8595D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				44055226BF3E6BFFB5A066CA087D709D /* Pods-daitaiKakeibo */,
+				F7D0206EFDAB0D19161AF9E94B61BD41 /* Pods-daitaiKakeiboTests */,
+				E38C76F619CDA3E841D2A2810AE243E3 /* Pods-daitaiKakeiboUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CC5A2803E0C2003CA3BAFF927DB9143B /* FoundationIcons */ = {
+			isa = PBXGroup;
+			children = (
+				13C8F17AC572905C43A9EDC40D9C9C0C /* FAKFoundationIcons.h */,
+				D004968535ECFB94A738EB291EDD2D88 /* FAKFoundationIcons.m */,
+				93FAA6AD0D62DBC3FF7930989327D1D2 /* Resources */,
+			);
+			name = FoundationIcons;
+			sourceTree = "<group>";
+		};
+		DD574FC726AFB6CFF2FFB63F328CAB9D /* Zocial */ = {
+			isa = PBXGroup;
+			children = (
+				EBEEF080EEE770242D282A426AA49A0D /* FAKZocial.h */,
+				782020E831E6E4DC207949E494D3D565 /* FAKZocial.m */,
+				1589228300985958601859BEF09F14D0 /* Resources */,
+			);
+			name = Zocial;
+			sourceTree = "<group>";
+		};
+		E38C76F619CDA3E841D2A2810AE243E3 /* Pods-daitaiKakeiboUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE7C307C4FE423BBB504C0BFC20BAE /* Info.plist */,
+				102E8ABFC29213D0A3BDF462FD39F0AD /* Pods-daitaiKakeiboUITests.modulemap */,
+				17F9475304168D351FA7FDAD22E12258 /* Pods-daitaiKakeiboUITests-acknowledgements.markdown */,
+				A3DE92AE267983E977AE1EAD096F4E25 /* Pods-daitaiKakeiboUITests-acknowledgements.plist */,
+				A1C2790B972481AAC50856B290FAD28D /* Pods-daitaiKakeiboUITests-dummy.m */,
+				79D4021E7FC6C16DDC418D95BAAD99F5 /* Pods-daitaiKakeiboUITests-frameworks.sh */,
+				D9EC07C71E9141680EC14581CBEFACC5 /* Pods-daitaiKakeiboUITests-resources.sh */,
+				938A4FE5A0C6231B575826840709A5A0 /* Pods-daitaiKakeiboUITests-umbrella.h */,
+				69B72D12EF96F44EE19487BA53FA69E0 /* Pods-daitaiKakeiboUITests.debug.xcconfig */,
+				061BCF2FF3C09D3A2E3FF78D39CFDFDB /* Pods-daitaiKakeiboUITests.release.xcconfig */,
+			);
+			name = "Pods-daitaiKakeiboUITests";
+			path = "Target Support Files/Pods-daitaiKakeiboUITests";
+			sourceTree = "<group>";
+		};
+		F7D0206EFDAB0D19161AF9E94B61BD41 /* Pods-daitaiKakeiboTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8E512F1A00CECD1655C1C9F92071747 /* Info.plist */,
+				FA1CBE9FDCB4B55F4360FE4274C45329 /* Pods-daitaiKakeiboTests.modulemap */,
+				45BC3C8B612FDDBA951DAE785F4FEEDC /* Pods-daitaiKakeiboTests-acknowledgements.markdown */,
+				C086756EFF47BA393A0208DAF3E2CAC4 /* Pods-daitaiKakeiboTests-acknowledgements.plist */,
+				C4371EB6E78608C153B372042FE06176 /* Pods-daitaiKakeiboTests-dummy.m */,
+				669C63DE78F2D428311A5090FC6CE17B /* Pods-daitaiKakeiboTests-frameworks.sh */,
+				2ED281F516C1FA46FD526CC130AC508F /* Pods-daitaiKakeiboTests-resources.sh */,
+				9C8F581A8B9FF12F4A6F61C6D0454FCD /* Pods-daitaiKakeiboTests-umbrella.h */,
+				362BF4F64BD2E7D70B6CD2E5E224598A /* Pods-daitaiKakeiboTests.debug.xcconfig */,
+				FD0F0EC488B36813E4A5E9534F61C25F /* Pods-daitaiKakeiboTests.release.xcconfig */,
+			);
+			name = "Pods-daitaiKakeiboTests";
+			path = "Target Support Files/Pods-daitaiKakeiboTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		002147B55B694A546B7A9A951042EE7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B88D9E4C211C1ABEE48E1D94CFDDA1 /* Pods-daitaiKakeiboTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BE305698ECAF41D4D3BA4FDE4612260 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A03CFEDB5A7FAE5352A508F1DCF0C842 /* Pods-daitaiKakeiboUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96C04F678E0E8511A10921B29F5E3DF7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F0FA885B04325837CBA8B2388C4B33 /* Pods-daitaiKakeibo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FD4C7BBA6628AECC611B6F02ADC782 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFDAB04F787BC7FB9EA75BDB0E773937 /* FAKFontAwesome.h in Headers */,
+				8FF68AEC20BF30072F4AD866513FE44E /* FAKFoundationIcons.h in Headers */,
+				F41CB5FFBB71B707F5CE8F5C23F3F895 /* FAKIcon.h in Headers */,
+				0308B2902DB5695DBD6AD4564FCBD4F2 /* FAKIonIcons.h in Headers */,
+				A37E4933BC6CB5D541B5AC4521631878 /* FAKZocial.h in Headers */,
+				650E9C1297EAE9A8E153D5F4FD3FFF51 /* FontAwesomeKit-umbrella.h in Headers */,
+				BC96108EBCE6F29BACA0662BC5B15254 /* FontAwesomeKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		485BE2C9920E19C47DD547908E2EF9C0 /* Pods-daitaiKakeiboUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EA9BF639F274041F77608AFDB2D18FF /* Build configuration list for PBXNativeTarget "Pods-daitaiKakeiboUITests" */;
+			buildPhases = (
+				A9FBC8FDEEDC58E634C34ED631512B07 /* Sources */,
+				58B4BB8DA4462E401D70F26D5DF02C31 /* Frameworks */,
+				7BE305698ECAF41D4D3BA4FDE4612260 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-daitaiKakeiboUITests";
+			productName = "Pods-daitaiKakeiboUITests";
+			productReference = 50047F65B8AFC0ECCC1B80431B318578 /* Pods_daitaiKakeiboUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8BE9D4B6FF6D92923152CB0534F2BB94 /* FontAwesomeKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A213487B2CA59049C1D63AF426CD3E /* Build configuration list for PBXNativeTarget "FontAwesomeKit" */;
+			buildPhases = (
+				7EEECA680190D957E28D25D28D8374BA /* Sources */,
+				3C9550AB6D56A7830662A6D8B0C8B3DC /* Frameworks */,
+				A0FD4C7BBA6628AECC611B6F02ADC782 /* Headers */,
+				2D96547AC8E532341B6E6EC8C83E9257 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontAwesomeKit;
+			productName = FontAwesomeKit;
+			productReference = BC04E98A2638A55DFDB67684296A47C3 /* FontAwesomeKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AE8385C243681393650ACC78C181830B /* Pods-daitaiKakeiboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60FF4294C45A62970306B521721AC017 /* Build configuration list for PBXNativeTarget "Pods-daitaiKakeiboTests" */;
+			buildPhases = (
+				05A4B243474BE900BD667AFFB9ADCAE1 /* Sources */,
+				25E165FBC8EED956DD81AFCFE1192D58 /* Frameworks */,
+				002147B55B694A546B7A9A951042EE7C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-daitaiKakeiboTests";
+			productName = "Pods-daitaiKakeiboTests";
+			productReference = 7B4A8058F268B72749E4EF6CD2080F21 /* Pods_daitaiKakeiboTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B29158296503A4E423366822BC5441AF /* Pods-daitaiKakeibo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FE3D85E8694B83246221091B4208B1F /* Build configuration list for PBXNativeTarget "Pods-daitaiKakeibo" */;
+			buildPhases = (
+				2B9DD2E89EB0DEC4EF63181A76314CA9 /* Sources */,
+				FC89B2C1219A237E4F43A63573EB7D12 /* Frameworks */,
+				96C04F678E0E8511A10921B29F5E3DF7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A5B12D9BB12C56BB837477D17376D11 /* PBXTargetDependency */,
+			);
+			name = "Pods-daitaiKakeibo";
+			productName = "Pods-daitaiKakeibo";
+			productReference = 7C8F8033C6786A33A0D83B188A96CC96 /* Pods_daitaiKakeibo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C898276B72AE04E68A40348FB739A3CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BE9D4B6FF6D92923152CB0534F2BB94 /* FontAwesomeKit */,
+				B29158296503A4E423366822BC5441AF /* Pods-daitaiKakeibo */,
+				AE8385C243681393650ACC78C181830B /* Pods-daitaiKakeiboTests */,
+				485BE2C9920E19C47DD547908E2EF9C0 /* Pods-daitaiKakeiboUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D96547AC8E532341B6E6EC8C83E9257 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59A78C9247621B660AE7AAD46E82446 /* FontAwesome.otf in Resources */,
+				60FD66A0C4A398F6DF3E89C15E01EB64 /* foundation-icons.ttf in Resources */,
+				7684852F540BB5B520A48E7FDDD20D8B /* ionicons.ttf in Resources */,
+				337166F44CD41FBD5074A886981DE532 /* zocial-regular-webfont.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05A4B243474BE900BD667AFFB9ADCAE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13D7ECB843CFC8919FA00457603382E5 /* Pods-daitaiKakeiboTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B9DD2E89EB0DEC4EF63181A76314CA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF7E1965C8DC4082C4FE09AA765613C /* Pods-daitaiKakeibo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EEECA680190D957E28D25D28D8374BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D140AE94F6E42075FEC37162DD5F36D9 /* FAKFontAwesome.m in Sources */,
+				0039EEF8B31575F0A84A492BA8089E7D /* FAKFoundationIcons.m in Sources */,
+				3959AEE0134F0E863AC4DB059BAF0C9F /* FAKIcon.m in Sources */,
+				29DB8AAB20B9088A34901CEC43319146 /* FAKIonIcons.m in Sources */,
+				DBD220F2A48C1644E5E1ACF39E20350B /* FAKZocial.m in Sources */,
+				D8B25CA4E48EEE4831E896F4077A6D3A /* FontAwesomeKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9FBC8FDEEDC58E634C34ED631512B07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E6286D602F986CED7FF745B76549AC1 /* Pods-daitaiKakeiboUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A5B12D9BB12C56BB837477D17376D11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FontAwesomeKit;
+			target = 8BE9D4B6FF6D92923152CB0534F2BB94 /* FontAwesomeKit */;
+			targetProxy = DC7718A9F2449051E2FB0751427AFC4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A67A7C687DC2D250D54099E58C60360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69B72D12EF96F44EE19487BA53FA69E0 /* Pods-daitaiKakeiboUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-daitaiKakeiboUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-daitaiKakeiboUITests/Pods-daitaiKakeiboUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_daitaiKakeiboUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2118D811DF819A73E69847C5F083DF07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061BCF2FF3C09D3A2E3FF78D39CFDFDB /* Pods-daitaiKakeiboUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-daitaiKakeiboUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-daitaiKakeiboUITests/Pods-daitaiKakeiboUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_daitaiKakeiboUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		32FC8BD4ED3E839A44EBF0F02DF16E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD0F0EC488B36813E4A5E9534F61C25F /* Pods-daitaiKakeiboTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-daitaiKakeiboTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_daitaiKakeiboTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		44CDA6B72090BD482CDE4924A2B08606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C544A0AB0DA234DDAA5BA7A796D71BF /* Pods-daitaiKakeibo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-daitaiKakeibo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-daitaiKakeibo/Pods-daitaiKakeibo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_daitaiKakeibo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		84FD87D359382A37B07149A12641B965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9E93A1442E61E185D35393DE25F3CB98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AA3B7E84CB319898DFB7945E2ED38EB /* Pods-daitaiKakeibo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-daitaiKakeibo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-daitaiKakeibo/Pods-daitaiKakeibo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_daitaiKakeibo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE0F038E6B9454A4602C3E733CBB7A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE64D67730295883E992D58D6216C96D /* FontAwesomeKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FontAwesomeKit/FontAwesomeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontAwesomeKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontAwesomeKit/FontAwesomeKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FontAwesomeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C56FAECD045D64C5F87128B0AE9E3C03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 362BF4F64BD2E7D70B6CD2E5E224598A /* Pods-daitaiKakeiboTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-daitaiKakeiboTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_daitaiKakeiboTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE09AAE6E88468029C3E7551EBB4D974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE64D67730295883E992D58D6216C96D /* FontAwesomeKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FontAwesomeKit/FontAwesomeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontAwesomeKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontAwesomeKit/FontAwesomeKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FontAwesomeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F594C655D48020EC34B00AA63E001773 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02A213487B2CA59049C1D63AF426CD3E /* Build configuration list for PBXNativeTarget "FontAwesomeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE09AAE6E88468029C3E7551EBB4D974 /* Debug */,
+				AE0F038E6B9454A4602C3E733CBB7A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FE3D85E8694B83246221091B4208B1F /* Build configuration list for PBXNativeTarget "Pods-daitaiKakeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E93A1442E61E185D35393DE25F3CB98 /* Debug */,
+				44CDA6B72090BD482CDE4924A2B08606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84FD87D359382A37B07149A12641B965 /* Debug */,
+				F594C655D48020EC34B00AA63E001773 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EA9BF639F274041F77608AFDB2D18FF /* Build configuration list for PBXNativeTarget "Pods-daitaiKakeiboUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A67A7C687DC2D250D54099E58C60360 /* Debug */,
+				2118D811DF819A73E69847C5F083DF07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60FF4294C45A62970306B521721AC017 /* Build configuration list for PBXNativeTarget "Pods-daitaiKakeiboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C56FAECD045D64C5F87128B0AE9E3C03 /* Debug */,
+				32FC8BD4ED3E839A44EBF0F02DF16E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

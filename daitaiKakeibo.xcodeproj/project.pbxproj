@@ -37,6 +37,9 @@
 		3CF8E6381CFEFBEF006E65AA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6371CFEFBEF006E65AA /* StoreKit.framework */; };
 		3CF8E63A1CFEFBFC006E65AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6391CFEFBFC006E65AA /* SystemConfiguration.framework */; };
 		3CF8E63C1CFEFC12006E65AA /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E63B1CFEFC12006E65AA /* GoogleMobileAds.framework */; };
+		A4F37307AFD2DD4F4B6213EE /* Pods_daitaiKakeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FB3FB50B22CDA500AA0765 /* Pods_daitaiKakeiboUITests.framework */; };
+		C6325063B1BDB19AFCC67277 /* Pods_daitaiKakeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2368BEF4A4AB6B4158809F /* Pods_daitaiKakeiboTests.framework */; };
+		FC07904005A3CCB278E73D8A /* Pods_daitaiKakeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC994BB62093E56577A27EA /* Pods_daitaiKakeibo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BA9EEBED5283A51A9A7734A /* Pods-daitaiKakeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeibo/Pods-daitaiKakeibo.debug.xcconfig"; sourceTree = "<group>"; };
+		2C1902258D5684E6C6FA051C /* Pods-daitaiKakeiboTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeiboTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C01675B1D069CD700A13D3C /* feeList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = feeList.xib; sourceTree = "<group>"; };
 		3C01675D1D069E3C00A13D3C /* FeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeeTableViewCell.swift; sourceTree = "<group>"; };
 		3C6A8CDE1CE59844001527FA /* daitaiKakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = daitaiKakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +98,13 @@
 		3CF8E6371CFEFBEF006E65AA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3CF8E6391CFEFBFC006E65AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3CF8E63B1CFEFC12006E65AA /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		3D1995100CBF3EAC6D0EFA42 /* Pods-daitaiKakeiboTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeiboTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests.release.xcconfig"; sourceTree = "<group>"; };
+		5ED5FE08DB2A7CAEE9D974E0 /* Pods-daitaiKakeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeiboUITests/Pods-daitaiKakeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9A2368BEF4A4AB6B4158809F /* Pods_daitaiKakeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8FB3FB50B22CDA500AA0765 /* Pods_daitaiKakeiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BEB3B7AF26F0A148536715 /* Pods-daitaiKakeiboUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeiboUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeiboUITests/Pods-daitaiKakeiboUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EEC994BB62093E56577A27EA /* Pods_daitaiKakeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1E4FCC54889391B160EA7CF /* Pods-daitaiKakeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeibo/Pods-daitaiKakeibo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 				3CF8E62A1CFEFB91006E65AA /* AudioToolbox.framework in Frameworks */,
 				3CF8E6281CFEFB7A006E65AA /* AdSupport.framework in Frameworks */,
 				3C828FF01CF1892800E9C0DC /* QuartzCore.framework in Frameworks */,
+				FC07904005A3CCB278E73D8A /* Pods_daitaiKakeibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6325063B1BDB19AFCC67277 /* Pods_daitaiKakeiboTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4F37307AFD2DD4F4B6213EE /* Pods_daitaiKakeiboUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +165,8 @@
 				3CF8E6291CFEFB91006E65AA /* AudioToolbox.framework */,
 				3CF8E6271CFEFB7A006E65AA /* AdSupport.framework */,
 				3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */,
+				8147DDC8FDF1AF441478E920 /* Pods */,
+				CC8CAB6EA9CDB38F35D17513 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +223,29 @@
 			path = daitaiKakeiboUITests;
 			sourceTree = "<group>";
 		};
+		8147DDC8FDF1AF441478E920 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BA9EEBED5283A51A9A7734A /* Pods-daitaiKakeibo.debug.xcconfig */,
+				F1E4FCC54889391B160EA7CF /* Pods-daitaiKakeibo.release.xcconfig */,
+				2C1902258D5684E6C6FA051C /* Pods-daitaiKakeiboTests.debug.xcconfig */,
+				3D1995100CBF3EAC6D0EFA42 /* Pods-daitaiKakeiboTests.release.xcconfig */,
+				D2BEB3B7AF26F0A148536715 /* Pods-daitaiKakeiboUITests.debug.xcconfig */,
+				5ED5FE08DB2A7CAEE9D974E0 /* Pods-daitaiKakeiboUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC8CAB6EA9CDB38F35D17513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEC994BB62093E56577A27EA /* Pods_daitaiKakeibo.framework */,
+				9A2368BEF4A4AB6B4158809F /* Pods_daitaiKakeiboTests.framework */,
+				B8FB3FB50B22CDA500AA0765 /* Pods_daitaiKakeiboUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C6A8D061CE59844001527FA /* Build configuration list for PBXNativeTarget "daitaiKakeibo" */;
 			buildPhases = (
+				1B3F16E15BFA25BB56A3B047 /* 📦 Check Pods Manifest.lock */,
 				3C6A8CDA1CE59844001527FA /* Sources */,
 				3C6A8CDB1CE59844001527FA /* Frameworks */,
 				3C6A8CDC1CE59844001527FA /* Resources */,
+				45A5B0BD1151265411DE4F09 /* 📦 Embed Pods Frameworks */,
+				3953AD01EC531F45948F3B77 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C6A8D091CE59844001527FA /* Build configuration list for PBXNativeTarget "daitaiKakeiboTests" */;
 			buildPhases = (
+				7033545DAF1FEB77D4F18C7A /* 📦 Check Pods Manifest.lock */,
 				3C6A8CEE1CE59844001527FA /* Sources */,
 				3C6A8CEF1CE59844001527FA /* Frameworks */,
 				3C6A8CF01CE59844001527FA /* Resources */,
+				C8E607D7BC7F45606033B6A6 /* 📦 Embed Pods Frameworks */,
+				809EBAABF8AFBD2FCE2F750A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C6A8D0C1CE59844001527FA /* Build configuration list for PBXNativeTarget "daitaiKakeiboUITests" */;
 			buildPhases = (
+				01513088F391C23B8728AA2C /* 📦 Check Pods Manifest.lock */,
 				3C6A8CF91CE59844001527FA /* Sources */,
 				3C6A8CFA1CE59844001527FA /* Frameworks */,
 				3C6A8CFB1CE59844001527FA /* Resources */,
+				B9091324077BBDC6B8F24303 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,6 +383,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01513088F391C23B8728AA2C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1B3F16E15BFA25BB56A3B047 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3953AD01EC531F45948F3B77 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daitaiKakeibo/Pods-daitaiKakeibo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45A5B0BD1151265411DE4F09 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daitaiKakeibo/Pods-daitaiKakeibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7033545DAF1FEB77D4F18C7A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		809EBAABF8AFBD2FCE2F750A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9091324077BBDC6B8F24303 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daitaiKakeiboUITests/Pods-daitaiKakeiboUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E607D7BC7F45606033B6A6 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C6A8CDA1CE59844001527FA /* Sources */ = {
@@ -490,6 +661,7 @@
 		};
 		3C6A8D071CE59844001527FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BA9EEBED5283A51A9A7734A /* Pods-daitaiKakeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -505,6 +677,7 @@
 		};
 		3C6A8D081CE59844001527FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1E4FCC54889391B160EA7CF /* Pods-daitaiKakeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -520,6 +693,7 @@
 		};
 		3C6A8D0A1CE59844001527FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C1902258D5684E6C6FA051C /* Pods-daitaiKakeiboTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = daitaiKakeiboTests/Info.plist;
@@ -532,6 +706,7 @@
 		};
 		3C6A8D0B1CE59844001527FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D1995100CBF3EAC6D0EFA42 /* Pods-daitaiKakeiboTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = daitaiKakeiboTests/Info.plist;
@@ -544,6 +719,7 @@
 		};
 		3C6A8D0D1CE59844001527FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2BEB3B7AF26F0A148536715 /* Pods-daitaiKakeiboUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = daitaiKakeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -556,6 +732,7 @@
 		};
 		3C6A8D0E1CE59844001527FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ED5FE08DB2A7CAEE9D974E0 /* Pods-daitaiKakeiboUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = daitaiKakeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

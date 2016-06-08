@@ -1,0 +1,6 @@
+framework module Pods_daitaiKakeiboUITests {
+  umbrella header "Pods-daitaiKakeiboUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

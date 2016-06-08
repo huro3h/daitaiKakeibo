@@ -219,6 +219,8 @@ class eraseController: UIViewController {
 		print("キャンセル")
 	}
 	
+	
+	
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

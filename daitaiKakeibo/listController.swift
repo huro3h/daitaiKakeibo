@@ -31,10 +31,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	@IBOutlet weak var hokaFeeLabel: UILabel!
 	@IBOutlet weak var totalFeeLabel: UILabel!
 	
-	@IBOutlet weak var listFlexView: UIView!
-
-
-	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		// CoreDataから読み込み
@@ -51,6 +47,13 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		hokaFeeLabel.text = String(hokaFeeCount)
 		totalFeeLabel.text = String(totalFeeCount)
 	}
+	
+	override func setEditing(editing: Bool, animated: Bool) {
+		super.setEditing(editing, animated: animated)
+		
+		listTableView.setEditing(editing, animated: animated)
+	}
+	
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return myTimes.count // 行数をデータの数でカウント
@@ -83,12 +86,20 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 //		return cell
 	}
 	
-//	@objc func tableView(tableView: UITableView, heightForRowAtIndexPath IndexPath: NSIndexPath) -> CGFloat{
-//		return 25 // 行の幅
-//	}
 	// 3.選択された時に行う処理(Delegate処理)
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		print("\(indexPath.row)行目を選択")
+	}
+	
+	func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		return true
+	}
+	
+	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == UITableViewCellEditingStyle.Delete {
+			myTimes.removeAtIndex(indexPath.row)
+			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+		}
 	}
 	
 
@@ -144,6 +155,8 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		let dateString: String = dateFormatter.stringFromDate(date)
 		return dateString
 	}
+	
+
 	
 	
 //    override func didReceiveMemoryWarning() {

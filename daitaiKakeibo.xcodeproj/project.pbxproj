@@ -84,7 +84,9 @@
 		3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eraseController.swift; sourceTree = "<group>"; };
 		3C828FED1CF0589300E9C0DC /* listController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listController.swift; sourceTree = "<group>"; };
 		3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3C9189B91D07FE9200D96C63 /* daitaiKakeibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C9189CA1D08054700D96C63 /* daitaiKakeiboTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeiboTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C9189CB1D08054700D96C63 /* daitaiKakeiboUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeiboUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		3C9189CC1D08058D00D96C63 /* daitaiKakeibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeibo-Bridging-Header.h"; sourceTree = "<group>"; };
 		3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = daitaiKakeibo.xcdatamodel; sourceTree = "<group>"; };
 		3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3CE4629C1CF43D5E00480502 /* AccountBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBook.swift; sourceTree = "<group>"; };
@@ -201,8 +203,10 @@
 				3C6A8CE81CE59844001527FA /* Assets.xcassets */,
 				3C6A8CED1CE59844001527FA /* Info.plist */,
 				3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */,
+				3C9189CC1D08058D00D96C63 /* daitaiKakeibo-Bridging-Header.h */,
+				3C9189CA1D08054700D96C63 /* daitaiKakeiboTests-Bridging-Header.h */,
+				3C9189CB1D08054700D96C63 /* daitaiKakeiboUITests-Bridging-Header.h */,
 				3CF8E63B1CFEFC12006E65AA /* GoogleMobileAds.framework */,
-				3C9189B91D07FE9200D96C63 /* daitaiKakeibo-Bridging-Header.h */,
 			);
 			path = daitaiKakeibo;
 			sourceTree = "<group>";
@@ -703,10 +707,13 @@
 			baseConfigurationReference = 2C1902258D5684E6C6FA051C /* Pods-daitaiKakeiboTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = daitaiKakeiboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satoshiii.daitaiKakeiboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daitaiKakeibo.app/daitaiKakeibo";
 			};
 			name = Debug;
@@ -716,10 +723,12 @@
 			baseConfigurationReference = 3D1995100CBF3EAC6D0EFA42 /* Pods-daitaiKakeiboTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = daitaiKakeiboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satoshiii.daitaiKakeiboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daitaiKakeibo.app/daitaiKakeibo";
 			};
 			name = Release;
@@ -728,10 +737,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2BEB3B7AF26F0A148536715 /* Pods-daitaiKakeiboUITests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = daitaiKakeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satoshiii.daitaiKakeiboUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = daitaiKakeibo;
 				USES_XCTRUNNER = YES;
 			};
@@ -741,10 +753,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5ED5FE08DB2A7CAEE9D974E0 /* Pods-daitaiKakeiboUITests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = daitaiKakeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satoshiii.daitaiKakeiboUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboUITests-Bridging-Header.h";
 				TEST_TARGET_NAME = daitaiKakeibo;
 				USES_XCTRUNNER = YES;
 			};

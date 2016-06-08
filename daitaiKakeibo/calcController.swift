@@ -7,6 +7,7 @@ import UIKit
 import QuartzCore
 import CoreData
 
+
 class BorderButton: UIButton {
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)!;
@@ -49,6 +50,8 @@ class calcController: UIViewController {
 	@IBOutlet weak var zappiTextView: UITextView!
 	@IBOutlet weak var hokaTextView: UITextView!
 	
+	@IBOutlet weak var foodFont: UIImageView!
+	
 	var startPoint: CGPoint?
 	var imageBeHereNowPoint: CGPoint?
 	var isImageInside: Bool?
@@ -73,6 +76,13 @@ class calcController: UIViewController {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
+		
+		let trash = FAKFontAwesome.trashIconWithSize(30)
+		// 下記でアイコンの色も変えられます
+		// trash.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+		let trashImage = trash.imageWithSize(CGSizeMake(30, 30))
+		
+		foodFont.image = trashImage
 		
 	}
 	

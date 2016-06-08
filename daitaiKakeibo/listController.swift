@@ -17,7 +17,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	var myHokas: [NSNumber] = []
 	var myTotals: [NSNumber] = []
 	
-
 	// リスト最下部に表示させる変数
 	var foodFeeCount: Int = 0
 	var lifeFeeCount: Int = 0
@@ -30,6 +29,10 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	@IBOutlet weak var zappiFeeLabel: UILabel!
 	@IBOutlet weak var hokaFeeLabel: UILabel!
 	@IBOutlet weak var totalFeeLabel: UILabel!
+	
+	@IBOutlet weak var listFlexView: UIView!
+
+
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,15 +61,10 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		let cell = tableView.dequeueReusableCellWithIdentifier("feeList")! as! FeeTableViewCell
 		
 		cell.dayLabel.text = "\(myTimes[indexPath.row])"
-
 		cell.foodFareLabel.text = "\(myFoods[indexPath.row])"
-
 		cell.lifeFareLabel.text = "\(myLifes[indexPath.row])"
-
 		cell.zappiFareLabel.text  = "\(myZappies[indexPath.row])"
-
 		cell.hokaFareLabel.text  = "\(myHokas[indexPath.row])"
-
 		cell.totalFareLabel.text  = "\(myTotals[indexPath.row])"
 		return cell
 //		let label1 = cell.viewWithTag(1) as! UILabel

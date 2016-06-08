@@ -3,3 +3,6 @@
 //
 
 #import <FontAwesomeKit/FontAwesomeKit.h>
+#import <FontAwesomeKit/FAKFoundationIcons.h>
+#import <FontAwesomeKit/FAKZocial.h>
+#import <FontAwesomeKit/FAKIonIcons.h>

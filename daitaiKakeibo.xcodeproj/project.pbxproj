@@ -23,6 +23,7 @@
 		3C828FEC1CF02BAF00E9C0DC /* eraseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FEB1CF02BAF00E9C0DC /* eraseController.swift */; };
 		3C828FEE1CF0589300E9C0DC /* listController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C828FED1CF0589300E9C0DC /* listController.swift */; };
 		3C828FF01CF1892800E9C0DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C828FEF1CF1892800E9C0DC /* QuartzCore.framework */; };
+		3CAA92191D08264300773514 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CAA92181D08264300773514 /* FontAwesome.otf */; };
 		3CE4629A1CF435EF00480502 /* daitaiKakeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */; };
 		3CE4629D1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */; };
 		3CE4629E1CF43D5E00480502 /* AccountBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE4629C1CF43D5E00480502 /* AccountBook.swift */; };
@@ -87,6 +88,7 @@
 		3C9189CA1D08054700D96C63 /* daitaiKakeiboTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeiboTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3C9189CB1D08054700D96C63 /* daitaiKakeiboUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeiboUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3C9189CC1D08058D00D96C63 /* daitaiKakeibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "daitaiKakeibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3CAA92181D08264300773514 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
 		3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = daitaiKakeibo.xcdatamodel; sourceTree = "<group>"; };
 		3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3CE4629C1CF43D5E00480502 /* AccountBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBook.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		3C6A8CD51CE59844001527FA = {
 			isa = PBXGroup;
 			children = (
+				3CAA92181D08264300773514 /* FontAwesome.otf */,
 				3C6A8CE01CE59844001527FA /* daitaiKakeibo */,
 				3C6A8CDF1CE59844001527FA /* Products */,
 				3C6A8D001CE59844001527FA /* daitaiKakeiboUITests */,
@@ -367,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CAA92191D08264300773514 /* FontAwesome.otf in Resources */,
 				3C01675C1D069CD700A13D3C /* feeList.xib in Resources */,
 				3C6A8CEC1CE59844001527FA /* LaunchScreen.storyboard in Resources */,
 				3C6A8CE91CE59844001527FA /* Assets.xcassets in Resources */,

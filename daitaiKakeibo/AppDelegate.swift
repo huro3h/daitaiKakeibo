@@ -6,6 +6,7 @@
 import UIKit
 import QuartzCore
 import CoreData
+import FontAwesomeKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

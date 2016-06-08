@@ -5,6 +5,7 @@
 
 import UIKit
 import CoreData
+import FontAwesomeKit
 
 class buttonShape: UIButton {
 	required init(coder aDecoder: NSCoder) {
@@ -48,7 +49,8 @@ class sendMailController: UIViewController {
 		
 		df.dateFormat = "yyyy/MM/dd"
 		
-		catchStartDate = df.stringFromDate(NSDate())
+		catchStartDate = df.stringFromDate(NSDate(timeInterval:-31*24*60*60, sinceDate:NSDate()))
+		catchEndDate = df.stringFromDate(NSDate())
 		
 		// 初期表示の日付を設定
 		startDatePicker.date = df.dateFromString(catchStartDate)!

@@ -5,6 +5,7 @@
 
 import UIKit
 import CoreData
+import FontAwesomeKit
 
 class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
@@ -139,7 +140,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
 		// dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-		dateFormatter.dateFormat = "M/dd"
+		dateFormatter.dateFormat = "M/d"
 		let dateString: String = dateFormatter.stringFromDate(date)
 		return dateString
 	}

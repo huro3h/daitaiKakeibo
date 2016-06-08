@@ -5,6 +5,7 @@
 
 import UIKit
 import GoogleMobileAds
+import FontAwesomeKit
 
 class howToUseController: UIViewController, GADBannerViewDelegate {
 	

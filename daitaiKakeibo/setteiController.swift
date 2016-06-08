@@ -5,6 +5,7 @@
 
 import UIKit
 import GoogleMobileAds
+import FontAwesomeKit
 
 class setteiController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate{
 

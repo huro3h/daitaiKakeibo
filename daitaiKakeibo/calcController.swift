@@ -6,6 +6,7 @@
 import UIKit
 import QuartzCore
 import CoreData
+import FontAwesomeKit
 
 
 class BorderButton: UIButton {
@@ -77,24 +78,19 @@ class calcController: UIViewController {
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
 		
-		let trash = FAKFontAwesome.trashIconWithSize(30)
+		let trash = FAKFontAwesome.trashIconWithSize(25)
 		// 下記でアイコンの色も変えられます
-		// trash.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-		let trashImage = trash.imageWithSize(CGSizeMake(30, 30))
-		
+		trash.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+		let trashImage = trash.imageWithSize(CGSizeMake(25, 25))
 		foodFont.image = trashImage
 		
+
 	}
 	
 	override func viewWillAppear(animated: Bool) {
 		
-		foodTextView.text = "食費:\(foodArray)"
-		lifeTextView.text = "生活費:\(lifeArray)"
-		zappiTextView.text = "雑費:\(zappiArray)"
-		hokaTextView.text = "他:\(hokaArray)"
-		
-		foodTextView.textColor = UIColor.whiteColor()
-		zappiLabel.textColor = UIColor.whiteColor()
+		fourDisplayItems()
+		textcolors()
 		
 		let myDefault = NSUserDefaults.standardUserDefaults()
 			if (myDefault.arrayForKey("fourTotal") != nil){
@@ -229,7 +225,7 @@ class calcController: UIViewController {
 					}
 					let foodString : String = String(foodTotal)
 					foodLabel.text? = foodString
-					foodTextView.text = "食費:\(foodArray)"
+					foodTextView.text = "\(foodArray)"
 					doing0()
 					
 				case (widthRight...myBoundSize.width, 64.0...heightMiddleUp):
@@ -242,7 +238,7 @@ class calcController: UIViewController {
 					}
 					let lifeString : String = String(lifeTotal)
 					lifeLabel.text! = lifeString
-					lifeTextView.text = "生活費:\(lifeArray)"
+					lifeTextView.text = "\(lifeArray)"
 					doing0()
 					
 				case (0.0...widthLeft, heightMiddleDown...heightEnd):
@@ -255,7 +251,7 @@ class calcController: UIViewController {
 					}
 					let zappiString : String = String(zappiTotal)
 					zappiLabel.text! = zappiString
-					zappiTextView.text = "雑費:\(zappiArray)"
+					zappiTextView.text = "\(zappiArray)"
 					doing0()
 					
 				case (widthRight...myBoundSize.width, heightMiddleDown...heightEnd):
@@ -268,7 +264,7 @@ class calcController: UIViewController {
 					}
 					let hokaString : String = String(hokaTotal)
 					hokaLabel.text! = hokaString
-					hokaTextView.text = "他:\(hokaArray)"
+					hokaTextView.text = "\(hokaArray)"
 					doing0()
 					
 				default:
@@ -290,7 +286,7 @@ class calcController: UIViewController {
 		}
 		let foodString : String = String(foodTotal)
 		foodLabel.text? = foodString
-		foodTextView.text = "食費:\(foodArray)"
+		foodTextView.text = "\(foodArray)"
 		doing0()
 	}
 	
@@ -304,7 +300,7 @@ class calcController: UIViewController {
 		}
 		let lifeString : String = String(lifeTotal)
 		lifeLabel.text! = lifeString
-		lifeTextView.text = "生活費:\(lifeArray)"
+		lifeTextView.text = "\(lifeArray)"
 		doing0()
 	}
 	
@@ -318,7 +314,7 @@ class calcController: UIViewController {
 		}
 		let zappiString : String = String(zappiTotal)
 		zappiLabel.text! = zappiString
-		zappiTextView.text = "雑費:\(zappiArray)"
+		zappiTextView.text = "\(zappiArray)"
 		doing0()
 	}
 	
@@ -332,7 +328,7 @@ class calcController: UIViewController {
 		}
 		let hokaString : String = String(hokaTotal)
 		hokaLabel.text! = hokaString
-		hokaTextView.text = "他:\(hokaArray)"
+		hokaTextView.text = "\(hokaArray)"
 		doing0()
 	}
 	
@@ -342,7 +338,7 @@ class calcController: UIViewController {
 		foodLabel.text! = "0"
 		foodTotal = 0
 		print("foodをリセット!\(foodArray)")
-		foodTextView.text = "食費:\(foodArray)"
+		foodTextView.text = "\(foodArray)"
 		userDefaultMemory()
 	}
 	
@@ -351,7 +347,7 @@ class calcController: UIViewController {
 		lifeLabel.text! = "0"
 		lifeTotal = 0
 		print("lifeをリセット!\(lifeArray)")
-		lifeTextView.text = "生活費:\(lifeArray)"
+		lifeTextView.text = "\(lifeArray)"
 		userDefaultMemory()
 	}
 	
@@ -360,7 +356,7 @@ class calcController: UIViewController {
 		zappiLabel.text! = "0"
 		zappiTotal = 0
 		print("zappiをリセット!\(zappiArray)")
-		zappiTextView.text = "雑費:\(zappiArray)"
+		zappiTextView.text = "\(zappiArray)"
 		userDefaultMemory()
 	}
 	
@@ -369,7 +365,7 @@ class calcController: UIViewController {
 		hokaLabel.text! = "0"
 		hokaTotal = 0
 		print("hokaをリセット!\(hokaArray)")
-		hokaTextView.text = "他:\(hokaArray)"
+		hokaTextView.text = "\(hokaArray)"
 		userDefaultMemory()
 	}
 	
@@ -380,7 +376,7 @@ class calcController: UIViewController {
 			foodLabel.text! = String(foodArray.reduce(0, combine: { $0 + $1 }))
 			foodTotal = foodArray.reduce(0, combine: { $0 + $1 })
 			print ("foodUndo:\(foodArray)")
-			foodTextView.text = "食費:\(foodArray)"
+			foodTextView.text = "\(foodArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -393,7 +389,7 @@ class calcController: UIViewController {
 			lifeLabel.text! = String(lifeArray.reduce(0, combine: { $0 + $1 }))
 			lifeTotal = lifeArray.reduce(0, combine: { $0 + $1 })
 			print ("lifeUndo:\(lifeArray)")
-			lifeTextView.text = "生活費:\(lifeArray)"
+			lifeTextView.text = "\(lifeArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -406,7 +402,7 @@ class calcController: UIViewController {
 			zappiLabel.text! = String(zappiArray.reduce(0, combine: { $0 + $1 }))
 			zappiTotal = zappiArray.reduce(0, combine: { $0 + $1 })
 			print ("zappiUndo:\(zappiArray)")
-			zappiTextView.text = "雑費:\(zappiArray)"
+			zappiTextView.text = "\(zappiArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -419,7 +415,7 @@ class calcController: UIViewController {
 			hokaLabel.text! = String(hokaArray.reduce(0, combine: { $0 + $1 }))
 			hokaTotal = hokaArray.reduce(0, combine: { $0 + $1 })
 			print ("hokaUndo:\(hokaArray)")
-			hokaTextView.text = "他:\(hokaArray)"
+			hokaTextView.text = "\(hokaArray)"
 			userDefaultMemory()
 		} else {
 			// 配列が空だったら何もしない
@@ -536,10 +532,7 @@ class calcController: UIViewController {
 				hokaTotal = 0
 				allTotal = 0
 				
-				foodTextView.text = "食費:\(foodArray)"
-				lifeTextView.text = "生活費:\(lifeArray)"
-				zappiTextView.text = "雑費:\(zappiArray)"
-				hokaTextView.text = "他:\(hokaArray)"
+				fourDisplayItems()
 				
 				let myDefault = NSUserDefaults.standardUserDefaults()
 				myDefault.removeObjectForKey("fourTotal")
@@ -596,11 +589,8 @@ class calcController: UIViewController {
 					display.text = "0"
 					displayLabel.text! = display.text!
 					
-					foodTextView.text = "食費:\(foodArray)"
-					lifeTextView.text = "生活:\(lifeArray)"
-					zappiTextView.text = "雑費:\(zappiArray)"
-					hokaTextView.text = "他:\(hokaArray)"
-					foodTextView.textColor = UIColor.whiteColor()
+					fourDisplayItems()
+					textcolors()
 				}
 				
 			}
@@ -633,7 +623,7 @@ class calcController: UIViewController {
 			// 即反映させる(きちんと保存して使用時すぐ出せるように)
 			allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
 			myDefault.synchronize()
-			foodTextView.textColor = UIColor.whiteColor()
+			textcolors()
 		}
 	
 		// userDefault保存後、計算機の値を0に戻す動き
@@ -642,6 +632,42 @@ class calcController: UIViewController {
 			display.text! = "0"
 			displayLabel.text! = display.text!
 		}
+	
+		func textcolors(){
+			foodTextView.textColor = UIColor.whiteColor()
+			lifeTextView.textColor = hexStr("7F7F7F", alpha: 1)
+			zappiTextView.textColor = UIColor.whiteColor()
+			hokaTextView.textColor = hexStr("7F7F7F", alpha: 1)
+			foodLabel.textColor = UIColor.whiteColor()
+			lifeLabel.textColor = hexStr("7F7F7F", alpha: 1)
+			zappiLabel.textColor = UIColor.whiteColor()
+			hokaLabel.textColor = hexStr("7F7F7F", alpha: 1)
+		}
+	
+		func fourDisplayItems(){
+			foodTextView.text = "\(foodArray)"
+			lifeTextView.text = "\(lifeArray)"
+			zappiTextView.text = "\(zappiArray)"
+			hokaTextView.text = "\(hokaArray)"
+		}
+	
+		func hexStr (var hexStr : NSString, alpha : CGFloat) -> UIColor {
+			hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
+			let scanner = NSScanner(string: hexStr as String)
+			var color: UInt32 = 0
+			if scanner.scanHexInt(&color) {
+				let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+				let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+				let b = CGFloat(color & 0x0000FF) / 255.0
+				return UIColor(red:r,green:g,blue:b,alpha:alpha)
+			} else {
+				print("invalid hex string")
+				return UIColor.whiteColor();
+			}
+		}
+	
+	
+
 	
 	
 	override func didReceiveMemoryWarning() {

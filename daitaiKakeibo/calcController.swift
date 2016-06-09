@@ -52,6 +52,8 @@ class calcController: UIViewController {
 	@IBOutlet weak var hokaTextView: UITextView!
 	
 	@IBOutlet weak var foodFont: UIImageView!
+	@IBOutlet weak var lifeFont: UIImageView!
+	@IBOutlet weak var zappiFont: UIImageView!
 	@IBOutlet weak var hokaFont: UIImageView!
 	
 	var startPoint: CGPoint?
@@ -73,27 +75,11 @@ class calcController: UIViewController {
 	// 起動画面サイズの取得
 	let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
-		
-		let cutlery = FAKFontAwesome.cutleryIconWithSize(25)
-		// 下記でアイコンの色も変えられます
-		cutlery.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-		let cutleryImage = cutlery.imageWithSize(CGSizeMake(25, 25))
-		foodFont.image = cutleryImage
-		foodFont.layer.opacity = 0.2
-		
-		let smileO = FAKFontAwesome.smileOIconWithSize(25)
-		// 下記でアイコンの色も変えられます
-		smileO.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor())
-		let smileOImage = smileO.imageWithSize(CGSizeMake(25, 25))
-		hokaFont.image = smileOImage
-		hokaFont.layer.opacity = 0.2
-		
-
+		aboutFontIcon()
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -613,67 +599,106 @@ class calcController: UIViewController {
 			
 		}
 		
-		// MARK:自作関数置き場
-	
-		// ディスプレイ表示を取得しIntに変換して返す
-		func getDisplayInt() -> Int {
-			if let displayText = display.text {
-				return Int(displayText) ?? 0
-			} else {
-				return 0
-			}
+	// MARK:自作関数置き場
+
+	// ディスプレイ表示を取得しIntに変換して返す
+	func getDisplayInt() -> Int {
+		if let displayText = display.text {
+			return Int(displayText) ?? 0
+		} else {
+			return 0
 		}
-	
-		// 値が入る時や何らかの動きがあった時にuserDefaultに保存
-		func userDefaultMemory() {
-			let myDefault = NSUserDefaults.standardUserDefaults()
-			// データを書き込んで("fourTotal"箱の名前)
-			myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
-			// 即反映させる(きちんと保存して使用時すぐ出せるように)
-			allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
-			myDefault.synchronize()
-			textcolors()
+	}
+
+	// 値が入る時や何らかの動きがあった時にuserDefaultに保存
+	func userDefaultMemory() {
+		let myDefault = NSUserDefaults.standardUserDefaults()
+		// データを書き込んで("fourTotal"箱の名前)
+		myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
+		// 即反映させる(きちんと保存して使用時すぐ出せるように)
+		allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
+		myDefault.synchronize()
+		textcolors()
+	}
+
+	// userDefault保存後、計算機の値を0に戻す動き
+	func doing0(){
+		userDefaultMemory()
+		display.text! = "0"
+		displayLabel.text! = display.text!
+	}
+
+	func fourDisplayItems(){
+		foodTextView.text = "\(foodArray)"
+		lifeTextView.text = "\(lifeArray)"
+		zappiTextView.text = "\(zappiArray)"
+		hokaTextView.text = "\(hokaArray)"
+	}
+
+	// 各項目のカラーを指定
+	func textcolors(){
+		foodTextView.textColor = UIColor.whiteColor()
+		lifeTextView.textColor = hexStr("7F7F7F", alpha: 1)
+		zappiTextView.textColor = UIColor.whiteColor()
+		hokaTextView.textColor = hexStr("7F7F7F", alpha: 1)
+		foodLabel.textColor = UIColor.whiteColor()
+		lifeLabel.textColor = hexStr("7F7F7F", alpha: 1)
+		zappiLabel.textColor = UIColor.whiteColor()
+		hokaLabel.textColor = hexStr("7F7F7F", alpha: 1)
+	}
+
+	// 色コードをhexで指定できるように
+	func hexStr (var hexStr : NSString, alpha : CGFloat) -> UIColor {
+		hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
+		let scanner = NSScanner(string: hexStr as String)
+		var color: UInt32 = 0
+		if scanner.scanHexInt(&color) {
+			let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+			let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+			let b = CGFloat(color & 0x0000FF) / 255.0
+			return UIColor(red:r,green:g,blue:b,alpha:alpha)
+		} else {
+			print("invalid hex string")
+			return UIColor.whiteColor();
 		}
+	}
 	
-		// userDefault保存後、計算機の値を0に戻す動き
-		func doing0(){
-			userDefaultMemory()
-			display.text! = "0"
-			displayLabel.text! = display.text!
-		}
+	// 各項目をアイコン化
+	func aboutFontIcon(){
+		// foodFieldのアイコン
+		let cutlery = FAKFontAwesome.cutleryIconWithSize(25)
+		// 下記でアイコンの色も変えられます
+		cutlery.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+		let cutleryImage = cutlery.imageWithSize(CGSizeMake(25, 25))
+		foodFont.image = cutleryImage
+		foodFont.layer.opacity = 0.2
+		
+		// lifeFieldのアイコン
+		let shoppingCart = FAKFontAwesome.shoppingCartIconWithSize(25)
+		// 下記でアイコンの色も変えられます
+		shoppingCart.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor())
+		let shoppingCartImage = shoppingCart.imageWithSize(CGSizeMake(25, 25))
+		lifeFont.image = shoppingCartImage
+		lifeFont.layer.opacity = 0.2
+		
+		// zappiFieldのアイコン
+		let coffee = FAKFontAwesome.coffeeIconWithSize(25)
+		// 下記でアイコンの色も変えられます
+		coffee.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+		let coffeeImage = coffee.imageWithSize(CGSizeMake(25, 25))
+		zappiFont.image = coffeeImage
+		zappiFont.layer.opacity = 0.2
+		
+		// hokaFieldのアイコン
+		let smileO = FAKFontAwesome.smileOIconWithSize(25)
+		// 下記でアイコンの色も変えられます
+		smileO.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor())
+		let smileOImage = smileO.imageWithSize(CGSizeMake(25, 25))
+		hokaFont.image = smileOImage
+		hokaFont.layer.opacity = 0.2
+	}
 	
-		func textcolors(){
-			foodTextView.textColor = UIColor.whiteColor()
-			lifeTextView.textColor = hexStr("7F7F7F", alpha: 1)
-			zappiTextView.textColor = UIColor.whiteColor()
-			hokaTextView.textColor = hexStr("7F7F7F", alpha: 1)
-			foodLabel.textColor = UIColor.whiteColor()
-			lifeLabel.textColor = hexStr("7F7F7F", alpha: 1)
-			zappiLabel.textColor = UIColor.whiteColor()
-			hokaLabel.textColor = hexStr("7F7F7F", alpha: 1)
-		}
 	
-		func fourDisplayItems(){
-			foodTextView.text = "\(foodArray)"
-			lifeTextView.text = "\(lifeArray)"
-			zappiTextView.text = "\(zappiArray)"
-			hokaTextView.text = "\(hokaArray)"
-		}
-	
-		func hexStr (var hexStr : NSString, alpha : CGFloat) -> UIColor {
-			hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
-			let scanner = NSScanner(string: hexStr as String)
-			var color: UInt32 = 0
-			if scanner.scanHexInt(&color) {
-				let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
-				let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
-				let b = CGFloat(color & 0x0000FF) / 255.0
-				return UIColor(red:r,green:g,blue:b,alpha:alpha)
-			} else {
-				print("invalid hex string")
-				return UIColor.whiteColor();
-			}
-		}
 	
 	
 

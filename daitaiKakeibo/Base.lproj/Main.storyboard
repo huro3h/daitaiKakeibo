@@ -305,11 +305,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pV6-ra-l8y">
+                                        <rect key="frame" x="135" y="102" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Wok-dD-uAB"/>
+                                            <constraint firstAttribute="width" constant="25" id="bxx-K9-l2J"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.27450980392156865" green="0.53725490196078429" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pV6-ra-l8y" secondAttribute="trailing" constant="2" id="0uW-kH-UcC"/>
                                     <constraint firstAttribute="bottom" secondItem="c8K-kx-dQH" secondAttribute="bottom" id="V3g-vn-yiN"/>
+                                    <constraint firstAttribute="bottom" secondItem="pV6-ra-l8y" secondAttribute="bottom" constant="2" id="t9L-Sd-uyc"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ZGX-Od-B2e" appends="YES" id="iea-11-oZj"/>
@@ -369,11 +378,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UvN-aM-4Qz">
+                                        <rect key="frame" x="135" y="102" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="6tg-Xk-qFq"/>
+                                            <constraint firstAttribute="height" constant="25" id="Ewv-Cb-OGe"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.69019607843137254" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="oik-DY-We7" secondAttribute="bottom" id="Qc6-u9-N4f"/>
+                                    <constraint firstAttribute="bottom" secondItem="UvN-aM-4Qz" secondAttribute="bottom" constant="2" id="tiB-c2-1j4"/>
+                                    <constraint firstAttribute="trailing" secondItem="UvN-aM-4Qz" secondAttribute="trailing" constant="2" id="yRz-Au-p5P"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nzf-Y0-ae5" appends="YES" id="ieT-Oh-j0M"/>
@@ -505,20 +523,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="DiU-Mu-HAB">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pBr-mT-dOF">
-                            <rect key="frame" x="138" y="7" width="45" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="リスト"/>
-                            <connections>
-                                <segue destination="BTD-6R-0tI" kind="show" id="wmm-8J-mRx"/>
-                            </connections>
-                        </button>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="3Of-Af-OeJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pBr-mT-dOF">
+                                <rect key="frame" x="16" y="7" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="List"/>
+                                <connections>
+                                    <segue destination="BTD-6R-0tI" kind="show" id="wmm-8J-mRx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="h6J-mc-zlC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FD8-Qv-ZBO">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
+                                <rect key="frame" x="264" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="設定"/>
+                                <state key="normal" title="Menu"/>
                                 <connections>
                                     <segue destination="g3R-mY-ewG" kind="show" identifier="mySegue" id="uCC-eK-t6O"/>
                                 </connections>
@@ -539,9 +559,11 @@
                         <outlet property="hokaLabel" destination="J0V-6H-vRw" id="mAQ-aA-acS"/>
                         <outlet property="hokaTextView" destination="XME-Ng-6Zw" id="CNe-gk-lnT"/>
                         <outlet property="lifeField" destination="SWM-6z-Nz8" id="aQu-5c-XJj"/>
+                        <outlet property="lifeFont" destination="UvN-aM-4Qz" id="Hlu-2F-HuC"/>
                         <outlet property="lifeLabel" destination="oik-DY-We7" id="GQI-hl-V1j"/>
                         <outlet property="lifeTextView" destination="o9B-Yu-5ez" id="qbd-fc-hPW"/>
                         <outlet property="zappiField" destination="GFi-CM-QrY" id="rSb-al-BLq"/>
+                        <outlet property="zappiFont" destination="pV6-ra-l8y" id="U4W-Gq-WyM"/>
                         <outlet property="zappiLabel" destination="c8K-kx-dQH" id="c0I-5e-Ygn"/>
                         <outlet property="zappiTextView" destination="UfW-bi-gnA" id="XL1-Q6-47h"/>
                     </connections>
@@ -610,7 +632,7 @@
             </objects>
             <point key="canvasLocation" x="1812" y="349"/>
         </scene>
-        <!--リスト-->
+        <!--List-->
         <scene sceneID="kC2-3Y-9rM">
             <objects>
                 <viewController id="BTD-6R-0tI" customClass="listController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -723,7 +745,7 @@ CFRPVEFMA
                             <constraint firstItem="vWy-a1-EYX" firstAttribute="leading" secondItem="L4B-XE-Xon" secondAttribute="trailing" id="zoR-pG-b31"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="リスト" id="qye-4I-VnI"/>
+                    <navigationItem key="navigationItem" title="List" id="qye-4I-VnI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="foodFeeLabel" destination="SQI-Zh-i9Q" id="ZbC-yu-FJc"/>
@@ -738,7 +760,7 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="1812" y="1033"/>
         </scene>
-        <!--Setting-->
+        <!--Menu-->
         <scene sceneID="W42-wQ-sN2">
             <objects>
                 <viewController id="g3R-mY-ewG" customClass="setteiController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -767,7 +789,7 @@ CFRPVEFMA
                             <constraint firstItem="lbi-Zd-vIe" firstAttribute="leading" secondItem="8Tg-Aq-O8i" secondAttribute="leading" id="hMq-fQ-7NG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Setting" id="Fl8-0h-4f2"/>
+                    <navigationItem key="navigationItem" title="Menu" id="Fl8-0h-4f2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="myTableView" destination="lbi-Zd-vIe" id="oLl-Uc-kkv"/>
@@ -813,7 +835,7 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="2602" y="349"/>
         </scene>
-        <!--メールで送信-->
+        <!--SendMail-->
         <scene sceneID="wTt-Qw-22m">
             <objects>
                 <viewController id="jUP-Io-j2j" customClass="sendMailController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -894,7 +916,7 @@ CFRPVEFMA
                             <constraint firstItem="yZS-wA-XEY" firstAttribute="centerX" secondItem="4Dx-8q-aii" secondAttribute="centerX" id="zb9-fC-y7Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="メールで送信" id="ih8-Ja-OiQ"/>
+                    <navigationItem key="navigationItem" title="SendMail" id="ih8-Ja-OiQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="endDatePicker" destination="tDx-as-qB6" id="gYo-e5-rl8"/>
@@ -936,7 +958,7 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="2196" y="1033"/>
         </scene>
-        <!--データの消去-->
+        <!--Delete-->
         <scene sceneID="ash-MI-fCf">
             <objects>
                 <viewController id="y7J-JX-tVF" customClass="eraseController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
@@ -1015,7 +1037,7 @@ CFRPVEFMA
                             <constraint firstItem="46W-a7-tnU" firstAttribute="centerX" secondItem="2bP-j8-cEs" secondAttribute="centerX" id="nlG-oo-dJS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="データの消去" id="4ou-Mg-2Zs"/>
+                    <navigationItem key="navigationItem" title="Delete" id="4ou-Mg-2Zs"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="endDatePicker" destination="N6T-e8-Nz7" id="quI-di-Msk"/>

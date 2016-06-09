@@ -87,9 +87,9 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	}
 	
 	// 3.選択された時に行う処理(Delegate処理)
-//	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//		print("\(indexPath.row)行目を選択")
-//	}
+	//	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	//		print("\(indexPath.row)行目を選択")
+	//	}
 	
 	func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 		return true
@@ -116,8 +116,9 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 					
 					var num: Int = 0
 					
-					for managedObject in results{
-						if(num == indexPath.row){
+					for managedObject in results {
+						
+						if(num == indexPath.row) {
 							let accountBook = managedObject as! AccountBook
 							
 							managedObjectContext.deleteObject(managedObject as! NSManagedObject)
@@ -139,8 +140,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 				}
 			}
 		}
-		
-		
 	}
 
 	// 以下自作関数置き場
@@ -214,8 +213,8 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 
 	
 	
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 }

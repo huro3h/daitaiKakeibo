@@ -87,9 +87,9 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	}
 	
 	// 3.選択された時に行う処理(Delegate処理)
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		print("\(indexPath.row)行目を選択")
-	}
+//	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//		print("\(indexPath.row)行目を選択")
+//	}
 	
 	func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 		return true
@@ -97,11 +97,51 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	
 	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		if editingStyle == UITableViewCellEditingStyle.Delete {
-			myTimes.removeAtIndex(indexPath.row)
-			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+			// myTimes.removeAtIndex(indexPath.row)
+			// tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+			
+			let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+			
+			if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {
+				let entityDiscription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+				
+				let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+				fetchRequest.entity = entityDiscription
+				
+				var error: NSError? = nil
+				
+				do {
+					let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+					print(results.count)
+					
+					var num: Int = 0
+					
+					for managedObject in results{
+						if(num == indexPath.row){
+							let accountBook = managedObject as! AccountBook
+							
+							managedObjectContext.deleteObject(managedObject as! NSManagedObject)
+							
+							appDelegate.saveContext()
+							read()
+							listTableView.reloadData()
+							
+							foodFeeLabel.text = String(foodFeeCount)
+							lifeFeeLabel.text = String(lifeFeeCount)
+							zappiFeeLabel.text = String(zappiFeeCount)
+							hokaFeeLabel.text = String(hokaFeeCount)
+							totalFeeLabel.text = String(totalFeeCount)
+						}
+						num++
+					}
+				} catch let error1 as NSError {
+					error = error1
+				}
+			}
 		}
+		
+		
 	}
-	
 
 	// 以下自作関数置き場
 	
@@ -118,6 +158,20 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 			var error:NSError? = nil
 
 			do{
+				
+				foodFeeCount = 0
+				lifeFeeCount = 0
+				zappiFeeCount = 0
+				hokaFeeCount = 0
+				totalFeeCount = 0
+				
+				myTimes = []
+				myFoods = []
+				myLifes = []
+				myZappies = []
+				myHokas = []
+				myTotals = []
+				
 				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
 				print(results.count)
 				for managedObject in results {
@@ -145,6 +199,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 			}
 		}
 	}
+	
 	
 	// NSDate->String型に変換
 	func dateString(date: NSDate) -> String {

@@ -52,6 +52,7 @@ class calcController: UIViewController {
 	@IBOutlet weak var hokaTextView: UITextView!
 	
 	@IBOutlet weak var foodFont: UIImageView!
+	@IBOutlet weak var hokaFont: UIImageView!
 	
 	var startPoint: CGPoint?
 	var imageBeHereNowPoint: CGPoint?
@@ -78,11 +79,19 @@ class calcController: UIViewController {
 		// 画像のタッチ操作を有効にする
 		displayLabel.userInteractionEnabled = true
 		
-		let trash = FAKFontAwesome.trashIconWithSize(25)
+		let cutlery = FAKFontAwesome.cutleryIconWithSize(25)
 		// 下記でアイコンの色も変えられます
-		trash.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-		let trashImage = trash.imageWithSize(CGSizeMake(25, 25))
-		foodFont.image = trashImage
+		cutlery.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
+		let cutleryImage = cutlery.imageWithSize(CGSizeMake(25, 25))
+		foodFont.image = cutleryImage
+		foodFont.layer.opacity = 0.2
+		
+		let smileO = FAKFontAwesome.smileOIconWithSize(25)
+		// 下記でアイコンの色も変えられます
+		smileO.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor())
+		let smileOImage = smileO.imageWithSize(CGSizeMake(25, 25))
+		hokaFont.image = smileOImage
+		hokaFont.layer.opacity = 0.2
 		
 
 	}

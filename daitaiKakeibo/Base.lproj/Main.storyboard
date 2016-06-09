@@ -254,24 +254,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-aq-1xQ">
                                 <rect key="frame" x="0.0" y="64" width="160" height="127"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klw-Oe-nTM">
-                                        <rect key="frame" x="44" y="0.0" width="116" height="20"/>
-                                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="50" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="食費をここに表示" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-Ns-mQK" customClass="whiteColorText" customModule="daitaiKakeibo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20" width="160" height="107"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="127"/>
                                         <gestureRecognizers/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klw-Oe-nTM">
+                                        <rect key="frame" x="0.0" y="37" width="160" height="90"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8oC-fg-E5l">
+                                        <rect key="frame" x="133" y="100" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="HFL-HP-Z3U"/>
+                                            <constraint firstAttribute="width" constant="25" id="khv-Tz-QP4"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.55686274509803924" green="0.15686274509803921" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="klw-Oe-nTM" secondAttribute="bottom" id="7So-5m-Z5w"/>
+                                    <constraint firstAttribute="bottom" secondItem="8oC-fg-E5l" secondAttribute="bottom" constant="2" id="Ype-zs-1wh"/>
+                                    <constraint firstAttribute="trailing" secondItem="8oC-fg-E5l" secondAttribute="trailing" constant="2" id="iSQ-bC-ils"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="d2C-V9-hiS" appends="YES" id="c5i-Wl-Y1w"/>
                                     <outletCollection property="gestureRecognizers" destination="Lrb-9h-k3Z" appends="YES" id="D4E-ak-0EP"/>
@@ -294,9 +305,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oC-fg-E5l">
-                                        <rect key="frame" x="127" y="8" width="25" height="25"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.27450980392156865" green="0.53725490196078429" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -324,10 +332,19 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5q-Ud-zjo">
+                                        <rect key="frame" x="135" y="102" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="CBN-tW-7Kp"/>
+                                            <constraint firstAttribute="height" constant="25" id="jib-cN-k5x"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="h5q-Ud-zjo" secondAttribute="trailing" constant="2" id="9bG-vO-5j0"/>
+                                    <constraint firstAttribute="bottom" secondItem="h5q-Ud-zjo" secondAttribute="bottom" constant="2" id="ZQC-FZ-Bhi"/>
                                     <constraint firstAttribute="bottom" secondItem="J0V-6H-vRw" secondAttribute="bottom" id="j0T-5n-DJW"/>
                                 </constraints>
                                 <connections>
@@ -339,23 +356,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWM-6z-Nz8">
                                 <rect key="frame" x="160" y="64" width="160" height="127"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oik-DY-We7">
-                                        <rect key="frame" x="44" y="0.0" width="116" height="20"/>
-                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="生活費をここに表示" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9B-Yu-5ez" customClass="whiteColorText" customModule="daitaiKakeibo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="21" width="160" height="106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="127"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oik-DY-We7">
+                                        <rect key="frame" x="0.0" y="37" width="160" height="90"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.69019607843137254" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oik-DY-We7" secondAttribute="bottom" id="Qc6-u9-N4f"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nzf-Y0-ae5" appends="YES" id="ieT-Oh-j0M"/>
                                     <outletCollection property="gestureRecognizers" destination="sID-7n-FKJ" appends="YES" id="5PG-O9-4uY"/>
@@ -375,6 +394,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jc5-G7-osz" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="1US-D3-kpQ"/>
+                            <constraint firstItem="oik-DY-We7" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.178571" id="1lW-13-yDT"/>
                             <constraint firstItem="EDs-v0-Gxo" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="1re-te-EeF"/>
                             <constraint firstItem="4GZ-L0-kYE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="3IO-Li-F6O"/>
                             <constraint firstItem="0FA-QZ-L1y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="3uc-Dp-XgQ"/>
@@ -414,6 +434,7 @@
                             <constraint firstItem="VJC-Yq-Ep9" firstAttribute="top" secondItem="9Ef-Zt-3Yt" secondAttribute="bottom" id="MXc-YD-TSx"/>
                             <constraint firstItem="Rh0-eM-pLu" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="N3k-4B-MA1"/>
                             <constraint firstItem="c8K-kx-dQH" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.178571" id="NCB-p7-VVo"/>
+                            <constraint firstItem="klw-Oe-nTM" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.178571" id="Ntz-CP-1M8"/>
                             <constraint firstItem="4GZ-L0-kYE" firstAttribute="leading" secondItem="EDs-v0-Gxo" secondAttribute="trailing" id="O7m-kj-BdY"/>
                             <constraint firstItem="HZi-sl-iVJ" firstAttribute="top" secondItem="jc5-G7-osz" secondAttribute="bottom" id="PB9-9C-SYK"/>
                             <constraint firstItem="0FA-QZ-L1y" firstAttribute="top" secondItem="vz4-l8-Nw6" secondAttribute="bottom" id="PPc-da-lYy"/>
@@ -438,6 +459,7 @@
                             <constraint firstItem="QZq-ck-7yK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="ZBa-sf-oqn"/>
                             <constraint firstItem="9Ef-Zt-3Yt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="Ziw-fM-ZQ2"/>
                             <constraint firstItem="jc5-G7-osz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="a7H-Pd-t2U"/>
+                            <constraint firstItem="klw-Oe-nTM" firstAttribute="width" secondItem="enY-vg-GQD" secondAttribute="width" multiplier="0.5" id="a7P-1u-NJc"/>
                             <constraint firstItem="Cdg-aq-1xQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="acb-3T-Jea"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9LU-bi-Xdc" secondAttribute="bottom" id="b1J-Yl-bqh"/>
                             <constraint firstItem="peO-Vu-Gg4" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="bHz-ny-IMk"/>
@@ -473,6 +495,7 @@
                             <constraint firstAttribute="trailing" secondItem="enY-vg-GQD" secondAttribute="trailing" id="voR-T7-WAD"/>
                             <constraint firstItem="vz4-l8-Nw6" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="wrJ-DC-Yne"/>
                             <constraint firstItem="T9H-cZ-Cbe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="wwJ-QD-yIF"/>
+                            <constraint firstItem="oik-DY-We7" firstAttribute="width" secondItem="enY-vg-GQD" secondAttribute="width" multiplier="0.5" id="xDG-EJ-Dgl"/>
                             <constraint firstItem="T9H-cZ-Cbe" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="xI7-Xs-fka"/>
                             <constraint firstItem="SWM-6z-Nz8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="xPN-1d-8L2"/>
                             <constraint firstItem="9LU-bi-Xdc" firstAttribute="top" secondItem="L7e-0J-hBs" secondAttribute="bottom" id="yLN-XV-FhN"/>
@@ -512,6 +535,7 @@
                         <outlet property="foodLabel" destination="klw-Oe-nTM" id="xEF-Tn-i6e"/>
                         <outlet property="foodTextView" destination="hd7-Ns-mQK" id="lYc-cA-DC5"/>
                         <outlet property="hokaField" destination="srj-1j-uHf" id="tH5-dr-f4n"/>
+                        <outlet property="hokaFont" destination="h5q-Ud-zjo" id="KxW-AT-1eZ"/>
                         <outlet property="hokaLabel" destination="J0V-6H-vRw" id="mAQ-aA-acS"/>
                         <outlet property="hokaTextView" destination="XME-Ng-6Zw" id="CNe-gk-lnT"/>
                         <outlet property="lifeField" destination="SWM-6z-Nz8" id="aQu-5c-XJj"/>

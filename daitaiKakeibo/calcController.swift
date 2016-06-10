@@ -8,7 +8,6 @@ import QuartzCore
 import CoreData
 import FontAwesomeKit
 
-
 class BorderButton: UIButton {
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)!;
@@ -508,7 +507,7 @@ class calcController: UIViewController {
 			}
 			
 			// !ボタンが押された場合、各項目Labelの値をリセット
-			if sender.currentTitle == "!" {
+			if sender.currentTitle == "" {
 				
 				foodArray = []
 				foodLabel.text! = "0"
@@ -537,8 +536,8 @@ class calcController: UIViewController {
 			}
 			
 			
-			// MARK:★
-			if sender.currentTitle == "★" {
+			// MARK:★
+			if sender.currentTitle == "" {
 				
 				// 1.AppDelegateをコードで読み込む
 				let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -590,7 +589,7 @@ class calcController: UIViewController {
 				
 			}
 			
-//			if sender.currentTitle == "D" {
+//			if sender.currentTitle == "" {
 //				let myDefault = NSUserDefaults.standardUserDefaults()
 //				 //一時的に用意したユーザーデフォルト消すボタン
 //				myDefault.removeObjectForKey("fourTotal")
@@ -697,10 +696,9 @@ class calcController: UIViewController {
 		hokaFont.image = smileOImage
 		hokaFont.layer.opacity = 0.2
 	}
+
 	
-	
-	
-	
+
 
 	
 	
@@ -708,4 +706,5 @@ class calcController: UIViewController {
 		super.didReceiveMemoryWarning()
 	}
 }
+
 

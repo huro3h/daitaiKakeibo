@@ -787,7 +787,6 @@ CFRPVEFMA
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SQI-Zh-i9Q" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="0GW-YI-MfI"/>
                             <constraint firstItem="vWy-a1-EYX" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.25" id="141-9E-In0"/>
@@ -864,7 +863,6 @@ CFRPVEFMA
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xXT-8E-AyA" firstAttribute="top" secondItem="lbi-Zd-vIe" secondAttribute="bottom" constant="50" id="2oq-N3-bNk"/>
                             <constraint firstAttribute="trailing" secondItem="lbi-Zd-vIe" secondAttribute="trailing" id="Mz2-13-QAb"/>
@@ -906,22 +904,22 @@ CFRPVEFMA
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="How To Use" id="7n6-Tx-XZ6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="myTextView" destination="hpA-9j-g8K" id="qxP-l1-5zF"/>
+                        <segue destination="QRh-1F-GAa" kind="show" id="IcS-Xc-Q2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaL-Y8-3cH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2602" y="349"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding Controller-->
         <scene sceneID="b9T-hR-ynQ">
             <objects>
-                <viewController id="QRh-1F-GAa" sceneMemberID="viewController">
+                <viewController id="QRh-1F-GAa" customClass="OnboardingController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TdA-W2-a3V"/>
                         <viewControllerLayoutGuide type="bottom" id="hbT-Za-hx2"/>
@@ -1030,6 +1028,79 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="2602" y="-301"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="YHZ-hv-H0j">
+            <objects>
+                <viewController id="3Ok-7m-HE5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wuX-FZ-NX4"/>
+                        <viewControllerLayoutGuide type="bottom" id="gcY-Ks-4dc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="klO-gq-Uum">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMb-Cz-FcX">
+                                <rect key="frame" x="0.0" y="229" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AW9-Zs-Ihv">
+                                <rect key="frame" x="0.0" y="258" width="320" height="150"/>
+                                <date key="date" timeIntervalSinceReferenceDate="486285082.190745">
+                                    <!--2016-05-30 07:11:22 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeUntilPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="7YW-rG-K9X"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まで" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-EQ-OVK">
+                                <rect key="frame" x="0.0" y="413" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2p-b1-fFW" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="442" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="期間送信"/>
+                                <connections>
+                                    <action selector="tapBtnLimited:" destination="jUP-Io-j2j" eventType="touchUpInside" id="PmL-xK-NIa"/>
+                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="smf-uN-kcB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-bS-ehO" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
+                                <rect key="frame" x="185" y="442" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="一括送信">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapBtnAll:" destination="jUP-Io-j2j" eventType="touchUpInside" id="wnG-we-Cgf"/>
+                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="OHl-e8-bmM"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kwt-fd-08C">
+                                <rect key="frame" x="0.0" y="77" width="320" height="150"/>
+                                <date key="date" timeIntervalSinceReferenceDate="486285071.34511">
+                                    <!--2016-05-30 07:11:11 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeFromPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="9vm-UK-sBr"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-2T-QQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2948" y="-345"/>
+        </scene>
         <!--アプリについて-->
         <scene sceneID="0aT-VU-ot3">
             <objects>
@@ -1048,7 +1119,6 @@ CFRPVEFMA
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="アプリについて" id="VgA-e4-pjO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1153,6 +1223,79 @@ CFRPVEFMA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-fr-w28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2602" y="1033"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3QR-0G-Ffz">
+            <objects>
+                <viewController id="Hdc-Xo-Ja2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eBx-DZ-fNc"/>
+                        <viewControllerLayoutGuide type="bottom" id="BM7-s7-62v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ijY-KA-xt2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oh9-P8-aVs">
+                                <rect key="frame" x="0.0" y="78" width="320" height="150"/>
+                                <date key="date" timeIntervalSinceReferenceDate="486285071.34511">
+                                    <!--2016-05-30 07:11:11 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeFromPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="ixH-4s-EEp"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8m-ym-ft0">
+                                <rect key="frame" x="0.0" y="236" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まで" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDu-l7-czk">
+                                <rect key="frame" x="0.0" y="416" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewr-ow-NKw" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="442" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="期間送信"/>
+                                <connections>
+                                    <action selector="tapBtnLimited:" destination="jUP-Io-j2j" eventType="touchUpInside" id="09n-Rw-jFa"/>
+                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="3Tw-wZ-lEm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l7-sr-Az4" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
+                                <rect key="frame" x="185" y="442" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="一括送信">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapBtnAll:" destination="jUP-Io-j2j" eventType="touchUpInside" id="BQT-zn-fe6"/>
+                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="iXJ-9A-12I"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-oU-JwL">
+                                <rect key="frame" x="0.0" y="265" width="320" height="150"/>
+                                <date key="date" timeIntervalSinceReferenceDate="486285082.190745">
+                                    <!--2016-05-30 07:11:22 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeUntilPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="TuY-xP-Sno"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZp-Lm-dTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2962" y="989"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F0F-vk-tsZ">

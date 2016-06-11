@@ -655,8 +655,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNV-lm-NlP">
-                                <rect key="frame" x="0.0" y="39" width="320" height="490"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rej-FG-SPN" userLabel="dummyFlexView">
+                                <rect key="frame" x="0.0" y="103" width="320" height="426"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SNV-lm-NlP">
+                                <rect key="frame" x="0.0" y="103" width="320" height="426"/>
                                 <color key="backgroundColor" red="1" green="0.78823529410000004" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BTD-6R-0tI" id="vac-mM-uRP"/>
@@ -678,7 +682,7 @@ CFRPVEFMA
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQI-Zh-i9Q">
                                 <rect key="frame" x="40" y="529" width="50" height="39"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.48627450979999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="XWs-ST-8sL"/>
                                 </constraints>
@@ -790,6 +794,7 @@ CFRPVEFMA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YA8-4b-cTd" firstAttribute="leading" secondItem="1Et-l3-wyv" secondAttribute="leading" id="1bG-Sz-cG0"/>
+                            <constraint firstAttribute="trailing" secondItem="Rej-FG-SPN" secondAttribute="trailing" id="2n5-v2-f9q"/>
                             <constraint firstItem="JwK-JR-7K5" firstAttribute="leading" secondItem="C3F-Ty-3BY" secondAttribute="trailing" id="3F2-o2-o43"/>
                             <constraint firstItem="9bu-tr-GwM" firstAttribute="top" secondItem="vWy-a1-EYX" secondAttribute="bottom" id="3IC-kX-ada"/>
                             <constraint firstItem="KXE-SU-53C" firstAttribute="top" secondItem="1Et-l3-wyv" secondAttribute="top" constant="64" id="6Ny-6T-e2T"/>
@@ -800,9 +805,11 @@ CFRPVEFMA
                             <constraint firstItem="L4B-XE-Xon" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="DeF-oO-rrD"/>
                             <constraint firstItem="qe4-KB-tth" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.125" id="Ea0-zI-2wO"/>
                             <constraint firstItem="9bu-tr-GwM" firstAttribute="top" secondItem="C3F-Ty-3BY" secondAttribute="bottom" id="Fyv-de-rgA"/>
+                            <constraint firstItem="Rej-FG-SPN" firstAttribute="top" secondItem="1Et-l3-wyv" secondAttribute="top" constant="103" id="GTq-We-x6m"/>
                             <constraint firstItem="VzY-HI-hQc" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="Ith-l8-tag"/>
                             <constraint firstItem="eht-OS-uAF" firstAttribute="top" secondItem="1Et-l3-wyv" secondAttribute="top" constant="64" id="JCr-OP-tbC"/>
                             <constraint firstItem="8zs-ef-bdo" firstAttribute="leading" secondItem="KXE-SU-53C" secondAttribute="trailing" id="Jri-x1-0x2"/>
+                            <constraint firstItem="SNV-lm-NlP" firstAttribute="height" secondItem="Rej-FG-SPN" secondAttribute="height" id="KJc-h8-6gQ"/>
                             <constraint firstItem="VzY-HI-hQc" firstAttribute="leading" secondItem="UQu-Ba-QeK" secondAttribute="trailing" id="LBg-ij-KHN"/>
                             <constraint firstItem="C3F-Ty-3BY" firstAttribute="leading" secondItem="SQI-Zh-i9Q" secondAttribute="trailing" id="Lcf-KK-TCi"/>
                             <constraint firstItem="qe4-KB-tth" firstAttribute="leading" secondItem="1Et-l3-wyv" secondAttribute="leading" id="MK9-IC-G6Z"/>
@@ -812,6 +819,8 @@ CFRPVEFMA
                             <constraint firstItem="vWy-a1-EYX" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.249221" id="SEN-Mc-gWu"/>
                             <constraint firstItem="vWy-a1-EYX" firstAttribute="leading" secondItem="L4B-XE-Xon" secondAttribute="trailing" id="TNb-f8-Tag"/>
                             <constraint firstItem="L4B-XE-Xon" firstAttribute="leading" secondItem="JwK-JR-7K5" secondAttribute="trailing" id="WbG-SE-pJz"/>
+                            <constraint firstItem="Rej-FG-SPN" firstAttribute="leading" secondItem="1Et-l3-wyv" secondAttribute="leading" id="ZK1-vd-3di"/>
+                            <constraint firstItem="SNV-lm-NlP" firstAttribute="width" secondItem="Rej-FG-SPN" secondAttribute="width" id="ZUA-wx-Ers"/>
                             <constraint firstItem="UQu-Ba-QeK" firstAttribute="top" secondItem="Gk3-4v-8Tq" secondAttribute="bottom" id="bfD-1l-RUb"/>
                             <constraint firstItem="UQu-Ba-QeK" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="bfq-mL-jqh"/>
                             <constraint firstItem="9bu-tr-GwM" firstAttribute="top" secondItem="SQI-Zh-i9Q" secondAttribute="bottom" id="eSS-GV-rGM"/>
@@ -820,6 +829,7 @@ CFRPVEFMA
                             <constraint firstItem="9bu-tr-GwM" firstAttribute="top" secondItem="L4B-XE-Xon" secondAttribute="bottom" id="iSP-hZ-4qS"/>
                             <constraint firstItem="9bu-tr-GwM" firstAttribute="top" secondItem="YA8-4b-cTd" secondAttribute="bottom" id="jkD-gi-eSu"/>
                             <constraint firstItem="eht-OS-uAF" firstAttribute="leading" secondItem="qe4-KB-tth" secondAttribute="trailing" id="pUK-M4-QhT"/>
+                            <constraint firstItem="9bu-tr-GwM" firstAttribute="top" secondItem="Rej-FG-SPN" secondAttribute="bottom" constant="39" id="pti-Uc-xKj"/>
                             <constraint firstItem="JwK-JR-7K5" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="q7C-mZ-5rD"/>
                             <constraint firstItem="SQI-Zh-i9Q" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="uzC-b0-R5q"/>
                             <constraint firstItem="VzY-HI-hQc" firstAttribute="top" secondItem="Gk3-4v-8Tq" secondAttribute="bottom" id="v5w-FX-3dX"/>

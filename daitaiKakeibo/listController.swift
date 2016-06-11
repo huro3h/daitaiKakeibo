@@ -9,6 +9,7 @@ import FontAwesomeKit
 
 class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
+	
 	@IBOutlet weak var listTableView: UITableView!
 	
 	var myTimes: [String] = []
@@ -46,6 +47,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		zappiFeeLabel.text = String(zappiFeeCount)
 		hokaFeeLabel.text = String(hokaFeeCount)
 		totalFeeLabel.text = String(totalFeeCount)
+		listTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 	}
 	
 	override func setEditing(editing: Bool, animated: Bool) {

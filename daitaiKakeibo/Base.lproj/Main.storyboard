@@ -419,6 +419,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jc5-G7-osz" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="1US-D3-kpQ"/>
@@ -786,6 +787,7 @@ CFRPVEFMA
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SQI-Zh-i9Q" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.15625" id="0GW-YI-MfI"/>
                             <constraint firstItem="vWy-a1-EYX" firstAttribute="width" secondItem="1Et-l3-wyv" secondAttribute="width" multiplier="0.25" id="141-9E-In0"/>
@@ -904,6 +906,7 @@ CFRPVEFMA
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="How To Use" id="7n6-Tx-XZ6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1119,6 +1122,7 @@ CFRPVEFMA
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="アプリについて" id="VgA-e4-pjO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

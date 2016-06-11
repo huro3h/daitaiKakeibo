@@ -33,6 +33,7 @@
 		3CF39A0E1D0AA87A00EB7DDB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */; };
 		3CF39A0F1D0AA87A00EB7DDB /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A091D0AA87A00EB7DDB /* page2.png */; };
 		3CF39A101D0AA87A00EB7DDB /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A0A1D0AA87A00EB7DDB /* page4.png */; };
+		3CF39A181D0B90C500EB7DDB /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF39A171D0B90C500EB7DDB /* GoogleMobileAds.framework */; };
 		3CF8E6281CFEFB7A006E65AA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6271CFEFB7A006E65AA /* AdSupport.framework */; };
 		3CF8E62A1CFEFB91006E65AA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6291CFEFB91006E65AA /* AudioToolbox.framework */; };
 		3CF8E62C1CFEFB9D006E65AA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E62B1CFEFB9D006E65AA /* AVFoundation.framework */; };
@@ -43,7 +44,6 @@
 		3CF8E6361CFEFBE2006E65AA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6351CFEFBE2006E65AA /* MessageUI.framework */; };
 		3CF8E6381CFEFBEF006E65AA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6371CFEFBEF006E65AA /* StoreKit.framework */; };
 		3CF8E63A1CFEFBFC006E65AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E6391CFEFBFC006E65AA /* SystemConfiguration.framework */; };
-		3CF8E63C1CFEFC12006E65AA /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8E63B1CFEFC12006E65AA /* GoogleMobileAds.framework */; };
 		A4F37307AFD2DD4F4B6213EE /* Pods_daitaiKakeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FB3FB50B22CDA500AA0765 /* Pods_daitaiKakeiboUITests.framework */; };
 		C6325063B1BDB19AFCC67277 /* Pods_daitaiKakeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2368BEF4A4AB6B4158809F /* Pods_daitaiKakeiboTests.framework */; };
 		FC07904005A3CCB278E73D8A /* Pods_daitaiKakeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC994BB62093E56577A27EA /* Pods_daitaiKakeibo.framework */; };
@@ -104,6 +104,7 @@
 		3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		3CF39A091D0AA87A00EB7DDB /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		3CF39A0A1D0AA87A00EB7DDB /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		3CF39A171D0B90C500EB7DDB /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		3CF8E6271CFEFB7A006E65AA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		3CF8E6291CFEFB91006E65AA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3CF8E62B1CFEFB9D006E65AA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -114,7 +115,6 @@
 		3CF8E6351CFEFBE2006E65AA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3CF8E6371CFEFBEF006E65AA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3CF8E6391CFEFBFC006E65AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3CF8E63B1CFEFC12006E65AA /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		3D1995100CBF3EAC6D0EFA42 /* Pods-daitaiKakeiboTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeiboTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeiboTests/Pods-daitaiKakeiboTests.release.xcconfig"; sourceTree = "<group>"; };
 		5ED5FE08DB2A7CAEE9D974E0 /* Pods-daitaiKakeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daitaiKakeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-daitaiKakeiboUITests/Pods-daitaiKakeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9A2368BEF4A4AB6B4158809F /* Pods_daitaiKakeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daitaiKakeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,11 +131,11 @@
 			files = (
 				3CF8E63A1CFEFBFC006E65AA /* SystemConfiguration.framework in Frameworks */,
 				3CF8E6381CFEFBEF006E65AA /* StoreKit.framework in Frameworks */,
+				3CF39A181D0B90C500EB7DDB /* GoogleMobileAds.framework in Frameworks */,
 				3CF8E6361CFEFBE2006E65AA /* MessageUI.framework in Frameworks */,
 				3CF8E6341CFEFBCB006E65AA /* EventKitUI.framework in Frameworks */,
 				3CF8E6331CFEFBCB006E65AA /* EventKit.framework in Frameworks */,
 				3CF8E6301CFEFBBA006E65AA /* CoreTelephony.framework in Frameworks */,
-				3CF8E63C1CFEFC12006E65AA /* GoogleMobileAds.framework in Frameworks */,
 				3CF8E62E1CFEFBAD006E65AA /* CoreGraphics.framework in Frameworks */,
 				3CF8E62C1CFEFB9D006E65AA /* AVFoundation.framework in Frameworks */,
 				3CF8E62A1CFEFB91006E65AA /* AudioToolbox.framework in Frameworks */,
@@ -227,7 +227,7 @@
 				3C9189CC1D08058D00D96C63 /* daitaiKakeibo-Bridging-Header.h */,
 				3C9189CA1D08054700D96C63 /* daitaiKakeiboTests-Bridging-Header.h */,
 				3C9189CB1D08054700D96C63 /* daitaiKakeiboUITests-Bridging-Header.h */,
-				3CF8E63B1CFEFC12006E65AA /* GoogleMobileAds.framework */,
+				3CF39A171D0B90C500EB7DDB /* GoogleMobileAds.framework */,
 			);
 			path = daitaiKakeibo;
 			sourceTree = "<group>";

@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhK-jR-d3Q">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhK-jR-d3Q">
                         <rect key="frame" x="0.0" y="0.0" width="40" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="wEt-H9-ABf"/>
@@ -24,7 +24,7 @@
                         <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="life" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PW-nX-GMW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="life" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PW-nX-GMW">
                         <rect key="frame" x="90" y="0.0" width="50" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="d4y-eu-gdh"/>
@@ -33,7 +33,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="zappi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fS-TP-lJC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zappi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fS-TP-lJC">
                         <rect key="frame" x="140" y="0.0" width="50" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="eXf-R8-w5u"/>
@@ -42,7 +42,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hoka" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3i-fn-MEt">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hoka" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3i-fn-MEt">
                         <rect key="frame" x="190" y="0.0" width="50" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="G2K-V1-GAR"/>
@@ -51,7 +51,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afb-Ew-0Kw">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afb-Ew-0Kw">
                         <rect key="frame" x="240" y="0.0" width="80" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="AzU-9t-hEE"/>
@@ -60,7 +60,7 @@
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1n-LE-aP8">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="food" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1n-LE-aP8">
                         <rect key="frame" x="40" y="0.0" width="50" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="6CR-Ly-tQh"/>
@@ -80,7 +80,7 @@
                     <constraint firstItem="9fS-TP-lJC" firstAttribute="leading" secondItem="2PW-nX-GMW" secondAttribute="trailing" id="Zt7-Sb-soM"/>
                     <constraint firstItem="dhK-jR-d3Q" firstAttribute="leading" secondItem="du1-au-p6i" secondAttribute="leading" id="hZX-Fx-j3E"/>
                     <constraint firstAttribute="bottom" secondItem="2PW-nX-GMW" secondAttribute="bottom" id="r5f-ej-dVi"/>
-                    <constraint firstAttribute="trailing" secondItem="afb-Ew-0Kw" secondAttribute="trailing" constant="1" id="tEo-5t-uhz"/>
+                    <constraint firstAttribute="trailing" secondItem="afb-Ew-0Kw" secondAttribute="trailing" id="tEo-5t-uhz"/>
                     <constraint firstAttribute="bottom" secondItem="dhK-jR-d3Q" secondAttribute="bottom" id="tM3-On-X0R"/>
                     <constraint firstAttribute="bottom" secondItem="N1n-LE-aP8" secondAttribute="bottom" id="utJ-LE-bp0"/>
                     <constraint firstItem="afb-Ew-0Kw" firstAttribute="leading" secondItem="N3i-fn-MEt" secondAttribute="trailing" id="whf-OH-Ton"/>

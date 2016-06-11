@@ -419,7 +419,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jc5-G7-osz" firstAttribute="height" secondItem="enY-vg-GQD" secondAttribute="height" multiplier="0.0992063" id="1US-D3-kpQ"/>
@@ -863,6 +862,7 @@ CFRPVEFMA
                                 </connections>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xXT-8E-AyA" firstAttribute="top" secondItem="lbi-Zd-vIe" secondAttribute="bottom" constant="50" id="2oq-N3-bNk"/>
                             <constraint firstAttribute="trailing" secondItem="lbi-Zd-vIe" secondAttribute="trailing" id="Mz2-13-QAb"/>

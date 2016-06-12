@@ -24,8 +24,9 @@ class aboutAppController: UIViewController, GADBannerViewDelegate {
 
 	override func viewWillAppear(animated: Bool) {
 		print("aboutApp画面表示")
-		myTextView.text="だいたい家計簿 Ver1.00\n\nCopyright © 2016 Satoshiii.\nAll Rights Reserved."
+		myTextView.text="だいたい家計簿\nVer1.00\n\nCopyright © 2016\nSatoshiii.\nAll Rights Reserved."
 		myTextView.font = UIFont.systemFontOfSize(CGFloat(25))
+
 	}
 	
 	

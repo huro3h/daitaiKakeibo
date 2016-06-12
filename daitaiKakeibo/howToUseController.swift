@@ -18,11 +18,11 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 	
 	var pictureFlag:Bool = true
 	
-	let backgroundColor = UIColor(red: 158.0/255.0, green: 206.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+	let backgroundColor = UIColor(red: 255.0/255.0, green: 214.0/255.0, blue: 234.0/255.0, alpha: 1.0)
 	let slides = [
 		[ "image": "", "text": "1. 数字を入力\n\n2. 画面タップで入力\n\n3.✏️で記録！"],
 		[ "image": "page2.png", "text": "2ページ目"],
-		[ "image": "", "text": "4. 画面の外にスワイプで取り消し\n\n5.長押しで消去"],
+		[ "image": "", "text": "4. 画面の外に\nスワイプで取り消し\n\n5.長押しで消去"],
 		[ "image": "page4.png", "text": "4ページ目"],
 		[ "image": "", "text": "とっても簡単\n\nさあ\n\nはじめましょう"]
 	]

@@ -46,9 +46,20 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		//scroll?.currentPageIndicatorTintColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.5];
 		//rscroll?.pageIndicatorTintColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
 		
+
+		// 画面サイズで機種判定
+		let screenHeight = Int(UIScreen.mainScreen().bounds.size.height)
+		print(screenHeight)
+		
+		// ドットの位置などここで決めている ↓
 		view.addSubview(scroll!)
 		if (slides.count > 1) {
-			dots = UIPageControl(frame: CGRect(x: 0.0, y: screen.height * 0.875, width: screen.width, height: screen.height * 0.05))
+			dots = UIPageControl(frame: CGRect(x: 0.0, y: screen.height * 0.86, width: screen.width, height: screen.height * 0.05))
+			
+			if screenHeight == 480 {
+				dots = UIPageControl(frame: CGRect(x: 0.0, y: screen.height * 0.845, width: screen.width, height: screen.height * 0.05))
+			}
+			
 			dots?.numberOfPages = slides.count
 			view.addSubview(dots!)
 		}
@@ -66,7 +77,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 			if (pictureFlag == true) {
 				
 				let image = UIImage(named: slides[i]["image"]!)
-				let imageView: UIImageView = UIImageView(frame: getFrame(image!.size.width, iH: image!.size.height, slide: i, offset: screen.height * 0.175))
+				let imageView: UIImageView = UIImageView(frame: getFrame(image!.size.width, iH: image!.size.height, slide: i, offset: screen.height * 0.15))
 				imageView.image = image
 				scroll?.addSubview(imageView)
 				
@@ -78,7 +89,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 				textView.editable = false
 				textView.selectable = false
 				textView.textAlignment = NSTextAlignment.Center
-				textView.font = UIFont.systemFontOfSize(30, weight: 0)
+				textView.font = UIFont.systemFontOfSize(28, weight: 0)
 				textView.textColor = hexStr("555555", alpha: 1)
 				textView.backgroundColor = UIColor.clearColor()
 				scroll?.addSubview(textView)
@@ -107,7 +118,18 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 	}
 	
 	func getFrame (iW: CGFloat, iH: CGFloat, slide: Int, offset: CGFloat) -> CGRect {
-		let mH: CGFloat = screen.height * 0.7
+		
+		//let screenHeight = Int(UIScreen.mainScreen().bounds.size.height)
+			//print(screenHeight)
+			// 画面サイズで機種判定
+		var mH: CGFloat = screen.height * 0.7
+		
+//			if screenHeight == 480 {
+//				 mH = screen.height * 0.6
+//			}else{
+//				 mH = screen.height * 0.7
+//			}
+		
 		let mW: CGFloat = screen.width
 		var h: CGFloat
 		var w: CGFloat

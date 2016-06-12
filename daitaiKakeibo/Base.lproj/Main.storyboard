@@ -1212,7 +1212,7 @@ CFRPVEFMA
         <!--delete-->
         <scene sceneID="3QR-0G-Ffz">
             <objects>
-                <viewController id="Hdc-Xo-Ja2" customClass="elase4SController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hdc-Xo-Ja2" customClass="erase4SController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eBx-DZ-fNc"/>
                         <viewControllerLayoutGuide type="bottom" id="BM7-s7-62v"/>
@@ -1227,6 +1227,9 @@ CFRPVEFMA
                                     <!--2016-05-30 07:11:11 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeFromPicker4SD:" destination="Hdc-Xo-Ja2" eventType="valueChanged" id="l3s-P5-rL8"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8m-ym-ft0">
                                 <rect key="frame" x="0.0" y="236" width="320" height="21"/>
@@ -1244,6 +1247,9 @@ CFRPVEFMA
                                 <rect key="frame" x="20" y="442" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="期間消去"/>
+                                <connections>
+                                    <action selector="tapBtnLimited4SD:" destination="Hdc-Xo-Ja2" eventType="touchUpInside" id="kSD-JC-lQ8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l7-sr-Az4" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="185" y="442" width="115" height="30"/>
@@ -1251,6 +1257,9 @@ CFRPVEFMA
                                 <state key="normal" title="全期間消去">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapBtnAll4SD:" destination="Hdc-Xo-Ja2" eventType="touchUpInside" id="FSt-aM-s0k"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-oU-JwL">
                                 <rect key="frame" x="0.0" y="265" width="320" height="150"/>
@@ -1258,12 +1267,19 @@ CFRPVEFMA
                                     <!--2016-05-30 07:11:22 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
+                                <connections>
+                                    <action selector="changeUntilPicker4SD:" destination="Hdc-Xo-Ja2" eventType="valueChanged" id="FPN-g5-KFe"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="delete" id="IbM-pb-1fu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="endDatePicker4SD" destination="Sby-oU-JwL" id="c5d-wg-w4t"/>
+                        <outlet property="startDatePicker4SD" destination="Oh9-P8-aVs" id="oF8-B5-KLQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZp-Lm-dTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

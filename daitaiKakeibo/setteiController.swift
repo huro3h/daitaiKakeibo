@@ -19,6 +19,8 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 	let AdMobTest:Bool = true
 	let SimulatorTest:Bool = true
 	
+	
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		insertAdMob()
@@ -37,18 +39,35 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 	}
 		
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		
-		switch indexPath.row {
-		case 0:
-			performSegueWithIdentifier("howToUseSegue", sender: nil)
-		case 1:
-			performSegueWithIdentifier("sendMailSegue", sender: nil)
-		case 2:
-			performSegueWithIdentifier("aboutAppSegue", sender: nil)
-		case 3:
-			performSegueWithIdentifier("eraseSegue", sender: nil)
-		default:
-			break
+		let screenHeight = Int(UIScreen.mainScreen().bounds.size.height)
+		//print(screenHeight)
+		// 画面サイズで機種判定
+		if screenHeight == 480 {
+			switch indexPath.row {
+			case 0:
+				performSegueWithIdentifier("howToUseSegue", sender: nil)
+			case 1:
+				performSegueWithIdentifier("sendMailSegue4S", sender: nil)
+			case 2:
+				performSegueWithIdentifier("aboutAppSegue", sender: nil)
+			case 3:
+				performSegueWithIdentifier("eraseSegue4S", sender: nil)
+			default:
+				break
+			}
+		}else{
+			switch indexPath.row {
+			case 0:
+				performSegueWithIdentifier("howToUseSegue", sender: nil)
+			case 1:
+				performSegueWithIdentifier("sendMailSegue", sender: nil)
+			case 2:
+				performSegueWithIdentifier("aboutAppSegue", sender: nil)
+			case 3:
+				performSegueWithIdentifier("eraseSegue", sender: nil)
+			default:
+				break
+			}
 		}
 	}
 	

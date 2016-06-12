@@ -890,6 +890,8 @@ CFRPVEFMA
                         <segue destination="jUP-Io-j2j" kind="show" identifier="sendMailSegue" id="ncZ-Wl-nmB"/>
                         <segue destination="cPB-hZ-6ZS" kind="show" identifier="aboutAppSegue" id="PEo-c1-YKu"/>
                         <segue destination="y7J-JX-tVF" kind="show" identifier="eraseSegue" id="Ab4-1Q-aNA"/>
+                        <segue destination="Hdc-Xo-Ja2" kind="show" identifier="eraseSegue4S" id="9h1-2O-FUA"/>
+                        <segue destination="3Ok-7m-HE5" kind="show" identifier="sendMailSegue4S" id="yeY-LK-zCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5s-7e-vsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -914,7 +916,7 @@ CFRPVEFMA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaL-Y8-3cH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2602" y="349"/>
+            <point key="canvasLocation" x="2724" y="349"/>
         </scene>
         <!--SendMail-->
         <scene sceneID="wTt-Qw-22m">
@@ -1007,7 +1009,7 @@ CFRPVEFMA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9h-7p-h57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2602" y="-301"/>
+            <point key="canvasLocation" x="2570" y="-343"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YHZ-hv-H0j">
@@ -1080,7 +1082,7 @@ CFRPVEFMA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-2T-QQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="-345"/>
+            <point key="canvasLocation" x="2928" y="-387"/>
         </scene>
         <!--アプリについて-->
         <scene sceneID="0aT-VU-ot3">
@@ -1204,7 +1206,7 @@ CFRPVEFMA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbf-fr-w28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2602" y="1033"/>
+            <point key="canvasLocation" x="2570" y="1033"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3QR-0G-Ffz">
@@ -1277,7 +1279,7 @@ CFRPVEFMA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZp-Lm-dTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962" y="989"/>
+            <point key="canvasLocation" x="2928" y="989"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F0F-vk-tsZ">

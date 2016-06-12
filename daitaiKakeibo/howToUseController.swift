@@ -11,7 +11,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 	
 	@IBOutlet weak var myTextView: UITextView!
 	
-	let AdMobID = "ca-app-pub-8544314931809940/0123456789"
+	let AdMobID = "ca-app-pub-8544314931809940/6829362316"
 	let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
 	let AdMobTest:Bool = true
 	let SimulatorTest:Bool = true

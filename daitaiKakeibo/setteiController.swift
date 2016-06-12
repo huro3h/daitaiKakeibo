@@ -14,7 +14,7 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 	var menuList = ["How To Use","メールで送信","アプリについて","データの削除"]
 	var selectedName:String = ""
 	
-	let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+	let AdMobID = "ca-app-pub-8544314931809940/6829362316"
 	let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
 	let AdMobTest:Bool = true
 	let SimulatorTest:Bool = true

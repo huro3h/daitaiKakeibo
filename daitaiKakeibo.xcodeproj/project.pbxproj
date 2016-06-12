@@ -27,9 +27,6 @@
 		3CE4629A1CF435EF00480502 /* daitaiKakeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */; };
 		3CE4629D1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */; };
 		3CE4629E1CF43D5E00480502 /* AccountBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE4629C1CF43D5E00480502 /* AccountBook.swift */; };
-		3CF39A0B1D0AA87A00EB7DDB /* aa1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A051D0AA87A00EB7DDB /* aa1.png */; };
-		3CF39A0C1D0AA87A00EB7DDB /* aa9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A061D0AA87A00EB7DDB /* aa9.jpg */; };
-		3CF39A0D1D0AA87A00EB7DDB /* mojiji_pen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A071D0AA87A00EB7DDB /* mojiji_pen.jpg */; };
 		3CF39A0E1D0AA87A00EB7DDB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */; };
 		3CF39A0F1D0AA87A00EB7DDB /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A091D0AA87A00EB7DDB /* page2.png */; };
 		3CF39A101D0AA87A00EB7DDB /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A0A1D0AA87A00EB7DDB /* page4.png */; };
@@ -98,9 +95,6 @@
 		3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = daitaiKakeibo.xcdatamodel; sourceTree = "<group>"; };
 		3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3CE4629C1CF43D5E00480502 /* AccountBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBook.swift; sourceTree = "<group>"; };
-		3CF39A051D0AA87A00EB7DDB /* aa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aa1.png; sourceTree = "<group>"; };
-		3CF39A061D0AA87A00EB7DDB /* aa9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aa9.jpg; sourceTree = "<group>"; };
-		3CF39A071D0AA87A00EB7DDB /* mojiji_pen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mojiji_pen.jpg; sourceTree = "<group>"; };
 		3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		3CF39A091D0AA87A00EB7DDB /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		3CF39A0A1D0AA87A00EB7DDB /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
@@ -216,9 +210,6 @@
 				3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */,
 				3CE4629C1CF43D5E00480502 /* AccountBook.swift */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
-				3CF39A051D0AA87A00EB7DDB /* aa1.png */,
-				3CF39A061D0AA87A00EB7DDB /* aa9.jpg */,
-				3CF39A071D0AA87A00EB7DDB /* mojiji_pen.jpg */,
 				3CF39A091D0AA87A00EB7DDB /* page2.png */,
 				3CF39A0A1D0AA87A00EB7DDB /* page4.png */,
 				3C6A8CE81CE59844001527FA /* Assets.xcassets */,
@@ -389,13 +380,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CAA92191D08264300773514 /* FontAwesome.otf in Resources */,
-				3CF39A0D1D0AA87A00EB7DDB /* mojiji_pen.jpg in Resources */,
 				3C01675C1D069CD700A13D3C /* feeList.xib in Resources */,
-				3CF39A0C1D0AA87A00EB7DDB /* aa9.jpg in Resources */,
 				3C6A8CEC1CE59844001527FA /* LaunchScreen.storyboard in Resources */,
 				3CF39A101D0AA87A00EB7DDB /* page4.png in Resources */,
 				3CF39A0F1D0AA87A00EB7DDB /* page2.png in Resources */,
-				3CF39A0B1D0AA87A00EB7DDB /* aa1.png in Resources */,
 				3C6A8CE91CE59844001527FA /* Assets.xcassets in Resources */,
 				3C6A8CE71CE59844001527FA /* Main.storyboard in Resources */,
 			);

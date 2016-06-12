@@ -11,19 +11,22 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 	
 	@IBOutlet weak var myTextView: UITextView!
 	
-	let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+	let AdMobID = "ca-app-pub-8544314931809940/0123456789"
 	let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
 	let AdMobTest:Bool = true
 	let SimulatorTest:Bool = true
 	
-	let backgroundColor = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1.0)
+	var pictureFlag:Bool = true
+	
+	let backgroundColor = UIColor(red: 158.0/255.0, green: 206.0/255.0, blue: 255.0/255.0, alpha: 1.0)
 	let slides = [
-		[ "image": "aa1.png", "text": "1. 数字を入力 2.画面タップで入力 3. ★で記録！"],
+		[ "image": "", "text": "1. 数字を入力\n\n2. 画面タップで入力\n\n3.✏️で記録！"],
 		[ "image": "page2.png", "text": "2ページ目"],
-		[ "image": "aa9.jpg", "text": "4. 画面の外にスワイプで取り消し 5. 長押しで消去"],
+		[ "image": "", "text": "4. 画面の外にスワイプで取り消し\n\n5.長押しで消去"],
 		[ "image": "page4.png", "text": "4ページ目"],
-		[ "image": "mojiji_pen.jpg", "text": "とっても簡単 さあ はじめましょう"],
+		[ "image": "", "text": "とっても簡単\n\nさあ\n\nはじめましょう"]
 	]
+	
 	let screen: CGRect = UIScreen.mainScreen().bounds
 	var scroll: UIScrollView?
 	var dots: UIPageControl?
@@ -39,26 +42,44 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		scroll?.showsHorizontalScrollIndicator = false
 		scroll?.showsVerticalScrollIndicator = false
 		scroll?.pagingEnabled = true
+		
+		//scroll?.currentPageIndicatorTintColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.5];
+		//rscroll?.pageIndicatorTintColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+		
 		view.addSubview(scroll!)
 		if (slides.count > 1) {
 			dots = UIPageControl(frame: CGRect(x: 0.0, y: screen.height * 0.875, width: screen.width, height: screen.height * 0.05))
 			dots?.numberOfPages = slides.count
 			view.addSubview(dots!)
 		}
+
+		
 		for var i = 0; i < slides.count; ++i {
-			if let image = UIImage(named: slides[i]["image"]!) {
-				let imageView: UIImageView = UIImageView(frame: getFrame(image.size.width, iH: image.size.height, slide: i, offset: screen.height * 0.15))
+			
+			//
+			if (slides[i]["image"] as! String! != ""){
+				pictureFlag = true
+			}else{
+				pictureFlag = false
+			}
+			
+			if (pictureFlag == true) {
+				
+				let image = UIImage(named: slides[i]["image"]!)
+				let imageView: UIImageView = UIImageView(frame: getFrame(image!.size.width, iH: image!.size.height, slide: i, offset: screen.height * 0.175))
 				imageView.image = image
 				scroll?.addSubview(imageView)
-			}
-			if let text = slides[i]["text"] {
-				let textView = UITextView(frame: CGRect(x: screen.width * 0.05 + CGFloat(i) * screen.width, y: screen.height * 0.745, width: screen.width * 0.9, height: 100.0))
+				
+			} else {
+				
+				let text = slides[i]["text"]
+				let textView = UITextView(frame: CGRect(x: screen.width * 0.05 + CGFloat(i) * screen.width, y: screen.height / 2 - 120, width: screen.width * 0.9, height: 300.0))
 				textView.text = text
 				textView.editable = false
 				textView.selectable = false
 				textView.textAlignment = NSTextAlignment.Center
-				textView.font = UIFont.systemFontOfSize(20, weight: 0)
-				textView.textColor = UIColor.whiteColor()
+				textView.font = UIFont.systemFontOfSize(30, weight: 0)
+				textView.textColor = hexStr("555555", alpha: 1)
 				textView.backgroundColor = UIColor.clearColor()
 				scroll?.addSubview(textView)
 			}
@@ -66,6 +87,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		scroll?.contentSize = CGSizeMake(CGFloat(Int(screen.width) *  slides.count), screen.height * 0.5)
 		scroll?.delegate = self
 		dots?.addTarget(self, action: Selector("swipe:"), forControlEvents: UIControlEvents.ValueChanged)
+		
 		let closeButton = UIButton()
 		closeButton.frame = CGRect(x: screen.width - 70, y: 20, width: 60, height: 60)
 		closeButton.setTitle("Skip", forState: .Normal)
@@ -73,8 +95,6 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		closeButton.titleLabel!.font =  UIFont.systemFontOfSize(16)
 		closeButton.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside)
 		view.addSubview(closeButton)
-
-		
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -87,7 +107,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 	}
 	
 	func getFrame (iW: CGFloat, iH: CGFloat, slide: Int, offset: CGFloat) -> CGRect {
-		let mH: CGFloat = screen.height * 0.50
+		let mH: CGFloat = screen.height * 0.7
 		let mW: CGFloat = screen.width
 		var h: CGFloat
 		var w: CGFloat
@@ -152,6 +172,21 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		self.view.addSubview(admobView)
 	}
 	
+	// 色コードをhexで指定できるように
+	func hexStr (var hexStr : NSString, alpha : CGFloat) -> UIColor {
+		hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
+		let scanner = NSScanner(string: hexStr as String)
+		var color: UInt32 = 0
+		if scanner.scanHexInt(&color) {
+			let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+			let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+			let b = CGFloat(color & 0x0000FF) / 255.0
+			return UIColor(red:r,green:g,blue:b,alpha:alpha)
+		} else {
+			print("invalid hex string")
+			return UIColor.whiteColor();
+		}
+	}
 
 
 	

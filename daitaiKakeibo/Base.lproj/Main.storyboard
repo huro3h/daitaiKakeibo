@@ -967,7 +967,6 @@ CFRPVEFMA
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="期間送信"/>
                                 <connections>
-                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="g6N-3z-tve"/>
                                     <action selector="tapBtnLimited:" destination="jUP-Io-j2j" eventType="touchUpInside" id="zCt-2O-QV2"/>
                                 </connections>
                             </button>
@@ -979,7 +978,6 @@ CFRPVEFMA
                                 </state>
                                 <connections>
                                     <action selector="tapBtnAll:" destination="jUP-Io-j2j" eventType="touchUpInside" id="wOz-iK-7tZ"/>
-                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="jyq-bb-thV"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2t-ge-XSb">
@@ -1011,10 +1009,10 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="2570" y="-343"/>
         </scene>
-        <!--View Controller-->
+        <!--sendmail-->
         <scene sceneID="YHZ-hv-H0j">
             <objects>
-                <viewController id="3Ok-7m-HE5" sceneMemberID="viewController">
+                <viewController id="3Ok-7m-HE5" customClass="sendMail4SController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wuX-FZ-NX4"/>
                         <viewControllerLayoutGuide type="bottom" id="gcY-Ks-4dc"/>
@@ -1036,7 +1034,7 @@ CFRPVEFMA
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                                 <connections>
-                                    <action selector="changeUntilPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="7YW-rG-K9X"/>
+                                    <action selector="changeUntilPicker4S:" destination="3Ok-7m-HE5" eventType="valueChanged" id="ysj-bw-lvz"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="まで" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-EQ-OVK">
@@ -1050,8 +1048,7 @@ CFRPVEFMA
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="期間送信"/>
                                 <connections>
-                                    <action selector="tapBtnLimited:" destination="jUP-Io-j2j" eventType="touchUpInside" id="PmL-xK-NIa"/>
-                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="smf-uN-kcB"/>
+                                    <action selector="tapBtnLimited4S:" destination="3Ok-7m-HE5" eventType="touchUpInside" id="Qih-a4-kQa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jR-bS-ehO" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
@@ -1061,8 +1058,7 @@ CFRPVEFMA
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="tapBtnAll:" destination="jUP-Io-j2j" eventType="touchUpInside" id="wnG-we-Cgf"/>
-                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="OHl-e8-bmM"/>
+                                    <action selector="tapBtnAll4S:" destination="3Ok-7m-HE5" eventType="touchUpInside" id="zX1-aP-5P8"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kwt-fd-08C">
@@ -1072,13 +1068,18 @@ CFRPVEFMA
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                                 <connections>
-                                    <action selector="changeFromPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="9vm-UK-sBr"/>
+                                    <action selector="changeFromPicker4S:" destination="3Ok-7m-HE5" eventType="valueChanged" id="5Ut-Lr-JEz"/>
                                 </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="sendmail" id="kyY-Vo-Eod"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="endDatePicker4S" destination="AW9-Zs-Ihv" id="oO0-3J-Md1"/>
+                        <outlet property="startDatePicker4S" destination="kwt-fd-08C" id="p0z-vh-u7X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-2T-QQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1208,10 +1209,10 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="2570" y="1033"/>
         </scene>
-        <!--View Controller-->
+        <!--delete-->
         <scene sceneID="3QR-0G-Ffz">
             <objects>
-                <viewController id="Hdc-Xo-Ja2" sceneMemberID="viewController">
+                <viewController id="Hdc-Xo-Ja2" customClass="elase4SController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eBx-DZ-fNc"/>
                         <viewControllerLayoutGuide type="bottom" id="BM7-s7-62v"/>
@@ -1226,9 +1227,6 @@ CFRPVEFMA
                                     <!--2016-05-30 07:11:11 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
-                                <connections>
-                                    <action selector="changeFromPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="ixH-4s-EEp"/>
-                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="から" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8m-ym-ft0">
                                 <rect key="frame" x="0.0" y="236" width="320" height="21"/>
@@ -1245,22 +1243,14 @@ CFRPVEFMA
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewr-ow-NKw" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="442" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="期間送信"/>
-                                <connections>
-                                    <action selector="tapBtnLimited:" destination="jUP-Io-j2j" eventType="touchUpInside" id="09n-Rw-jFa"/>
-                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="3Tw-wZ-lEm"/>
-                                </connections>
+                                <state key="normal" title="期間消去"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l7-sr-Az4" customClass="buttonShape" customModule="daitaiKakeibo" customModuleProvider="target">
                                 <rect key="frame" x="185" y="442" width="115" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="一括送信">
+                                <state key="normal" title="全期間消去">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapBtnAll:" destination="jUP-Io-j2j" eventType="touchUpInside" id="BQT-zn-fe6"/>
-                                    <action selector="tapBtnLimited:" destination="y7J-JX-tVF" eventType="touchUpInside" id="iXJ-9A-12I"/>
-                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-oU-JwL">
                                 <rect key="frame" x="0.0" y="265" width="320" height="150"/>
@@ -1268,13 +1258,11 @@ CFRPVEFMA
                                     <!--2016-05-30 07:11:22 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
-                                <connections>
-                                    <action selector="changeUntilPicker:" destination="jUP-Io-j2j" eventType="valueChanged" id="TuY-xP-Sno"/>
-                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="delete" id="IbM-pb-1fu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZp-Lm-dTf" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -27,7 +27,6 @@
 		3CE4629A1CF435EF00480502 /* daitaiKakeibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CE462981CF435EF00480502 /* daitaiKakeibo.xcdatamodeld */; };
 		3CE4629D1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */; };
 		3CE4629E1CF43D5E00480502 /* AccountBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE4629C1CF43D5E00480502 /* AccountBook.swift */; };
-		3CF39A0E1D0AA87A00EB7DDB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */; };
 		3CF39A0F1D0AA87A00EB7DDB /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A091D0AA87A00EB7DDB /* page2.png */; };
 		3CF39A101D0AA87A00EB7DDB /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF39A0A1D0AA87A00EB7DDB /* page4.png */; };
 		3CF39A181D0B90C500EB7DDB /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF39A171D0B90C500EB7DDB /* GoogleMobileAds.framework */; };
@@ -95,7 +94,6 @@
 		3CE462991CF435EF00480502 /* daitaiKakeibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = daitaiKakeibo.xcdatamodel; sourceTree = "<group>"; };
 		3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountBook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3CE4629C1CF43D5E00480502 /* AccountBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBook.swift; sourceTree = "<group>"; };
-		3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		3CF39A091D0AA87A00EB7DDB /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
 		3CF39A0A1D0AA87A00EB7DDB /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
 		3CF39A171D0B90C500EB7DDB /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				3C6A8CE51CE59844001527FA /* Main.storyboard */,
 				3C01675D1D069E3C00A13D3C /* FeeTableViewCell.swift */,
 				3C01675B1D069CD700A13D3C /* feeList.xib */,
-				3CF39A081D0AA87A00EB7DDB /* OnboardingViewController.swift */,
 				3CE4629B1CF43D5E00480502 /* AccountBook+CoreDataProperties.swift */,
 				3CE4629C1CF43D5E00480502 /* AccountBook.swift */,
 				3C6A8CEA1CE59844001527FA /* LaunchScreen.storyboard */,
@@ -533,7 +530,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CF39A0E1D0AA87A00EB7DDB /* OnboardingViewController.swift in Sources */,
 				3C6A8CE41CE59844001527FA /* calcController.swift in Sources */,
 				3CE4629E1CF43D5E00480502 /* AccountBook.swift in Sources */,
 				3C828FEA1CF02AE800E9C0DC /* aboutAppController.swift in Sources */,

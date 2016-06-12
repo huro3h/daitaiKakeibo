@@ -916,25 +916,6 @@ CFRPVEFMA
             </objects>
             <point key="canvasLocation" x="2602" y="349"/>
         </scene>
-        <!--Onboarding Controller-->
-        <scene sceneID="b9T-hR-ynQ">
-            <objects>
-                <viewController id="QRh-1F-GAa" customClass="OnboardingController" customModule="daitaiKakeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TdA-W2-a3V"/>
-                        <viewControllerLayoutGuide type="bottom" id="hbT-Za-hx2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R7b-0J-ECp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-Hh-TWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2976" y="349"/>
-        </scene>
         <!--SendMail-->
         <scene sceneID="wTt-Qw-22m">
             <objects>

@@ -1099,16 +1099,15 @@ CFRPVEFMA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-29-BPe">
-                                <rect key="frame" x="40" y="72" width="237" height="240"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-29-BPe">
+                                <rect key="frame" x="45" y="134" width="230" height="300"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g5O-29-BPe" firstAttribute="centerY" secondItem="Il1-Fa-4Gv" secondAttribute="centerY" id="uej-93-uN8"/>
-                            <constraint firstItem="g5O-29-BPe" firstAttribute="centerX" secondItem="Il1-Fa-4Gv" secondAttribute="centerX" id="z9x-Wt-XRa"/>
+                            <constraint firstItem="g5O-29-BPe" firstAttribute="centerX" secondItem="Il1-Fa-4Gv" secondAttribute="centerX" id="Ohu-V9-RGl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="アプリについて" id="VgA-e4-pjO"/>

@@ -29,8 +29,6 @@ class aboutAppController: UIViewController, GADBannerViewDelegate {
 
 	}
 	
-	
-	
 	func insertAdMob(){
 	// 以下参考サイトからのコピぺ
 		var admobView: GADBannerView = GADBannerView()
@@ -60,17 +58,9 @@ class aboutAppController: UIViewController, GADBannerViewDelegate {
 		self.view.addSubview(admobView)
 	}
 	
-	
-	
-	
-	
-	
-	
-
-	
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 
 }

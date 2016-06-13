@@ -268,7 +268,6 @@ class calcController: UIViewController {
 	}
 	// Labelタッチ判定テスト ここまで↑↑(5.22-)
 	
-	
 	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {
 		// print("foodFieldたっぷ！")
 		// 配列にInt型の値が入るように変更
@@ -416,9 +415,8 @@ class calcController: UIViewController {
 		}
 	}
 	
-	
 		var isTypingNumber = false  // 数字をタイプ中か
-		var bufferNumber : Int = 0  // 計算中の数値
+		var bufferNumber : Int64 = 0  // 計算中の数値
 		var nextOperation : String?   // 次に演算する操作　+, -
 	
 		// 数字キーが押されたとき
@@ -453,22 +451,66 @@ class calcController: UIViewController {
 				nextOperation = nil
 				
 			} else {
-				if nextOperation == nil {
-					//はじめて演算キーを押したとき
-					bufferNumber = getDisplayInt()
-				} else if nextOperation == "+" {
-					//前回+を押したとき
-					bufferNumber = bufferNumber + getDisplayInt()
-				} else if nextOperation == "-" {
-					//前回-を押したとき
-					bufferNumber = bufferNumber - getDisplayInt()
-				} else if nextOperation == "×" {
-					//前回×を押したとき
-					bufferNumber = bufferNumber * getDisplayInt()
-				} else if nextOperation == "÷" {
-					//前回÷を押したとき
-					bufferNumber = bufferNumber / getDisplayInt()
-				}
+				
+//				do {
+				
+					if nextOperation == nil {
+						//はじめて演算キーを押したとき
+						bufferNumber = Int64(getDisplayInt())
+					} else if nextOperation == "+" {
+						//前回+を押したとき
+						bufferNumber = bufferNumber + Int64(getDisplayInt())
+					} else if nextOperation == "-" {
+						//前回-を押したとき
+						bufferNumber = bufferNumber - Int64(getDisplayInt())
+					} else if nextOperation == "×" {
+						//前回×を押したとき
+						let bufferString = String(bufferNumber)
+						let getDisplayIntString = String(getDisplayInt())
+						print(bufferString.characters.count + getDisplayIntString.characters.count)
+						
+						var count2numbers: Int = bufferString.characters.count + getDisplayIntString.characters.count
+						if count2numbers > 17 {
+							
+							let myalert = UIAlertController(
+							title: "桁数オーバーです",
+							message: "17桁(1京円)以内で入力してください",
+							preferredStyle: .Alert)
+							
+							myalert.addAction(UIAlertAction(
+							title: "OK",
+							style: .Default,
+							handler: { action in print("OK") }))
+							presentViewController(myalert, animated: true, completion: nil)
+							display.text = "error"
+							display.text = "0"
+							displayLabel.text! = display.text!
+							
+							count2numbers = 0
+							bufferNumber = 0
+							nextOperation = nil
+							
+							
+							print(nextOperation)
+							return
+							//sender.currentTitle = "="
+							
+						} else {
+							
+							bufferNumber = bufferNumber * Int64(getDisplayInt())
+						}
+					
+					} else if nextOperation == "÷" {
+						//前回÷を押したとき
+						bufferNumber = bufferNumber / Int64(getDisplayInt())
+					}
+				
+//				}catch let error as NSError {
+//					print("例外発生！")
+//					return
+//				}
+				
+				
 				// 実際の計算は次のキーを押した時なので、演算の種類をとっておく
 				if (sender.currentTitle == "+" || sender.currentTitle == "-" || sender.currentTitle == "×" || sender.currentTitle == "÷") {
 					nextOperation = sender.currentTitle
@@ -532,9 +574,7 @@ class calcController: UIViewController {
 				myDefault.removeObjectForKey("fourTotal")
 				
 				userDefaultMemory()
-
 			}
-			
 			
 			// MARK:★
 			if sender.currentTitle == "" {
@@ -589,21 +629,14 @@ class calcController: UIViewController {
 				
 			}
 			
-//			if sender.currentTitle == "" {
-//				let myDefault = NSUserDefaults.standardUserDefaults()
-//				 //一時的に用意したユーザーデフォルト消すボタン
-//				myDefault.removeObjectForKey("fourTotal")
-//				userDefaultMemory()
-//			}
-			
 		}
 		
 	// MARK:自作関数置き場
 
 	// ディスプレイ表示を取得しIntに変換して返す
-	func getDisplayInt() -> Int {
+	func getDisplayInt() -> Int64 {
 		if let displayText = display.text {
-			return Int(displayText) ?? 0
+			return Int64(displayText) ?? 0
 		} else {
 			return 0
 		}
@@ -696,15 +729,8 @@ class calcController: UIViewController {
 		hokaFont.image = smileOImage
 		hokaFont.layer.opacity = 0.2
 	}
-
-	
-
-
-	
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 }
-
-

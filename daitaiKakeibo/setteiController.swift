@@ -19,8 +19,6 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 	let AdMobTest:Bool = true
 	let SimulatorTest:Bool = true
 	
-	
-	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		insertAdMob()
@@ -100,27 +98,7 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		self.view.addSubview(admobView)
 	}
 	
-//	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//		if (segue.identifier == "howToUseSegue") {
-//			let twoVC: setteiController = (segue.setteiViewController as? howToUseController)!
-//
-//		}
-//	}
-	
-
-	
-
-	
-	
-	
-	
-
-	
-	
-	
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
-	
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }

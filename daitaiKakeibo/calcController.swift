@@ -134,7 +134,7 @@ class calcController: UIViewController {
 			}
 	}
 	
-	// Labelタッチ判定テスト ここから↓↓ (5.22-)
+	// Labelタッチ判定テスト ここから↓↓ (5.22-6.11)
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let touch: UITouch = touches.first! as UITouch
 		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
@@ -195,7 +195,6 @@ class calcController: UIViewController {
 			//座標獲得
 			let pointXY = (point.x,point.y)
 			print(pointXY)
-			// let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
 			
 			// オートレイアウトに対応
 			// 変数に画面の左半分と右半分の値を代入
@@ -325,7 +324,7 @@ class calcController: UIViewController {
 		doing0()
 	}
 	
-	// 画面長押しで項目の値 全削除　ここから↓(6.1-)
+	// 画面長押しで項目の値 全削除　ここから↓
 	@IBAction func longPressFoodField(sender: UILongPressGestureRecognizer) {
 		foodArray = []
 		foodLabel.text! = "0"
@@ -452,8 +451,6 @@ class calcController: UIViewController {
 				
 			} else {
 				
-//				do {
-				
 					if nextOperation == nil {
 						//はじめて演算キーを押したとき
 						bufferNumber = Int64(getDisplayInt())
@@ -493,7 +490,6 @@ class calcController: UIViewController {
 							
 							print(nextOperation)
 							return
-							//sender.currentTitle = "="
 							
 						} else {
 							
@@ -504,12 +500,6 @@ class calcController: UIViewController {
 						//前回÷を押したとき
 						bufferNumber = bufferNumber / Int64(getDisplayInt())
 					}
-				
-//				}catch let error as NSError {
-//					print("例外発生！")
-//					return
-//				}
-				
 				
 				// 実際の計算は次のキーを押した時なので、演算の種類をとっておく
 				if (sender.currentTitle == "+" || sender.currentTitle == "-" || sender.currentTitle == "×" || sender.currentTitle == "÷") {
@@ -633,7 +623,7 @@ class calcController: UIViewController {
 		
 	// MARK:自作関数置き場
 
-	// ディスプレイ表示を取得しIntに変換して返す
+	// ディスプレイ表示を取得しInt64に変換して返す
 	func getDisplayInt() -> Int64 {
 		if let displayText = display.text {
 			return Int64(displayText) ?? 0

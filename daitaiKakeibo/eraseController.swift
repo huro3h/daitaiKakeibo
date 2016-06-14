@@ -49,9 +49,6 @@ class eraseController: UIViewController {
 		startDatePicker.maximumDate = df.dateFromString("2045/12/31")
 		endDatePicker.minimumDate = df.dateFromString("2000/01/01")
 		endDatePicker.maximumDate = df.dateFromString("2045/12/31")
-		
-		// startDatePicker.date = now
-		// endDatePicker.date = now
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -219,12 +216,7 @@ class eraseController: UIViewController {
 		print("キャンセル")
 	}
 	
-	
-	
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-	
-
 }

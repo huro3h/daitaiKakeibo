@@ -38,7 +38,7 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let screenHeight = Int(UIScreen.mainScreen().bounds.size.height)
-		//print(screenHeight)
+
 		// 画面サイズで機種判定
 		if screenHeight == 480 {
 			switch indexPath.row {

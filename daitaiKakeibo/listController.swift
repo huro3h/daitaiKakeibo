@@ -201,7 +201,6 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		}
 	}
 	
-	
 	// NSDate->String型に変換
 	func dateString(date: NSDate) -> String {
 		let dateFormatter = NSDateFormatter()
@@ -211,11 +210,8 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		let dateString: String = dateFormatter.stringFromDate(date)
 		return dateString
 	}
-	
-	
-	
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }

@@ -59,10 +59,6 @@ class sendMail4SController: UIViewController {
 		endDatePicker4S.minimumDate = df.dateFromString("2016/01/01")
 		endDatePicker4S.maximumDate = df.dateFromString("2045/12/31")
 		
-		
-		
-		// startDatePicker.date = now
-		// endDatePicker.date = now
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -257,9 +253,7 @@ class sendMail4SController: UIViewController {
 		presentViewController(activityVC, animated: true, completion: nil)
 	}
 	
-	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
-	
 }

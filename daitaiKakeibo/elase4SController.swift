@@ -218,13 +218,8 @@ class erase4SController: UIViewController {
 	func myCancel() {
 		print("キャンセル")
 	}
-	
-	
-	
-	
+
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
-	
-	
 }

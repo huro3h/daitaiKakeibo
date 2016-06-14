@@ -209,22 +209,10 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 			return UIColor.whiteColor();
 		}
 	}
-
-
 	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 
 }

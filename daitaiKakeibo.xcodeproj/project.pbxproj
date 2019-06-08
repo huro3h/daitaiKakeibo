@@ -182,7 +182,10 @@
 				8147DDC8FDF1AF441478E920 /* Pods */,
 				CC8CAB6EA9CDB38F35D17513 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		3C6A8CDF1CE59844001527FA /* Products */ = {
 			isa = PBXGroup;

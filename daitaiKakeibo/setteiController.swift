@@ -24,45 +24,45 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		insertAdMob()
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return menuList.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-		let cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+		let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
 		// cell.textLabel!.text = "\(indexPath.row)行目"
-		cell.accessoryType = .DisclosureIndicator
+		cell.accessoryType = .disclosureIndicator
 		cell.textLabel!.text = "\(menuList[indexPath.row])"
 		return cell
 	}
 		
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let screenHeight = Int(UIScreen.mainScreen().bounds.size.height)
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let screenHeight = Int(UIScreen.main.bounds.size.height)
 
 		// 画面サイズで機種判定
 		if screenHeight == 480 {
 			switch indexPath.row {
 			case 0:
-				performSegueWithIdentifier("howToUseSegue", sender: nil)
+				performSegue(withIdentifier: "howToUseSegue", sender: nil)
 			case 1:
-				performSegueWithIdentifier("sendMailSegue4S", sender: nil)
+				performSegue(withIdentifier: "sendMailSegue4S", sender: nil)
 			case 2:
-				performSegueWithIdentifier("aboutAppSegue", sender: nil)
+				performSegue(withIdentifier: "aboutAppSegue", sender: nil)
 			case 3:
-				performSegueWithIdentifier("eraseSegue4S", sender: nil)
+				performSegue(withIdentifier: "eraseSegue4S", sender: nil)
 			default:
 				break
 			}
 		}else{
 			switch indexPath.row {
 			case 0:
-				performSegueWithIdentifier("howToUseSegue", sender: nil)
+				performSegue(withIdentifier: "howToUseSegue", sender: nil)
 			case 1:
-				performSegueWithIdentifier("sendMailSegue", sender: nil)
+				performSegue(withIdentifier: "sendMailSegue", sender: nil)
 			case 2:
-				performSegueWithIdentifier("aboutAppSegue", sender: nil)
+				performSegue(withIdentifier: "aboutAppSegue", sender: nil)
 			case 3:
-				performSegueWithIdentifier("eraseSegue", sender: nil)
+				performSegue(withIdentifier: "eraseSegue", sender: nil)
 			default:
 				break
 			}
@@ -75,12 +75,12 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 		admobView = GADBannerView(adSize:kGADAdSizeBanner)
 		
 		// 広告の位置を指定している(下に設置)
-		admobView.frame.origin = CGPointMake(0, self.view.frame.size.height - admobView.frame.height)
+		admobView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - admobView.frame.height)
 		
 		// ↓上に設置の場合
 		// admobView.frame.origin = CGPointMake(0, 20)
 		// 広告のサイズを指定している
-		admobView.frame.size = CGSizeMake(self.view.frame.width, admobView.frame.height)
+		admobView.frame.size = CGSize(width: self.view.frame.width, height: admobView.frame.height)
 		admobView.adUnitID = AdMobID
 		admobView.delegate = self
 		admobView.rootViewController = self
@@ -94,7 +94,7 @@ class setteiController: UIViewController, UITableViewDataSource, UITableViewDele
 				admobRequest.testDevices = [TEST_DEVICE_ID]
 			}
 		}
-		admobView.loadRequest(admobRequest)
+		admobView.load(admobRequest)
 		self.view.addSubview(admobView)
 	}
 	

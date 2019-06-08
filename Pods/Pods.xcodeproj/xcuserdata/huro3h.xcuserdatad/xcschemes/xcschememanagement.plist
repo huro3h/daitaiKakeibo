@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FontAwesomeKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-daitaiKakeibo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-daitaiKakeiboTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-daitaiKakeiboUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>485BE2C9920E19C47DD547908E2EF9C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BE9D4B6FF6D92923152CB0534F2BB94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE8385C243681393650ACC78C181830B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B29158296503A4E423366822BC5441AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

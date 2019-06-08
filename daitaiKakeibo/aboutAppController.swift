@@ -22,10 +22,10 @@ class aboutAppController: UIViewController, GADBannerViewDelegate {
 		insertAdMob()
 	}
 
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		print("aboutApp画面表示")
 		myTextView.text="だいたい家計簿\nVer1.00\n\nCopyright © 2016\nSatoshiii.\nAll Rights Reserved."
-		myTextView.font = UIFont.systemFontOfSize(CGFloat(25))
+		myTextView.font = UIFont.systemFont(ofSize: CGFloat(25))
 
 	}
 	
@@ -35,12 +35,12 @@ class aboutAppController: UIViewController, GADBannerViewDelegate {
 		admobView = GADBannerView(adSize:kGADAdSizeBanner)
 		
 		// 広告の位置を指定している(下に設置)
-		admobView.frame.origin = CGPointMake(0, self.view.frame.size.height - admobView.frame.height)
+		admobView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - admobView.frame.height)
 		
 		// ↓上に設置の場合
 		// admobView.frame.origin = CGPointMake(0, 20)
 		// 広告のサイズを指定している
-		admobView.frame.size = CGSizeMake(self.view.frame.width, admobView.frame.height)
+		admobView.frame.size = CGSize(width: self.view.frame.width, height: admobView.frame.height)
 		admobView.adUnitID = AdMobID
 		admobView.delegate = self
 		admobView.rootViewController = self
@@ -54,7 +54,7 @@ class aboutAppController: UIViewController, GADBannerViewDelegate {
 			admobRequest.testDevices = [TEST_DEVICE_ID]
 			}
 		}
-		admobView.loadRequest(admobRequest)
+		admobView.load(admobRequest)
 		self.view.addSubview(admobView)
 	}
 	

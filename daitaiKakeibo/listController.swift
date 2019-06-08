@@ -37,10 +37,10 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		// CoreDataから読み込み
 		read()
 		// 別でcellファイルを作った時に
-		listTableView.registerNib(UINib(nibName: "feeList", bundle: nil), forCellReuseIdentifier: "feeList")
+		listTableView.register(UINib(nibName: "feeList", bundle: nil), forCellReuseIdentifier: "feeList")
     }
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		print("List画面表示")
 		foodFeeLabel.text = String(foodFeeCount)
 		lifeFeeLabel.text = String(lifeFeeCount)
@@ -50,21 +50,21 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 		listTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 	}
 	
-	override func setEditing(editing: Bool, animated: Bool) {
+	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
 		
 		listTableView.setEditing(editing, animated: animated)
 	}
 	
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return myTimes.count // 行数をデータの数でカウント
 	}
 	
 	// 2.行に表示する内容をリセット
 	// returnで入る物、int型(引数) -> 戻り値のデータ型
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("feeList")! as! FeeTableViewCell
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "feeList")! as! FeeTableViewCell
 		
 		cell.dayLabel.text = "\(myTimes[indexPath.row])"
 		cell.foodFareLabel.text = "\(myFoods[indexPath.row])"
@@ -93,27 +93,27 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	//		print("\(indexPath.row)行目を選択")
 	//	}
 	
-	func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+	func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}
 	
-	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-		if editingStyle == UITableViewCellEditingStyle.Delete {
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == UITableViewCellEditingStyle.delete {
 			// myTimes.removeAtIndex(indexPath.row)
 			// tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
 			
-			let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+			let appDelegate = UIApplication.shared.delegate as! AppDelegate
 			
 			if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {
-				let entityDiscription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+				let entityDiscription = NSEntityDescription.entity(forEntityName: "AccountBook", in: managedObjectContext)
 				
-				let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+				let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountBook")
 				fetchRequest.entity = entityDiscription
 				
 				var error: NSError? = nil
 				
 				do {
-					let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+					let results = try managedObjectContext.fetch(fetchRequest)
 					print(results.count)
 					
 					var num: Int = 0
@@ -123,7 +123,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 						if(num == indexPath.row) {
 							let accountBook = managedObject as! AccountBook
 							
-							managedObjectContext.deleteObject(managedObject as! NSManagedObject)
+							managedObjectContext.delete(managedObject as! NSManagedObject)
 							
 							appDelegate.saveContext()
 							read()
@@ -135,7 +135,7 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 							hokaFeeLabel.text = String(hokaFeeCount)
 							totalFeeLabel.text = String(totalFeeCount)
 						}
-						num++
+						num += 1
 					}
 				} catch let error1 as NSError {
 					error = error1
@@ -148,12 +148,12 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	
 	// CoreDataから値読み込み
 	func read(){
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		if let managedObjectContext:NSManagedObjectContext = appDelegate.managedObjectContext{
 
-			let entityDescription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+			let entityDescription = NSEntityDescription.entity(forEntityName: "AccountBook", in: managedObjectContext)
 			
-			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+			let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountBook")
 			fetchRequest.entity = entityDescription
 			
 			var error:NSError? = nil
@@ -173,13 +173,13 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 				myHokas = []
 				myTotals = []
 				
-				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+				let results = try managedObjectContext.fetch(fetchRequest)
 				print(results.count)
 				for managedObject in results {
 					let accountBook = managedObject as! AccountBook
 					
 					// 用意した変数に各項目を配列の形で代入
-					let fixDate = dateString(accountBook.inputDate!)
+					let fixDate = dateString(accountBook.inputDate! as Date)
 					myTimes.append(fixDate)
 					myFoods.append(accountBook.foodFee!)
 					myLifes.append(accountBook.lifeFee!)
@@ -202,12 +202,12 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 	}
 	
 	// NSDate->String型に変換
-	func dateString(date: NSDate) -> String {
-		let dateFormatter = NSDateFormatter()
-		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+	func dateString(_ date: Date) -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.locale = Locale(identifier: "ja_JP")
 		// dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
 		dateFormatter.dateFormat = "M/d"
-		let dateString: String = dateFormatter.stringFromDate(date)
+		let dateString: String = dateFormatter.string(from: date)
 		return dateString
 	}
 

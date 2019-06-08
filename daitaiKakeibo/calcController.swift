@@ -13,14 +13,14 @@ class BorderButton: UIButton {
 		super.init(coder: aDecoder)!;
 		layer.cornerRadius = 0;  // ボタンの角の半径
 		layer.borderWidth = 0.5;  // ボタンの枠線の太さ
-		layer.borderColor = UIColor.darkGrayColor().CGColor;
+		layer.borderColor = UIColor.darkGray.cgColor;
 	}
 }
 
 class whiteColorText: UITextView {
 	required init(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)!;
-		textColor = UIColor.whiteColor()
+		textColor = UIColor.white
 	}
 }
 
@@ -72,24 +72,24 @@ class calcController: UIViewController {
 	
 	var panLocation: CGPoint = CGPoint()
 	// 起動画面サイズの取得
-	let myBoundSize:CGSize = UIScreen.mainScreen().bounds.size
+	let myBoundSize:CGSize = UIScreen.main.bounds.size
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// 画像のタッチ操作を有効にする
-		displayLabel.userInteractionEnabled = true
+		displayLabel.isUserInteractionEnabled = true
 		aboutFontIcon()
 	}
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		
 		fourDisplayItems()
 		textcolors()
 		
-		let myDefault = NSUserDefaults.standardUserDefaults()
-			if (myDefault.arrayForKey("fourTotal") != nil){
+		let myDefault = UserDefaults.standard
+			if (myDefault.array(forKey: "fourTotal") != nil){
 				
-				var fourTotal: Array? = myDefault.arrayForKey("fourTotal")!
+				var fourTotal: Array? = myDefault.array(forKey: "fourTotal")!
 		
 					if (fourTotal!.count == 4){
 						foodTotal = fourTotal![0] as! Int
@@ -114,7 +114,7 @@ class calcController: UIViewController {
 						// 上の処理を無視！ \( 'ω')/
 					}
 				
-			} else if (myDefault.arrayForKey("fourTotal") == nil) {
+			} else if (myDefault.array(forKey: "fourTotal") == nil) {
 				
 				foodArray = []
 				foodTotal = 0
@@ -135,9 +135,9 @@ class calcController: UIViewController {
 	}
 	
 	// Labelタッチ判定テスト ここから↓↓ (5.22-6.11)
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		let touch: UITouch = touches.first! as UITouch
-		startPoint = touch.locationInView(self.view) // タッチの開始座標を取得
+		startPoint = touch.location(in: self.view) // タッチの開始座標を取得
 		imageBeHereNowPoint = displayLabel.frame.origin // 開始時の画像の座標を取得
 		
 		// 画面の大きさによって可変させるViewから高さを取得
@@ -152,12 +152,12 @@ class calcController: UIViewController {
 		}
 	}
 	
-	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 		
 		if isImageInside! {
 			// タッチ中のLabelの座標を取得
 			let touch = touches.first! as UITouch
-			let location = touch.locationInView(self.view)
+			let location = touch.location(in: self.view)
 			
 			// 画面の大きさによって可変させるViewから高さを取得
 			let myFlexViewSize:CGSize = self.flexView.bounds.size
@@ -181,7 +181,7 @@ class calcController: UIViewController {
 	}
 	
 	// MARK:label効果
-	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		// 画面の大きさによって可変させるViewから高さを取得
 		let myFlexViewSize:CGSize = self.flexView.bounds.size
 		// 指を離したタイミングでLabelの透過解除
@@ -191,7 +191,7 @@ class calcController: UIViewController {
 
 		// タッチした位置の座標を取得
 		for touch: AnyObject in touches {
-			let point = touch.locationInView(self.view)
+			let point = touch.location(in: self.view)
 			//座標獲得
 			let pointXY = (point.x,point.y)
 			print(pointXY)
@@ -267,7 +267,7 @@ class calcController: UIViewController {
 	}
 	// Labelタッチ判定テスト ここまで↑↑(5.22-)
 	
-	@IBAction func tapFoodField(sender: UITapGestureRecognizer) {
+	@IBAction func tapFoodField(_ sender: UITapGestureRecognizer) {
 		// print("foodFieldたっぷ！")
 		// 配列にInt型の値が入るように変更
 		let foodInt: Int = Int(displayLabel.text!)!
@@ -282,7 +282,7 @@ class calcController: UIViewController {
 		doing0()
 	}
 	
-	@IBAction func tapLifeField(sender: UITapGestureRecognizer) {
+	@IBAction func tapLifeField(_ sender: UITapGestureRecognizer) {
 		
 		let lifeInt: Int = Int(displayLabel.text!)!
 		lifeArray.append(lifeInt)
@@ -296,7 +296,7 @@ class calcController: UIViewController {
 		doing0()
 	}
 	
-	@IBAction func tapZappiField(sender: UITapGestureRecognizer) {
+	@IBAction func tapZappiField(_ sender: UITapGestureRecognizer) {
 		
 		let zappiInt: Int = Int(displayLabel.text!)!
 		zappiArray.append(zappiInt)
@@ -310,7 +310,7 @@ class calcController: UIViewController {
 		doing0()
 	}
 	
-	@IBAction func tapHokaField(sender: UITapGestureRecognizer) {
+	@IBAction func tapHokaField(_ sender: UITapGestureRecognizer) {
 		
 		let hokaInt: Int = Int(displayLabel.text!)!
 		hokaArray.append(hokaInt)
@@ -325,7 +325,7 @@ class calcController: UIViewController {
 	}
 	
 	// 画面長押しで項目の値 全削除　ここから↓
-	@IBAction func longPressFoodField(sender: UILongPressGestureRecognizer) {
+	@IBAction func longPressFoodField(_ sender: UILongPressGestureRecognizer) {
 		foodArray = []
 		foodLabel.text! = "0"
 		foodTotal = 0
@@ -334,7 +334,7 @@ class calcController: UIViewController {
 		userDefaultMemory()
 	}
 	
-	@IBAction func longPressLifeField(sender: UILongPressGestureRecognizer) {
+	@IBAction func longPressLifeField(_ sender: UILongPressGestureRecognizer) {
 		lifeArray = []
 		lifeLabel.text! = "0"
 		lifeTotal = 0
@@ -343,7 +343,7 @@ class calcController: UIViewController {
 		userDefaultMemory()
 	}
 	
-	@IBAction func longPressZappiField(sender: UILongPressGestureRecognizer) {
+	@IBAction func longPressZappiField(_ sender: UILongPressGestureRecognizer) {
 		zappiArray = []
 		zappiLabel.text! = "0"
 		zappiTotal = 0
@@ -352,7 +352,7 @@ class calcController: UIViewController {
 		userDefaultMemory()
 	}
 	
-	@IBAction func longPressHokaField(sender: UILongPressGestureRecognizer) {
+	@IBAction func longPressHokaField(_ sender: UILongPressGestureRecognizer) {
 		hokaArray = []
 		hokaLabel.text! = "0"
 		hokaTotal = 0
@@ -362,11 +362,11 @@ class calcController: UIViewController {
 	}
 	
 	// 画面外側にスワイプしたら、配列の最後の値を削除(擬似Undo機能)
-	@IBAction func swipeFoodField(sender: UISwipeGestureRecognizer) {
+	@IBAction func swipeFoodField(_ sender: UISwipeGestureRecognizer) {
 		if(foodArray != []) {
 			foodArray.removeLast()
-			foodLabel.text! = String(foodArray.reduce(0, combine: { $0 + $1 }))
-			foodTotal = foodArray.reduce(0, combine: { $0 + $1 })
+			foodLabel.text! = String(foodArray.reduce(0, { $0 + $1 }))
+			foodTotal = foodArray.reduce(0, { $0 + $1 })
 			print ("foodUndo:\(foodArray)")
 			foodTextView.text = "\(foodArray)"
 			userDefaultMemory()
@@ -375,11 +375,11 @@ class calcController: UIViewController {
 		}
 	}
 	
-	@IBAction func swipeLifeField(sender: UISwipeGestureRecognizer) {
+	@IBAction func swipeLifeField(_ sender: UISwipeGestureRecognizer) {
 		if(lifeArray != []) {
 			lifeArray.removeLast()
-			lifeLabel.text! = String(lifeArray.reduce(0, combine: { $0 + $1 }))
-			lifeTotal = lifeArray.reduce(0, combine: { $0 + $1 })
+			lifeLabel.text! = String(lifeArray.reduce(0, { $0 + $1 }))
+			lifeTotal = lifeArray.reduce(0, { $0 + $1 })
 			print ("lifeUndo:\(lifeArray)")
 			lifeTextView.text = "\(lifeArray)"
 			userDefaultMemory()
@@ -388,11 +388,11 @@ class calcController: UIViewController {
 		}
 	}
 	
-	@IBAction func swipeZappiField(sender: UISwipeGestureRecognizer) {
+	@IBAction func swipeZappiField(_ sender: UISwipeGestureRecognizer) {
 		if(zappiArray != []) {
 			zappiArray.removeLast()
-			zappiLabel.text! = String(zappiArray.reduce(0, combine: { $0 + $1 }))
-			zappiTotal = zappiArray.reduce(0, combine: { $0 + $1 })
+			zappiLabel.text! = String(zappiArray.reduce(0, { $0 + $1 }))
+			zappiTotal = zappiArray.reduce(0, { $0 + $1 })
 			print ("zappiUndo:\(zappiArray)")
 			zappiTextView.text = "\(zappiArray)"
 			userDefaultMemory()
@@ -401,11 +401,11 @@ class calcController: UIViewController {
 		}
 	}
 	
-	@IBAction func swipeHokaField(sender: UISwipeGestureRecognizer) {
+	@IBAction func swipeHokaField(_ sender: UISwipeGestureRecognizer) {
 		if(hokaArray != []) {
 			hokaArray.removeLast()
-			hokaLabel.text! = String(hokaArray.reduce(0, combine: { $0 + $1 }))
-			hokaTotal = hokaArray.reduce(0, combine: { $0 + $1 })
+			hokaLabel.text! = String(hokaArray.reduce(0, { $0 + $1 }))
+			hokaTotal = hokaArray.reduce(0, { $0 + $1 })
 			print ("hokaUndo:\(hokaArray)")
 			hokaTextView.text = "\(hokaArray)"
 			userDefaultMemory()
@@ -419,7 +419,7 @@ class calcController: UIViewController {
 		var nextOperation : String?   // 次に演算する操作　+, -
 	
 		// 数字キーが押されたとき
-		@IBAction func digit(sender: UIButton) {
+		@IBAction func digit(_ sender: UIButton) {
 			// ログに表示
 			print("pushed \(sender.currentTitle)")
 			
@@ -441,7 +441,7 @@ class calcController: UIViewController {
 		}
 		
 		// 操作キー（+-×÷=C★!D）が押されたとき
-		@IBAction func operation(sender: UIButton) {
+		@IBAction func operation(_ sender: UIButton) {
 			// ログに表示
 			print("pushed \(sender.currentTitle)")
 			
@@ -472,13 +472,13 @@ class calcController: UIViewController {
 							let myalert = UIAlertController(
 							title: "桁数オーバーです",
 							message: "17桁(1京円)以内で入力してください",
-							preferredStyle: .Alert)
+							preferredStyle: .alert)
 							
 							myalert.addAction(UIAlertAction(
 							title: "OK",
-							style: .Default,
+							style: .default,
 							handler: { action in print("OK") }))
-							presentViewController(myalert, animated: true, completion: nil)
+							present(myalert, animated: true, completion: nil)
 							display.text = "error"
 							display.text = "0"
 							displayLabel.text! = display.text!
@@ -522,13 +522,13 @@ class calcController: UIViewController {
 					let myalert = UIAlertController(
 						title: "桁数オーバーです",
 						message: "17桁(1京円)以内で入力してください",
-						preferredStyle: .Alert)
+						preferredStyle: .alert)
 					
 					myalert.addAction(UIAlertAction(
 						title: "OK",
-						style: .Default,
+						style: .default,
 						handler: { action in print("OK") }))
-					presentViewController(myalert, animated: true, completion: nil)
+					present(myalert, animated: true, completion: nil)
 					display.text = "error"
 					display.text = "0"
 					displayLabel.text! = display.text!
@@ -560,8 +560,8 @@ class calcController: UIViewController {
 				
 				fourDisplayItems()
 				
-				let myDefault = NSUserDefaults.standardUserDefaults()
-				myDefault.removeObjectForKey("fourTotal")
+				let myDefault = UserDefaults.standard
+				myDefault.removeObject(forKey: "fourTotal")
 				
 				userDefaultMemory()
 			}
@@ -570,24 +570,24 @@ class calcController: UIViewController {
 			if sender.currentTitle == "" {
 				
 				// 1.AppDelegateをコードで読み込む
-				let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+				let appDelegate = UIApplication.shared.delegate as! AppDelegate
 				
 				// 2.Entityの操作を制御する(managedObjectContext)を(appDelegate)から作成
 				if let managedObjectContext:NSManagedObjectContext = appDelegate.managedObjectContext{
 					
 					// 3.新しくデータを追加する為のEntityを作成する
-					let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+					let managedObject: AnyObject = NSEntityDescription.insertNewObject(forEntityName: "AccountBook", into: managedObjectContext)
 					
 					// 4.Todo EntityからObjectを生成し、Attributesに接続して値を代入
 					// (Entityにあわせたクラスを作ってから)
 					let accountBook = managedObject as! AccountBook
 					
-					accountBook.foodFee = foodTotal
-					accountBook.lifeFee = lifeTotal
-					accountBook.zappiFee = zappiTotal
-					accountBook.hokaFee = hokaTotal
-					accountBook.totalFee = allTotal
-					accountBook.inputDate = NSDate() // NSDate() 現在の日付を返す
+					accountBook.foodFee = foodTotal as NSNumber
+					accountBook.lifeFee = lifeTotal as NSNumber
+					accountBook.zappiFee = zappiTotal as NSNumber
+					accountBook.hokaFee = hokaTotal as NSNumber
+					accountBook.totalFee = allTotal as NSNumber
+					accountBook.inputDate = Date() // NSDate() 現在の日付を返す
 					
 					appDelegate.saveContext()
 					
@@ -597,8 +597,8 @@ class calcController: UIViewController {
 					hokaTotal = 0
 					allTotal = 0
 					
-					let myDefault = NSBundle.mainBundle().bundleIdentifier
-					NSUserDefaults.standardUserDefaults().removePersistentDomainForName(myDefault!)
+					let myDefault = Bundle.main.bundleIdentifier
+					UserDefaults.standard.removePersistentDomain(forName: myDefault!)
 					bufferNumber = 0
 					nextOperation = nil
 					
@@ -634,9 +634,9 @@ class calcController: UIViewController {
 
 	// 値が入る時や何らかの動きがあった時にuserDefaultに保存
 	func userDefaultMemory() {
-		let myDefault = NSUserDefaults.standardUserDefaults()
+		let myDefault = UserDefaults.standard
 		// データを書き込んで("fourTotal"箱の名前)
-		myDefault.setObject([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
+		myDefault.set([foodTotal,lifeTotal,zappiTotal,hokaTotal], forKey: "fourTotal")
 		// 即反映させる(きちんと保存して使用時すぐ出せるように)
 		allTotal = foodTotal+lifeTotal+zappiTotal+hokaTotal
 		myDefault.synchronize()
@@ -659,63 +659,64 @@ class calcController: UIViewController {
 
 	// 各項目のカラーを指定
 	func textcolors(){
-		foodTextView.textColor = UIColor.whiteColor()
+		foodTextView.textColor = UIColor.white
 		lifeTextView.textColor = hexStr("7F7F7F", alpha: 1)
-		zappiTextView.textColor = UIColor.whiteColor()
+		zappiTextView.textColor = UIColor.white
 		hokaTextView.textColor = hexStr("7F7F7F", alpha: 1)
-		foodLabel.textColor = UIColor.whiteColor()
+		foodLabel.textColor = UIColor.white
 		lifeLabel.textColor = hexStr("7F7F7F", alpha: 1)
-		zappiLabel.textColor = UIColor.whiteColor()
+		zappiLabel.textColor = UIColor.white
 		hokaLabel.textColor = hexStr("7F7F7F", alpha: 1)
 	}
 
 	// 色コードをhexで指定できるように
-	func hexStr (var hexStr : NSString, alpha : CGFloat) -> UIColor {
-		hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
-		let scanner = NSScanner(string: hexStr as String)
+	func hexStr (_ hexStr : NSString, alpha : CGFloat) -> UIColor {
+		var hexStr = hexStr
+		hexStr = hexStr.replacingOccurrences(of: "#", with: "") as NSString
+		let scanner = Scanner(string: hexStr as String)
 		var color: UInt32 = 0
-		if scanner.scanHexInt(&color) {
+		if scanner.scanHexInt32(&color) {
 			let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
 			let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
 			let b = CGFloat(color & 0x0000FF) / 255.0
 			return UIColor(red:r,green:g,blue:b,alpha:alpha)
 		} else {
 			print("invalid hex string")
-			return UIColor.whiteColor();
+			return UIColor.white;
 		}
 	}
 	
 	// 各項目をアイコン化
 	func aboutFontIcon(){
 		// foodFieldのアイコン
-		let cutlery = FAKFontAwesome.cutleryIconWithSize(25)
+		let cutlery = FAKFontAwesome.cutleryIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		cutlery.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-		let cutleryImage = cutlery.imageWithSize(CGSizeMake(25, 25))
+		cutlery?.addAttribute(NSForegroundColorAttributeName, value: UIColor.white)
+		let cutleryImage = cutlery?.image(with: CGSize(width: 25, height: 25))
 		foodFont.image = cutleryImage
 		foodFont.layer.opacity = 0.2
 		
 		// lifeFieldのアイコン
-		let shoppingCart = FAKFontAwesome.shoppingCartIconWithSize(25)
+		let shoppingCart = FAKFontAwesome.shoppingCartIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		shoppingCart.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor())
-		let shoppingCartImage = shoppingCart.imageWithSize(CGSizeMake(25, 25))
+		shoppingCart?.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray)
+		let shoppingCartImage = shoppingCart?.image(with: CGSize(width: 25, height: 25))
 		lifeFont.image = shoppingCartImage
 		lifeFont.layer.opacity = 0.2
 		
 		// zappiFieldのアイコン
-		let coffee = FAKFontAwesome.coffeeIconWithSize(25)
+		let coffee = FAKFontAwesome.coffeeIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		coffee.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
-		let coffeeImage = coffee.imageWithSize(CGSizeMake(25, 25))
+		coffee?.addAttribute(NSForegroundColorAttributeName, value: UIColor.white)
+		let coffeeImage = coffee?.image(with: CGSize(width: 25, height: 25))
 		zappiFont.image = coffeeImage
 		zappiFont.layer.opacity = 0.2
 		
 		// hokaFieldのアイコン
-		let smileO = FAKFontAwesome.smileOIconWithSize(25)
+		let smileO = FAKFontAwesome.smileOIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		smileO.addAttribute(NSForegroundColorAttributeName, value: UIColor.grayColor())
-		let smileOImage = smileO.imageWithSize(CGSizeMake(25, 25))
+		smileO?.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray)
+		let smileOImage = smileO?.image(with: CGSize(width: 25, height: 25))
 		hokaFont.image = smileOImage
 		hokaFont.layer.opacity = 0.2
 	}

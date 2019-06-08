@@ -10,8 +10,8 @@ import FontAwesomeKit
 class erase4SController: UIViewController {
 	
 	var dataArray: [String] = []
-	let now = NSDate()
-	let df = NSDateFormatter()
+	let now = Date()
+	let df = DateFormatter()
 	
 	// 以下4行期間指定削除で使う変数
 	// datePickerからString型で日付を取得し以下2行の変数に代入
@@ -19,8 +19,8 @@ class erase4SController: UIViewController {
 	var catchEndDate: String = "2000-01-01"
 	
 	// 次の2行は先のデータをString型->NSDate型に変更した後に入れておく変数
-	var catchStartDate2: NSDate = NSDate()
-	var catchEndDate2: NSDate = NSDate()
+	var catchStartDate2: Date = Date()
+	var catchEndDate2: Date = Date()
 	
 	@IBOutlet weak var startDatePicker4SD: UIDatePicker!
 	@IBOutlet weak var endDatePicker4SD: UIDatePicker!
@@ -31,96 +31,96 @@ class erase4SController: UIViewController {
 		read()
 		
 		// DatePicker設定
-		startDatePicker4SD.datePickerMode = UIDatePickerMode.Date
-		endDatePicker4SD.datePickerMode = UIDatePickerMode.Date
+		startDatePicker4SD.datePickerMode = UIDatePickerMode.date
+		endDatePicker4SD.datePickerMode = UIDatePickerMode.date
 		
 		df.dateFormat = "yyyy-MM-dd"
 		
-		catchStartDate = df.stringFromDate(NSDate(timeInterval:-31*24*60*60, sinceDate:NSDate()))
-		catchEndDate = df.stringFromDate(NSDate())
+		catchStartDate = df.string(from: Date(timeInterval:-31*24*60*60, since:Date()))
+		catchEndDate = df.string(from: Date())
 		
 		// 初期表示の日付を設定
-		startDatePicker4SD.date = df.dateFromString(catchStartDate)!
-		endDatePicker4SD.date = df.dateFromString(catchEndDate)!
+		startDatePicker4SD.date = df.date(from: catchStartDate)!
+		endDatePicker4SD.date = df.date(from: catchEndDate)!
 		// 選択可能範囲設定
-		startDatePicker4SD.minimumDate = df.dateFromString("2000/01/01")
-		startDatePicker4SD.maximumDate = df.dateFromString("2045/12/31")
-		endDatePicker4SD.minimumDate = df.dateFromString("2000/01/01")
-		endDatePicker4SD.maximumDate = df.dateFromString("2045/12/31")
+		startDatePicker4SD.minimumDate = df.date(from: "2000/01/01")
+		startDatePicker4SD.maximumDate = df.date(from: "2045/12/31")
+		endDatePicker4SD.minimumDate = df.date(from: "2000/01/01")
+		endDatePicker4SD.maximumDate = df.date(from: "2045/12/31")
 		
 		// startDatePicker.date = now
 		// endDatePicker.date = now
 	}
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		print("erase画面表示")
 	}
 	
 	
 	// 期間選択
-	@IBAction func changeFromPicker4SD(sender: UIDatePicker) {
-		let selectedStartDate: NSString = df.stringFromDate(sender.date)
+	@IBAction func changeFromPicker4SD(_ sender: UIDatePicker) {
+		let selectedStartDate: NSString = df.string(from: sender.date) as NSString
 		catchStartDate = selectedStartDate as String
 	}
 	
-	@IBAction func changeUntilPicker4SD(sender: UIDatePicker) {
-		let selectedEndDate: NSString = df.stringFromDate(sender.date)
+	@IBAction func changeUntilPicker4SD(_ sender: UIDatePicker) {
+		let selectedEndDate: NSString = df.string(from: sender.date) as NSString
 		catchEndDate = selectedEndDate as String
 	}
 
 	
-	@IBAction func tapBtnLimited4SD(sender: UIButton) {
-		let alertController = UIAlertController(title: "データの消去", message: "指定された期間のデータを消去します", preferredStyle: .Alert)
+	@IBAction func tapBtnLimited4SD(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "データの消去", message: "指定された期間のデータを消去します", preferredStyle: .alert)
 		
 		alertController.addAction(UIAlertAction(
 			title: "消去",
-			style: UIAlertActionStyle.Destructive,
+			style: UIAlertActionStyle.destructive,
 			handler: { action in self.deletePartData()}))
 		
 		alertController.addAction(UIAlertAction(
 			title: "Cancel",
-			style: .Cancel,
+			style: .cancel,
 			handler: { action in self.myCancel()}))
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 
 	
-	@IBAction func tapBtnAll4SD(sender: UIButton) {
-		let alertController = UIAlertController(title: "データの消去", message: "全期間のデータを消去しますか？", preferredStyle: .Alert)
+	@IBAction func tapBtnAll4SD(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "データの消去", message: "全期間のデータを消去しますか？", preferredStyle: .alert)
 		
 		alertController.addAction(UIAlertAction(
 			title: "消去",
-			style: UIAlertActionStyle.Destructive,
+			style: UIAlertActionStyle.destructive,
 			handler: { action in self.deleteAllData()}))
 		
 		alertController.addAction(UIAlertAction(
 			title: "Cancel",
-			style: .Cancel,
+			style: .cancel,
 			handler: { action in self.myCancel()}))
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	// Coredata読込
 	func read(){
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		if let managedObjectContext:NSManagedObjectContext = appDelegate.managedObjectContext{
-			let entityDescription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+			let entityDescription = NSEntityDescription.entity(forEntityName: "AccountBook", in: managedObjectContext)
 			
-			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+			let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountBook")
 			fetchRequest.entity = entityDescription
 			var error:NSError? = nil
 			
 			do{
-				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+				let results = try managedObjectContext.fetch(fetchRequest)
 				
 				for managedObject in results {
 					let accountBook = managedObject as! AccountBook
 					print("日時:\(accountBook.inputDate), 食費:\(accountBook.foodFee)")
 					
 					// 用意した変数に各項目を配列の形で代入
-					let fixDate = dateString(accountBook.inputDate!)
+					let fixDate = dateString(accountBook.inputDate! as Date)
 					//let myFoods = String(accountBook.foodFee!)
 					//let myLifes = String(accountBook.lifeFee!)
 					//let myZappies = String(accountBook.zappiFee!)
@@ -144,32 +144,32 @@ class erase4SController: UIViewController {
 	
 	func deletePartData () {
 		// CoreData期間削除
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {
-			let entityDiscription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+			let entityDiscription = NSEntityDescription.entity(forEntityName: "AccountBook", in: managedObjectContext)
 			
-			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+			let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountBook")
 			fetchRequest.entity = entityDiscription
 			
 			// データをNSDate型に変換
-			catchStartDate2 = df.dateFromString(catchStartDate)!
-			catchEndDate2 = df.dateFromString(catchEndDate)!
+			catchStartDate2 = df.date(from: catchStartDate)!
+			catchEndDate2 = df.date(from: catchEndDate)!
 			// catchEndDate2に 23:59:59 加算
-			let catchEndDate2Plus1Day: NSDate = NSDate(timeInterval:24*60*60-1, sinceDate:catchEndDate2)
+			let catchEndDate2Plus1Day: Date = Date(timeInterval:24*60*60-1, since:catchEndDate2)
 			
-			let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2, catchEndDate2Plus1Day)
+			let predicate = NSPredicate(format: "(inputDate >= %@)and(inputDate <= %@)", catchStartDate2 as CVarArg, catchEndDate2Plus1Day as CVarArg)
 			// print(predicate)
 			fetchRequest.predicate = predicate
 			var error: NSError? = nil
 			
 			do {
-				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+				let results = try managedObjectContext.fetch(fetchRequest)
 				print(results.count)
 				
 				for managedObject in results{
 					let accountBook = managedObject as! AccountBook
 					
-					managedObjectContext.deleteObject(managedObject as! NSManagedObject)
+					managedObjectContext.delete(managedObject as! NSManagedObject)
 					
 					appDelegate.saveContext()
 				}
@@ -181,22 +181,22 @@ class erase4SController: UIViewController {
 	
 	func deleteAllData (){
 		// CoreData全削除
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		if let managedObjectContext: NSManagedObjectContext = appDelegate.managedObjectContext {
-			let entityDiscription = NSEntityDescription.entityForName("AccountBook", inManagedObjectContext: managedObjectContext)
+			let entityDiscription = NSEntityDescription.entity(forEntityName: "AccountBook", in: managedObjectContext)
 			
-			let fetchRequest = NSFetchRequest(entityName: "AccountBook")
+			let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AccountBook")
 			fetchRequest.entity = entityDiscription
 			var error: NSError? = nil
 			
 			do {
-				let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+				let results = try managedObjectContext.fetch(fetchRequest)
 				print(results.count)
 				
 				for managedObject in results{
 					let accountBook = managedObject as! AccountBook
 					
-					managedObjectContext.deleteObject(managedObject as! NSManagedObject)
+					managedObjectContext.delete(managedObject as! NSManagedObject)
 					
 					appDelegate.saveContext()
 				}
@@ -207,11 +207,11 @@ class erase4SController: UIViewController {
 	}
 	
 	// NSDate->String型に変換
-	func dateString (date: NSDate) -> String {
-		let dateFormatter = NSDateFormatter()
-		dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+	func dateString (_ date: Date) -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.locale = Locale(identifier: "ja_JP")
 		dateFormatter.dateFormat = "yyyy-MM-dd"
-		let dateString: String = dateFormatter.stringFromDate(date)
+		let dateString: String = dateFormatter.string(from: date)
 		return dateString
 	}
 	

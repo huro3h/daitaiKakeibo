@@ -15,7 +15,7 @@ import FontAwesomeKit
 
 extension AccountBook {
 
-    @NSManaged var inputDate: NSDate?
+    @NSManaged var inputDate: Date?
     @NSManaged var foodFee: NSNumber?
     @NSManaged var lifeFee: NSNumber?
     @NSManaged var zappiFee: NSNumber?

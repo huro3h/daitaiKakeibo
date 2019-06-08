@@ -344,15 +344,18 @@
 					3C6A8CDD1CE59844001527FA = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = Y63B3HU65B;
+						LastSwiftMigration = 0830;
 					};
 					3C6A8CF11CE59844001527FA = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 445HFT775Z;
+						LastSwiftMigration = 0830;
 						TestTargetID = 3C6A8CDD1CE59844001527FA;
 					};
 					3C6A8CFC1CE59844001527FA = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 445HFT775Z;
+						LastSwiftMigration = 0830;
 						TestTargetID = 3C6A8CDD1CE59844001527FA;
 					};
 				};
@@ -707,6 +710,7 @@
 				PROVISIONING_PROFILE = "51633edd-7d70-411f-9812-4c7e80ad480d";
 				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeibo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -728,6 +732,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "51633edd-7d70-411f-9812-4c7e80ad480d";
 				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeibo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -743,6 +748,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daitaiKakeibo.app/daitaiKakeibo";
 			};
 			name = Debug;
@@ -758,6 +764,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.satoshiii.daitaiKakeiboTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daitaiKakeibo.app/daitaiKakeibo";
 			};
 			name = Release;
@@ -773,6 +780,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboUITests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = daitaiKakeibo;
 				USES_XCTRUNNER = YES;
 			};
@@ -788,6 +796,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.satoshiii.daitaiKakeiboUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "daitaiKakeibo/daitaiKakeiboUITests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = daitaiKakeibo;
 				USES_XCTRUNNER = YES;
 			};

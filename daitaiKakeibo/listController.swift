@@ -188,11 +188,11 @@ class listController: UIViewController,UITextFieldDelegate,UITableViewDataSource
 					myTotals.append(accountBook.totalFee!)
 					
 					// リストに各項目の合計値を入れる為、Int型にダウンキャストして合計させる
-					foodFeeCount += (accountBook.foodFee! as Int)
-					lifeFeeCount += (accountBook.lifeFee! as Int)
-					zappiFeeCount += (accountBook.zappiFee! as Int)
-					hokaFeeCount += (accountBook.hokaFee! as Int)
-					totalFeeCount += (accountBook.totalFee! as Int)
+					foodFeeCount += (accountBook.foodFee! as! Int)
+					lifeFeeCount += (accountBook.lifeFee! as! Int)
+					zappiFeeCount += (accountBook.zappiFee! as! Int)
+					hokaFeeCount += (accountBook.hokaFee! as! Int)
+					totalFeeCount += (accountBook.totalFee! as! Int)
 				}
 				
 			}catch let error1 as NSError{

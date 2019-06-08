@@ -89,7 +89,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 				textView.isEditable = false
 				textView.isSelectable = false
 				textView.textAlignment = NSTextAlignment.center
-				textView.font = UIFont.systemFont(ofSize: 28, weight: 0)
+				textView.font = UIFont.systemFont(ofSize: 28, weight: UIFont.Weight(rawValue: 0))
 				textView.textColor = hexStr("555555", alpha: 1)
 				textView.backgroundColor = UIColor.clear
 				scroll?.addSubview(textView)
@@ -112,7 +112,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		print("howToUse画面表示")
 	}
 	
-	func pressed(_ sender: UIButton!) {
+	@objc func pressed(_ sender: UIButton!) {
 		self.dismiss(animated: true) { () -> Void in
 		}
 	}
@@ -141,7 +141,7 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		)
 	}
 	
-	func swipe(_ sender: AnyObject) -> () {
+	@objc func swipe(_ sender: AnyObject) -> () {
 		if let scrollView = scroll {
 			let x = CGFloat(dots!.currentPage) * scrollView.frame.size.width
 			scroll?.setContentOffset(CGPoint(x: x, y: 0), animated: true)

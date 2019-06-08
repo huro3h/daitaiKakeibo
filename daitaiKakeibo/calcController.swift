@@ -691,7 +691,7 @@ class calcController: UIViewController {
 		// foodFieldのアイコン
 		let cutlery = FAKFontAwesome.cutleryIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		cutlery?.addAttribute(NSForegroundColorAttributeName, value: UIColor.white)
+		cutlery?.addAttribute(NSAttributedStringKey.foregroundColor.rawValue, value: UIColor.white)
 		let cutleryImage = cutlery?.image(with: CGSize(width: 25, height: 25))
 		foodFont.image = cutleryImage
 		foodFont.layer.opacity = 0.2
@@ -699,7 +699,7 @@ class calcController: UIViewController {
 		// lifeFieldのアイコン
 		let shoppingCart = FAKFontAwesome.shoppingCartIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		shoppingCart?.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray)
+		shoppingCart?.addAttribute(NSAttributedStringKey.foregroundColor.rawValue, value: UIColor.gray)
 		let shoppingCartImage = shoppingCart?.image(with: CGSize(width: 25, height: 25))
 		lifeFont.image = shoppingCartImage
 		lifeFont.layer.opacity = 0.2
@@ -707,7 +707,7 @@ class calcController: UIViewController {
 		// zappiFieldのアイコン
 		let coffee = FAKFontAwesome.coffeeIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		coffee?.addAttribute(NSForegroundColorAttributeName, value: UIColor.white)
+		coffee?.addAttribute(NSAttributedStringKey.foregroundColor.rawValue, value: UIColor.white)
 		let coffeeImage = coffee?.image(with: CGSize(width: 25, height: 25))
 		zappiFont.image = coffeeImage
 		zappiFont.layer.opacity = 0.2
@@ -715,7 +715,7 @@ class calcController: UIViewController {
 		// hokaFieldのアイコン
 		let smileO = FAKFontAwesome.smileOIcon(withSize: 25)
 		// 下記でアイコンの色も変えられます
-		smileO?.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray)
+		smileO?.addAttribute(NSAttributedStringKey.foregroundColor.rawValue, value: UIColor.gray)
 		let smileOImage = smileO?.image(with: CGSize(width: 25, height: 25))
 		hokaFont.image = smileOImage
 		hokaFont.layer.opacity = 0.2

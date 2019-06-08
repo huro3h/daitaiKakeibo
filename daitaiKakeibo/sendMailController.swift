@@ -166,11 +166,11 @@ class sendMailController: UIViewController {
 					shareTextArray.append("\(myDate),\(myFoods),\(myLifes),\(myZappies),\(myHokas),\(myTotals)")
 					
 					// 選択した範囲の合計値をメールの一番下に追加する為、各値の合計を代入
-					foodFeeCount += (accountBook.foodFee! as Int)
-					lifeFeeCount += (accountBook.lifeFee! as Int)
-					zappiFeeCount += (accountBook.zappiFee! as Int)
-					hokaFeeCount += (accountBook.hokaFee! as Int)
-					totalFeeCount += (accountBook.totalFee! as Int)
+					foodFeeCount += (accountBook.foodFee! as! Int)
+					lifeFeeCount += (accountBook.lifeFee! as! Int)
+					zappiFeeCount += (accountBook.zappiFee! as! Int)
+					hokaFeeCount += (accountBook.hokaFee! as! Int)
+					totalFeeCount += (accountBook.totalFee! as! Int)
 					
 					// shareTextArray = ["\(accountBook)"]
 				}
@@ -221,11 +221,11 @@ class sendMailController: UIViewController {
 					// shareTextArray = ["\(accountBook)"]
 					
 					// 選択した範囲の合計値をメールの一番下に追加する為、各値の合計を代入
-					foodFeeCount += (accountBook.foodFee! as Int)
-					lifeFeeCount += (accountBook.lifeFee! as Int)
-					zappiFeeCount += (accountBook.zappiFee! as Int)
-					hokaFeeCount += (accountBook.hokaFee! as Int)
-					totalFeeCount += (accountBook.totalFee! as Int)
+					foodFeeCount += (accountBook.foodFee! as! Int)
+					lifeFeeCount += (accountBook.lifeFee! as! Int)
+					zappiFeeCount += (accountBook.zappiFee! as! Int)
+					hokaFeeCount += (accountBook.hokaFee! as! Int)
+					totalFeeCount += (accountBook.totalFee! as! Int)
 				}
 			} catch let error1 as NSError {
 				error = error1

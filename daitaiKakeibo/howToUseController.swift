@@ -65,7 +65,8 @@ class howToUseController: UIViewController, UIScrollViewDelegate , GADBannerView
 		}
 
 		
-		for var i = 0; i < slides.count; ++i {
+//		for i in 0 ..< slides.count += 1 {
+        for i in (0...slides.count + 1) {
 			
 			if (slides[i]["image"] as String! != ""){
 				pictureFlag = true
